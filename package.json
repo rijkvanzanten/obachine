@@ -1,0 +1,28 @@
+{
+  "name": "oba",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rijkvanzanten/oba.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rijkvanzanten/oba/issues"
+  },
+  "xo": {
+  "semicolon": true,
+  "space": true,
+  "env": [
+    "node",
+    "browser"
+  ]
+},
+  "homepage": "https://github.com/rijkvanzanten/oba#readme"
+}
