@@ -17,12 +17,15 @@
     "url": "https://github.com/rijkvanzanten/oba/issues"
   },
   "xo": {
-  "semicolon": true,
-  "space": true,
-  "env": [
-    "node",
-    "browser"
-  ]
-},
-  "homepage": "https://github.com/rijkvanzanten/oba#readme"
+    "semicolon": true,
+    "space": true,
+    "env": [
+      "node",
+      "browser"
+    ]
+  },
+  "homepage": "https://github.com/rijkvanzanten/oba#readme",
+  "devDependencies": {
+    "xo": "^0.18.2"
+  }
 }
