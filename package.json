@@ -43,6 +43,9 @@
     "envs": [
       "browser",
       "node"
-    ]
+    ],
+    "rules": {
+      "import/no-unresolved": "off"
+    }
   }
 }
