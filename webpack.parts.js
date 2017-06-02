@@ -6,7 +6,10 @@ exports.devServer = ({host, port} = {}) => ({
     historyApiFallback: true,
     stats: 'errors-only',
     host, // Defaults to `localhost`
-    port, // Defaults to 8080
+    port, // Defaults to 8080,
+    proxy: {
+      '/api': 'http://localhost:3000'
+    },
     overlay: {
       errors: true,
       warnings: true
