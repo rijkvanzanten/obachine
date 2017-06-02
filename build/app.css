@@ -1,0 +1,10 @@
+body {
+    background: lightblue;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.redButton {
+    background: #fff;
+}

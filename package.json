@@ -2,9 +2,12 @@
   "name": "oba",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env.target development\"",
+    "build": "webpack --env.target production",
+    "lint:js": "eslint app/ webpack.*.js --cache",
+    "lint:style": "stylelint app/**/*.css"
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,22 @@
   },
   "homepage": "https://github.com/rijkvanzanten/oba#readme",
   "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "nodemon": "^1.11.0",
+    "postcss-loader": "^2.0.5",
+    "style-loader": "^0.18.1",
+    "stylelint": "^7.10.1",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.1.0",
     "xo": "^0.18.2"
+  },
+  "dependencies": {
+    "express": "^4.15.3"
   }
 }
