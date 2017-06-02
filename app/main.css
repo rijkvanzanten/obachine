@@ -1,8 +1,8 @@
 body {
-    background: lightblue;
-    display: flex;
+  background: lightblue;
+  display: flex;
 }
 
 .redButton {
-    background: #fff;
+  background: #fff;
 }
