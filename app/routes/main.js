@@ -8,7 +8,7 @@ export default function main() {
   return html`
     <body class=${styles.body}>
       ${header()}
-      ${modal()}
+      ${modal('Kies het thema waar je boek over moet gaan!', 'De leuke inhoud')}
       ${footer()}
     </body>
   `;

@@ -11,3 +11,9 @@
   left: 0;
   margin: auto;
 }
+
+.close {
+  background-color: none;
+  color: #fff;
+  color: red;
+}
