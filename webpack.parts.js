@@ -33,6 +33,25 @@ exports.lintJavascript = ({include, exclude, options}) => ({
   }
 });
 
+exports.lintCSS = ({include, exclude}) => {
+  const plugin = new StyleLintPlugin({
+    files: ['app/**/*.css']
+  });
+
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          include,
+          exclude
+        }
+      ]
+    },
+    plugins: [plugin]
+  };
+};
+
 exports.loadCSS = ({include, exclude} = {}) => ({
   module: {
     rules: [
@@ -89,12 +108,19 @@ exports.autoprefix = () => ({
   }
 });
 
-exports.lintCSS = ({include, exclude}) => {
-  const plugin = new StyleLintPlugin({
-    files: ['app/**/*.css']
-  });
+exports.loadImages = ({include, exclude, options} = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|svg)$/,
+        include,
+        exclude,
 
-  return {
-    plugins: [plugin]
+        use: {
+          loader: 'url-loader',
+          options
+        }
+      }
+    ]
   }
-};
+});

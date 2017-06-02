@@ -29,6 +29,12 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  parts.loadImages({
+    options: {
+      limit: 15000,
+      name: '[name].[ext]'
+    }
+  }),
   parts.extractCSS({
     use: [
       {
@@ -43,6 +49,7 @@ const productionConfig = merge([
 ]);
 
 const developmentConfig = merge([
+  parts.loadImages(),
   parts.loadCSS(),
   parts.devServer({
     // Customize host/port here if needed
