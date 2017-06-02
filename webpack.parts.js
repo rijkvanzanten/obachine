@@ -1,6 +1,6 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-exports.devServer = ({ host, port } = {}) => ({
+exports.devServer = ({host, port} = {}) => ({
   devServer: {
     historyApiFallback: true,
     stats: 'errors-only',
@@ -8,12 +8,12 @@ exports.devServer = ({ host, port } = {}) => ({
     port, // Defaults to 8080
     overlay: {
       errors: true,
-      warnings: true,
-    },
-  },
+      warnings: true
+    }
+  }
 });
 
-exports.lintJavascript = ({ include, exclude, options }) => ({
+exports.lintJavascript = ({include, exclude, options}) => ({
   module: {
     rules: [
       {
@@ -23,13 +23,13 @@ exports.lintJavascript = ({ include, exclude, options }) => ({
         enforce: 'pre',
 
         loader: 'xo-loader',
-        options,
-      },
-    ],
-  },
+        options
+      }
+    ]
+  }
 });
 
-exports.loadCSS = ({ include, exclude } = {}) => ({
+exports.loadCSS = ({include, exclude} = {}) => ({
   module: {
     rules: [
       {
@@ -42,19 +42,19 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
           {
             loader: 'css-loader',
             options: {
-               modules: true,
-             },
-          },
-        ],
-      },
-    ],
-  },
+              modules: true
+            }
+          }
+        ]
+      }
+    ]
+  }
 });
 
-exports.extractCSS = ({ include, exclude, use }) => {
+exports.extractCSS = ({include, exclude, use}) => {
   // Output extracted to CSS to a file
   const plugin = new ExtractTextPlugin({
-    filename: '[name].css',
+    filename: '[name].css'
   });
 
   return {
@@ -67,12 +67,12 @@ exports.extractCSS = ({ include, exclude, use }) => {
 
           use: plugin.extract({
             use,
-            fallback: 'style-loader',
-          }),
-        },
-      ],
+            fallback: 'style-loader'
+          })
+        }
+      ]
     },
-    plugins: [ plugin ],
+    plugins: [plugin]
   };
 };
 
@@ -80,12 +80,12 @@ exports.autoprefix = () => ({
   loader: 'postcss-loader',
   options: {
     plugins: () => ([
-      require('autoprefixer')(),
-    ]),
-  },
+      require('autoprefixer')()
+    ])
+  }
 });
 
-exports.lintCSS = ({ include, exclude }) => ({
+exports.lintCSS = ({include, exclude}) => ({
   module: {
     rules: [
       {
@@ -97,10 +97,10 @@ exports.lintCSS = ({ include, exclude }) => ({
         loader: 'postcss-loader',
         options: {
           plugins: () => ([
-            require('stylelint')(),
-          ]),
-        },
-      },
-    ],
-  },
+            require('stylelint')()
+          ])
+        }
+      }
+    ]
+  }
 });
