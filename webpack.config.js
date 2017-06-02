@@ -51,7 +51,6 @@ const productionConfig = merge([
 const developmentConfig = merge([
   parts.loadImages(),
   parts.loadCSS(),
-  parts.compressImages(),
   parts.devServer({
     // Customize host/port here if needed
     host: process.env.HOST,
