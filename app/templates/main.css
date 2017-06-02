@@ -1,0 +1,10 @@
+.main {
+  color: blue;
+  font-size: 3em;
+}
+
+body {
+  background-image: url('../logo.png');
+  background-repeat: no-repeat;
+  background-position: center;
+}
