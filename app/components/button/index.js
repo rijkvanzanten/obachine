@@ -1,9 +1,8 @@
 import html from 'choo/html';
+import styles from './button.css';
 
 // Export module
 export default () => // Create html template
 html`
-  <div class="container">
-    <h1>Footer</h1>
-  </div>
+  <button class=${styles.button}>Zet de machine aan!</button>
 `;
