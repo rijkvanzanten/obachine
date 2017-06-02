@@ -7,3 +7,9 @@
 h1 {
   margin: 0;
 }
+
+body {
+  background-image: url('../arctic.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
