@@ -4,11 +4,11 @@ import footer from '../components/footer';
 import modal from '../components/modal';
 import styles from './body.css';
 
-export default function main() {
+export default function main(state, emit) {
   return html`
     <body class=${styles.body}>
-      ${header()}
-      ${modal('Kies het thema waar je boek over moet gaan!', 'De leuke inhoud')}
+      ${header(state, emit)}
+      ${state.modal.active ? modal(state, emit) : null}
       ${footer()}
     </body>
   `;

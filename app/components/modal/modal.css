@@ -13,7 +13,9 @@
 }
 
 .close {
-  background-color: none;
+  background-color: transparent;
+  border: none;
   color: #fff;
-  color: red;
+  font-size: 1.5rem;
+  float: right;
 }
