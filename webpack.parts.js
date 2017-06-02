@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 exports.devServer = ({host, port} = {}) => ({
   devServer: {
@@ -85,22 +86,12 @@ exports.autoprefix = () => ({
   }
 });
 
-exports.lintCSS = ({include, exclude}) => ({
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        include,
-        exclude,
-        enforce: 'pre',
+exports.lintCSS = ({include, exclude}) => {
+  const plugin = new StyleLintPlugin({
+    files: ['app/**/*.css']
+  });
 
-        loader: 'postcss-loader',
-        options: {
-          plugins: () => ([
-            require('stylelint')()
-          ])
-        }
-      }
-    ]
+  return {
+    plugins: [plugin]
   }
-});
+};
