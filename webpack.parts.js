@@ -117,35 +117,9 @@ exports.loadImages = ({include, exclude, options} = {}) => ({
         exclude,
 
         use: {
-          loader: ['file-loader', 'url-loader'],
+          loader: 'url-loader',
           options
         }
-      }
-    ]
-  }
-});
-
-exports.compressImages = ({include, exclude} = {}) => ({
-  module: {
-    rules: [
-      {
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        include,
-        exclude,
-        use: [
-          {
-            loader: 'file-loader',
-            query: {
-              progressive: true,
-              optimizationLevel: 7,
-              interlaced: false,
-              pngquant: {
-                quality: '65-90',
-                speed: 4
-              }
-            }
-          }
-        ]
       }
     ]
   }
