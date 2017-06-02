@@ -19,14 +19,6 @@
   "bugs": {
     "url": "https://github.com/rijkvanzanten/oba/issues"
   },
-  "xo": {
-    "semicolon": true,
-    "space": true,
-    "env": [
-      "node",
-      "browser"
-    ]
-  },
   "homepage": "https://github.com/rijkvanzanten/oba#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
@@ -41,8 +33,7 @@
     "stylelint": "^7.10.1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
-    "webpack-merge": "^4.1.0",
-    "xo": "^0.18.2"
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "express": "^4.15.3"
