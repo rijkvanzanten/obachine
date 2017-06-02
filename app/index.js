@@ -1,3 +1,13 @@
-import component from './component';
+import choo from 'choo';
 
-document.body.appendChild(component());
+import main from './templates/main';
+
+// Append root-div to mount choo in
+document.body.append(document.createElement('div'));
+
+const app = choo();
+
+app.route('/', main);
+
+app.mount('div');
+
