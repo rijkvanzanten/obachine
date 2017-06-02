@@ -33,6 +33,25 @@ exports.lintJavascript = ({include, exclude, options}) => ({
   }
 });
 
+exports.lintCSS = ({include, exclude}) => {
+  const plugin = new StyleLintPlugin({
+    files: ['app/**/*.css']
+  });
+
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          include,
+          exclude
+        }
+      ]
+    },
+    plugins: [plugin]
+  };
+};
+
 exports.loadCSS = ({include, exclude} = {}) => ({
   module: {
     rules: [
@@ -89,12 +108,45 @@ exports.autoprefix = () => ({
   }
 });
 
-exports.lintCSS = ({include, exclude}) => {
-  const plugin = new StyleLintPlugin({
-    files: ['app/**/*.css']
-  });
+exports.loadImages = ({include, exclude, options} = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|svg)$/,
+        include,
+        exclude,
 
-  return {
-    plugins: [plugin]
+        use: {
+          loader: ['file-loader', 'url-loader'],
+          options
+        }
+      }
+    ]
   }
-};
+});
+
+exports.compressImages = ({include, exclude} = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        include,
+        exclude,
+        use: [
+          {
+            loader: 'file-loader',
+            query: {
+              progressive: true,
+              optimizationLevel: 7,
+              interlaced: false,
+              pngquant: {
+                quality: '65-90',
+                speed: 4
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+});
