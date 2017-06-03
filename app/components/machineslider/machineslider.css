@@ -1,0 +1,18 @@
+.machineslider {
+  background-color: #86138a;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.skip {
+  background-color: transparent;
+  color: red;
+}
+
+.next,
+.prev {
+  display: none;
+}
