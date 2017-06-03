@@ -17,7 +17,8 @@ function setupState(state, emitter) {
     item: [
       {
         title: 'Genre',
-        machine: 'genre'
+        machine: 'genre',
+        svg: 'machine-1.svg'
       },
       {
         title: 'Type',
@@ -25,6 +26,18 @@ function setupState(state, emitter) {
       },
       {
         title: 'Language',
+        machine: 'genre'
+      },
+      {
+        title: 'Pages',
+        machine: 'genre'
+      },
+      {
+        title: 'Auteur',
+        machine: 'genre'
+      },
+      {
+        title: 'Components',
         machine: 'genre'
       }
     ],
@@ -61,7 +74,9 @@ function setupState(state, emitter) {
   });
 
   emitter.on('select', () => {
-    console.log('select');
+    console.log(state.machineslider.activeItem);
+    console.log(state.machineslider.activeItem.svg);
+    emitter.emit('render');
   });
 }
 

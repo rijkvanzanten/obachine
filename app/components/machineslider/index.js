@@ -1,5 +1,6 @@
 import html from 'choo/html';
 import styles from './machineslider.css';
+// Import image from './machine-1.svg';
 
 // Export module
 export default (state, emit) => {
@@ -20,6 +21,6 @@ export default (state, emit) => {
   }
 
   function select() {
-    emit('select');
+    emit('select', this);
   }
 };
