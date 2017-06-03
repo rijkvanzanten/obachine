@@ -13,9 +13,10 @@ app.mount('body');
 function setupState(state, emitter) {
   // Default state
   state.modal = {
-    active: true,
+    active: false,
     title: 'Kies het thema waar je boek over moet gaan!',
-    content: 'Op deze applicatie kan je een eigen zoekmachine in elkaar zetten om zo altijd de juiste content te vinden waar jij naar zoekt.'
+    content: 'Op deze applicatie kan je een eigen zoekmachine in elkaar zetten om zo altijd de juiste content te vinden waar jij naar zoekt.',
+    color: '#18a9e0'
   };
 
   emitter.on('closeModal', () => {

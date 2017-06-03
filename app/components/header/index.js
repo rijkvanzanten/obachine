@@ -1,11 +1,12 @@
 import html from 'choo/html';
 import styles from './header.css';
+import logo from './oba-logo.svg';
 
 // Export module
 export default (state, emit) => {// Create html template
   return html`
     <header class=${styles.header} onclick=${openModal}>
-      <h1>OBAchine</h1>
+      <img src="${logo}">
     </header>
   `;
 
