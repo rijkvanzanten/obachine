@@ -14,24 +14,36 @@ function setupState(state, emitter) {
   // Default state
   state.machineslider = {
     active: false,
-    title: [
-      'Genre', 'Type', 'Year', 'Place', 'Auteur', 'Pages', 'Color'
+    item: [
+      {
+        title: 'Genre',
+        machine: 'genre'
+      },
+      {
+        title: 'Type',
+        machine: 'genre'
+      },
+      {
+        title: 'Language',
+        machine: 'genre'
+      }
     ],
     number: 0,
     activeItem: ''
   };
 
-  state.machineslider.activeItem = state.machineslider.title[0];
+  state.machineslider.activeItem = state.machineslider.item[0];
 
   let count = state.machineslider.number;
 
   emitter.on('next', () => {
-    if (count >= 0 && count < (state.machineslider.title.length - 1)) {
+    if (count >= 0 && count < (state.machineslider.item.length - 1)) {
       count++;
-      state.machineslider.activeItem = state.machineslider.title[count];
+      state.machineslider.activeItem = state.machineslider.item[count];
+      console.log(state.machineslider.activeItem);
       emitter.emit('render');
     } else {
-      state.machineslider.activeItem = state.machineslider.title[count];
+      state.machineslider.activeItem = state.machineslider.item[count];
       emitter.emit('render');
     }
   });
@@ -40,10 +52,10 @@ function setupState(state, emitter) {
     console.log('prev');
     if (count > 0) {
       count--;
-      state.machineslider.activeItem = state.machineslider.title[count];
+      state.machineslider.activeItem = state.machineslider.item[count];
       emitter.emit('render');
     } else {
-      state.machineslider.activeItem = state.machineslider.title[count];
+      state.machineslider.activeItem = state.machineslider.item[count];
       emitter.emit('render');
     }
   });
