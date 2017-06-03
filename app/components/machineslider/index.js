@@ -2,13 +2,24 @@ import html from 'choo/html';
 import styles from './machineslider.css';
 
 // Export module
-export default () => // Create html template
-html`
+export default (state, emit) => {
+  return html`
   <div class=${styles.machineslider}>
-    <button class=${styles.prev} onclick="next()">◀</button>
-      <div class=${styles.buildingblock}></div>
-    <button class=${styles.next} onclick="console.log('joe')">▶</button>
+    <button class=${styles.prev} onclick=${prev}>◀</button>
+      <button class=${styles.buildingblock} onclick=${select}>${state.machineslider.activeItem}</button>
+    <button class=${styles.next} onclick=${next}>▶</button>
   </div>
 `;
 
-// Cnsole.log(blocks.length);
+  function next() {
+    emit('next');
+  }
+
+  function prev() {
+    emit('prev');
+  }
+
+  function select() {
+    emit('select');
+  }
+};

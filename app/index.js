@@ -4,33 +4,53 @@ import main from './routes/main';
 
 const app = choo();
 
+app.use(setupState);
+
 app.route('/', main);
 
 app.mount('body');
 
 function setupState(state, emitter) {
   // Default state
-  state.slider = {
+  state.machineslider = {
     active: false,
-    title: 'Kies het thema waar je boek over moet gaan!',
-    img: ''
+    title: [
+      'Genre', 'Type', 'Year', 'Place', 'Auteur', 'Pages', 'Color'
+    ],
+    number: 0,
+    activeItem: ''
   };
 
+  state.machineslider.activeItem = state.machineslider.title[0];
+
+  let count = state.machineslider.number;
+
   emitter.on('next', () => {
-    state.modal.active = false;
-    emitter.emit('render');
+    if (count >= 0 && count < (state.machineslider.title.length - 1)) {
+      count++;
+      state.machineslider.activeItem = state.machineslider.title[count];
+      emitter.emit('render');
+    } else {
+      state.machineslider.activeItem = state.machineslider.title[count];
+      emitter.emit('render');
+    }
   });
 
   emitter.on('prev', () => {
-    state.modal.active = true;
-    emitter.emit('render');
+    console.log('prev');
+    if (count > 0) {
+      count--;
+      state.machineslider.activeItem = state.machineslider.title[count];
+      emitter.emit('render');
+    } else {
+      state.machineslider.activeItem = state.machineslider.title[count];
+      emitter.emit('render');
+    }
   });
 
-  // Emitter.on('updateModal', data => {
-  //   state.modal.title = data.title;
-  //   state.modal.content = data.content;
-  //   emitter.emit('render');
-  // });
+  emitter.on('select', () => {
+    console.log('select');
+  });
 }
 
 console.log(setupState);

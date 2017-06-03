@@ -4,11 +4,11 @@ import footer from '../components/footer';
 import machineslider from '../components/machineslider';
 import styles from './body.css';
 
-export default function main() {
+export default function main(state, emit) {
   return html`
     <body class=${styles.body}>
       ${header()}
-      ${machineslider()}
+      ${machineslider(state, emit)}
       ${footer()}
     </body>
   `;
