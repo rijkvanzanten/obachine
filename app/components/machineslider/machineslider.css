@@ -7,12 +7,23 @@
   justify-content: space-between;
 }
 
-.skip {
-  background-color: transparent;
-  color: red;
-}
-
 .next,
 .prev {
+  background-color: transparent;
+  border: none;
+  color: #fb0;
+  font-size: 1.5rem;
+}
+
+.buildingblock {
+  color: #86138a;
+  background-color: #fb0;
+  padding: 1rem;
+  font-weight: 800;
+  border-radius: 3px;
   display: none;
+}
+
+.buildingblock:first-of-type {
+  display: flex;
 }
