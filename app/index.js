@@ -15,7 +15,7 @@ function setupState(state, emitter) {
   state.machineslider = {
     active: false,
     title: [
-      'Genre', 'Type', 'Year', 'Place', 'Auteur', 'Pages', 'Color'
+      'Genre', 'Type', 'Year', 'Place', 'Author', 'Pages', 'Color'
     ],
     number: 0,
     activeItem: ''
