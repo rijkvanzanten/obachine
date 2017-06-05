@@ -1,0 +1,21 @@
+.modal {
+  background-color: #da008c;
+  width: 90%;
+  max-width: 800px;
+  padding: 1rem;
+  position: absolute;
+  color: #fff;
+  font-size: 1rem;
+  top: 2rem;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.close {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  float: right;
+}
