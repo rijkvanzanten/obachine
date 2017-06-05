@@ -1,20 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="47" height="33" viewBox="0 0 47 33">
   <defs>
-    <rect id="machine-1-a" width="36.976" height="26.066" rx="6"/>
+    <rect id="machineslider-2-a" width="25.384" height="17.841" x="17.182" y="4.664" rx="4"/>
   </defs>
   <g fill="none" fill-rule="evenodd">
-    <rect width="43" height="32" fill="#4A4A4A" rx="10"/>
-    <g transform="translate(3.116 2.967)">
-      <mask id="machine-1-b" fill="#fff">
-        <use xlink:href="#machine-1-a"/>
-      </mask>
-      <use fill="#D8D8D8" xlink:href="#machine-1-a"/>
-      <g mask="url(#machine-1-b)">
-        <rect width="9.348" height="27.762" fill="#E30111"/>
-        <rect width="9.348" height="27.762" x="9.348" fill="#86138A"/>
-        <rect width="9.348" height="27.762" x="18.696" fill="#FFF"/>
-        <rect width="9.348" height="27.762" x="27.836" fill="#12C047"/>
-      </g>
+    <rect width="47" height="33" fill="#4A4A4A" rx="4"/>
+    <use fill="#FFF" xlink:href="#machineslider-2-a"/>
+    <rect width="24.384" height="16.841" x="17.682" y="5.164" stroke="#979797" rx="4"/>
+    <rect width="4.212" height="1" x="18.733" y="10.145" fill="#D8D8D8"/>
+    <rect width="6.429" height="1" x="18.733" y="11.194" fill="#D8D8D8"/>
+    <rect width="5.321" height="1" x="18.733" y="12.244" fill="#FF8686"/>
+    <g fill="#D8D8D8" opacity=".424" transform="translate(1.108 1.166)">
+      <ellipse cx=".776" cy=".816" rx="1" ry="1"/>
+      <ellipse cx="44.229" cy=".583" rx="1" ry="1"/>
+      <ellipse cx=".554" cy="30.085" rx="1" ry="1"/>
+      <ellipse cx="44.007" cy="29.852" rx="1" ry="1"/>
+    </g>
+    <g transform="translate(4.988 4.664)">
+      <rect width="6.762" height="11.661" fill="#1C4A51" rx="3.381"/>
+      <rect width="4.545" height="2.565" x="1.108" y="1.049" fill="#FB0" rx="1.283"/>
+      <rect width="4.545" height="2.565" x="1.108" y="8.046" fill="#FB0" rx="1.283"/>
+      <rect width="1" height="2.565" x="1.108" y="4.548" fill="#FB0" rx=".5"/>
+      <rect width="1" height="2.565" x="2.993" y="4.548" fill="#FB0" rx=".5"/>
+      <rect width="1" height="2.565" x="4.767" y="4.548" fill="#FB0" rx=".5"/>
+    </g>
+    <g transform="translate(37.91 24.72)">
+      <ellipse cx="1.774" cy="1.866" stroke="#FB0" stroke-width="3" rx="1.774" ry="1.866"/>
+      <path fill="#FB0" d="M1.55188679,0.116607774 C1.55188679,0.116607774 2.61118608,0.107876899 2.93743911,0.451079101 C3.26369215,0.794281303 3.36785878,1.16606751 3.36785878,1.16606751 L1.55188679,2.2155477 L1.55188679,0.116607774 Z"/>
     </g>
   </g>
 </svg>

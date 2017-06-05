@@ -4,7 +4,7 @@ import styles from './machineslider.css';
 
 const svgs = {
   genre: require('./machine-1.svg'),
-  type: require('./machine-1.svg'),
+  type: require('./machine-2.svg'),
   year: require('./machine-1.svg'),
   place: require('./machine-1.svg'),
   author: require('./machine-1.svg'),

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43" height="32" viewBox="0 0 43 32">
+  <defs>
+    <rect id="machine-2-a" width="36.976" height="26.066" rx="6"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <rect width="43" height="32" fill="#4A4A4A" rx="10"/>
+    <g transform="translate(3.116 2.967)">
+      <mask id="machine-2-b" fill="#fff">
+        <use xlink:href="#machine-2-a"/>
+      </mask>
+      <use fill="#D8D8D8" xlink:href="#machine-2-a"/>
+      <g mask="url(#machine-2-b)">
+        <rect width="9.348" height="27.762" fill="#E30111"/>
+        <rect width="9.348" height="27.762" x="9.348" fill="#86138A"/>
+        <rect width="9.348" height="27.762" x="18.696" fill="#FFF"/>
+        <rect width="9.348" height="27.762" x="27.836" fill="#12C047"/>
+      </g>
+    </g>
+  </g>
+</svg>
