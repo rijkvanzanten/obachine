@@ -2,10 +2,10 @@
   background-color: #da008c;
   width: 90%;
   max-width: 800px;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   position: absolute;
   color: #fff;
-  font-size: 1rem;
+  font-size: 3rem;
   top: 2rem;
   right: 0;
   left: 0;
@@ -16,6 +16,6 @@
   background-color: transparent;
   border: none;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 3rem;
   float: right;
 }
