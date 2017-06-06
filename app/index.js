@@ -1,4 +1,6 @@
 import choo from 'choo';
+import shortid from 'shortid';
+import parts from './components/parts';
 
 import main from './routes/main';
 
@@ -11,71 +13,84 @@ app.route('/', main);
 app.mount('body');
 
 function setupState(state, emitter) {
-  // Default state
-
-  state.machineslider = {
-    active: false,
-    item: [
-      'Genre', 'Type', 'Year', 'Place', 'Author', 'Pages', 'Color'
-    ],
-    number: 0,
-    activeItem: ''
-  };
-
-  state.machineslider.activeItem = state.machineslider.item[0];
-
-  let count = state.machineslider.number;
-
-  emitter.on('next', () => {
-    if (count >= 0 && count < (state.machineslider.item.length - 1)) {
-      count++;
-      state.machineslider.activeItem = state.machineslider.item[count];
-      console.log(state.machineslider.activeItem);
-      emitter.emit('render');
-    } else {
-      state.machineslider.activeItem = state.machineslider.item[count];
-      emitter.emit('render');
+  Object.assign(state, {
+    machineslider: {
+      active: false,
+      items: ['genre', 'type', 'year', 'place', 'author', 'pages', 'color'],
+      current: 0
+    },
+    /*
+     * {
+     *   [id]: {
+     *     type: String,
+     *     value: String,
+     *     order: Number
+     *   }
+     * }
+     */
+    machineparts: {},
+    modal: {
+      active: false,
+      content: {}
     }
   });
 
-  emitter.on('prev', () => {
-    console.log('prev');
-    if (count > 0) {
-      count--;
-      state.machineslider.activeItem = state.machineslider.item[count];
-      emitter.emit('render');
-    } else {
-      state.machineslider.activeItem = state.machineslider.item[count];
-      emitter.emit('render');
-    }
-  });
+  emitter.on('select-nextItem', onSelectNextItem);
+  emitter.on('select-prevItem', onSelectPrevItem);
+  emitter.on('select-add', onSelectAdd);
 
-  emitter.on('select', () => {
-    console.log(state.machineslider.activeItem);
-    console.log(state.machineslider.activeItem.svg);
+  emitter.on('showModal', showModal);
+  emitter.on('hideModal', hideModal);
+
+  emitter.on('updateValue', updateValue);
+
+  function onSelectNextItem() {
+    state.machineslider.current++;
+    if (state.machineslider.current >= state.machineslider.items.length) {
+      state.machineslider.current = 0;
+    }
+
     emitter.emit('render');
-  });
+  }
 
-  state.modal = {
-    active: false,
-    title: 'Kies het thema waar je boek over moet gaan!',
-    content: 'Op deze applicatie kan je een eigen zoekmachine in elkaar zetten om zo altijd de juiste content te vinden waar jij naar zoekt.',
-    color: '#18a9e0'
-  };
+  function onSelectPrevItem() {
+    state.machineslider.current--;
+    if (state.machineslider.current < 0) {
+      state.machineslider.current = state.machineslider.items.length;
+    }
 
-  emitter.on('closeModal', () => {
+    emitter.emit('render');
+  }
+
+  function onSelectAdd(type) {
+    const id = shortid.generate();
+
+    state.machineparts[id] = {
+      type,
+      value: '',
+      order: Object.keys(state.machineparts).length
+    };
+
+    emitter.emit('showModal', {
+      id,
+      content: parts[type].modal
+    });
+  }
+
+  function showModal(modalContent) {
+    state.modal.content = modalContent;
+    state.modal.active = true;
+
+    emitter.emit('render');
+  }
+
+  function hideModal() {
     state.modal.active = false;
     emitter.emit('render');
-  });
+  }
 
-  emitter.on('openModal', () => {
-    state.modal.active = true;
+  function updateValue({id, value}) {
+    state.machineparts[id].value = value;
     emitter.emit('render');
-  });
-
-  emitter.on('updateModal', data => {
-    state.modal.title = data.title;
-    state.modal.content = data.content;
-    emitter.emit('render');
-  });
+  }
 }
