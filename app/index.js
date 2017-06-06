@@ -55,7 +55,6 @@ function setupState(state, emitter) {
     console.log(state.machineslider.activeItem.svg);
     emitter.emit('render');
   });
-}
 
   state.modal = {
     active: false,
