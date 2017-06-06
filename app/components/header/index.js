@@ -6,14 +6,14 @@ import logo from './oba-logo.svg';
 export default (state, emit) => {// Create html template
   return html`
     <header class=${styles.header} onclick=${openModal}>
-      <img src="${logo}">
+      <img class=${styles.logo} src="${logo}" alt="oba logo">
     </header>
   `;
 
   function openModal() {
     emit('updateModal', {
-      title: 'Hoi!',
-      content: 'Hier moet je het mee doen.'
+      title: 'Welkom!',
+      content: 'Dit is de vernieuwde zoekmachine van de Openbare Bibliotheek van Amsterdam. Op deze applicatie kan je een eigen zoekmachine in elkaar zetten om zo altijd de juiste content te vinden waar jij naar zoekt.'
     });
     emit('openModal');
   }
