@@ -23,7 +23,7 @@ export default function main(state, emit) {
   `;
 
   function machine(id) {
-    const type = state.machineparts[id].type;
+    const {type, value} = state.machineparts[id];
 
     function showModal() {
       emit('showModal', {
@@ -34,7 +34,7 @@ export default function main(state, emit) {
 
     return html`
       <li data-id=${id} onclick=${showModal}>
-        <input type="hidden" name=${type} />
+        <input type="hidden" name=${type} value=${value || ''}/>
         ${parts[type].machine()}
       </li>
     `;
