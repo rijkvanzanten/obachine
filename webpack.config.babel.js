@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
-
+const webpack = require('webpack');
 const parts = require('./webpack.parts');
 
 const PATHS = {
@@ -30,6 +30,15 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  {
+    plugins: [
+      new webpack.HashedModuleIdsPlugin()
+    ],
+    output: {
+      chunkFilename: '[name].[chunkhash:8].js',
+      filename: '[name].[chunkhash:8].js'
+    }
+  },
   {
     performance: {
       hints: 'warning',
@@ -62,7 +71,7 @@ const productionConfig = merge([
   parts.loadImages({
     options: {
       limit: 15000,
-      name: '[hash:12].[ext]',
+      name: '[name].[hash:8].[ext]',
       outputPath: 'images/'
     }
   }),
