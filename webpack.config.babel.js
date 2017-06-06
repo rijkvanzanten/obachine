@@ -20,7 +20,7 @@ const commonConfig = merge([
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Webpack demo'
+        title: 'Obachine'
       })
     ]
   },
@@ -30,6 +30,19 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  parts.clean(PATHS.build),
+  parts.attachRevision(),
+  {
+    entry: {
+      vendor: ['choo']
+    }
+  },
+  parts.extractBundles([
+    {
+      name: 'vendor'
+    }
+  ]),
+  parts.generateSourceMaps({type: 'source-map'}),
   parts.loadImages({
     options: {
       limit: 15000,
@@ -51,6 +64,12 @@ const productionConfig = merge([
 ]);
 
 const developmentConfig = merge([
+  {
+    output: {
+      devtoolModuleFilenameTemplate: 'webpack:///[absolute-resource-path]'
+    }
+  },
+  parts.generateSourceMaps({type: 'cheap-module-eval-source-map'}),
   parts.loadImages(),
   parts.loadCSS(),
   parts.devServer({
