@@ -13,9 +13,11 @@ app.mount('body');
 function setupState(state, emitter) {
   state.machineslider = {
     active: false,
-    items: ['Genre', 'Type', 'Year', 'Place', 'Author', 'Pages', 'Color'],
+    items: ['genre', 'type', 'year', 'place', 'author', 'pages', 'color'],
     current: 0
   };
+
+  state.machineparts = [];
 
   emitter.on('select-nextItem', () => {
     state.machineslider.current++;
@@ -35,7 +37,12 @@ function setupState(state, emitter) {
     emitter.emit('render');
   });
 
-  emitter.on('select-add', () => {
+  emitter.on('select-add', item => {
+    state.machineparts.push({
+      type: item,
+      value: ''
+    });
+
     emitter.emit('render');
   });
 }

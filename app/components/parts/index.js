@@ -1,8 +1,3 @@
-import genre, {Small as genreSmall} from './genre';
+import genre from './genre';
 
-export default {
-  genre: {
-    large: genre,
-    small: genreSmall
-  }
-};
+export default {genre};
