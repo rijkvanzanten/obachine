@@ -22,9 +22,72 @@
           "0": 0
         }
       }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": "a/t9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "a/t9": "a/t9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
     }
   ],
   "extract-text-webpack-plugin": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/url-loader/index.js??ref--3-0!node_modules/image-webpack-loader/index.js!app/components/logo.png": "8XJY",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js?{\"modules\":true}!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!app/routes/body.css": "H/LF"
+        },
+        "usedIds": {
+          "8XJY": "8XJY",
+          "FZ+f": "FZ+f",
+          "H/LF": "H/LF"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js?{\"modules\":true}!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!app/components/header/header.css": "GQVn"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "GQVn": "GQVn"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
     {
       "modules": {
         "byIdentifier": {
