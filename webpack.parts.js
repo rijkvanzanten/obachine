@@ -127,3 +127,23 @@ exports.loadImages = ({include, exclude, options} = {}) => ({
     ]
   }
 });
+
+exports.loadJavaScript = ({include, exclude}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include,
+        exclude,
+
+        loader: 'babel-loader',
+        // Enable caching for improved performance during developmment
+        // It uses default OS directory by default. If you need something
+        // more custom, pass a path to it. I.e., {cacheDirectory: '<path>'}
+        options: {
+          cacheDirectory: true
+        }
+      }
+    ]
+  }
+});
