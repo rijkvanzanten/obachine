@@ -4,6 +4,7 @@ import footer from '../components/footer';
 import machineslider from '../components/machineslider';
 import machine from '../components/machine';
 import button from '../components/button';
+import modal from '../components/modal';
 import styles from './body.css';
 
 export default function main(state, emit) {
@@ -12,7 +13,7 @@ export default function main(state, emit) {
       ${header(state, emit)}
       ${machineslider(state, emit)}
       ${machine()}
-      ${button()}      
+      ${button()}
       ${state.modal.active ? modal(state, emit) : null}
       ${footer()}
     </body>
