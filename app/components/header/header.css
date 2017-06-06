@@ -2,7 +2,18 @@
   background-color: #f7d80a;
   color: #86138a;
   font-weight: 800;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 15%;
+}
+
+.menu {
+  width: 10%;
+  max-width: 50px;
 }
 
 .logo {

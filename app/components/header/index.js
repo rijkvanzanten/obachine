@@ -1,11 +1,14 @@
 import html from 'choo/html';
 import styles from './header.css';
 import logo from './oba-logo.svg';
+import menu from './menu.svg';
 
 // Export module
 export default (state, emit) => {// Create html template
   return html`
-    <header class=${styles.header} onclick=${openModal}>
+    <header class=${styles.header}>
+      <img class=${styles.logo} src="${logo}" alt="oba logo">
+      <img class=${styles.menu} src="${menu}" alt="menu" onclick=${openModal}>
       <img class=${styles.logo} src="${logo}" alt="oba logo">
     </header>
   `;
