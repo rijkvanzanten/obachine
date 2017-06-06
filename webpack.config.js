@@ -32,7 +32,8 @@ const productionConfig = merge([
   parts.loadImages({
     options: {
       limit: 15000,
-      name: '[name].[ext]'
+      name: '[hash:12].[ext]',
+      outputPath: 'images/'
     }
   }),
   parts.extractCSS({
