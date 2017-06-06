@@ -4,6 +4,5 @@ import html from 'choo/html';
 export default () => // Create html template
 html`
   <div class="container">
-    <h1>Footer</h1>
   </div>
 `;

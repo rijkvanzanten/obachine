@@ -6,7 +6,10 @@ exports.devServer = ({host, port} = {}) => ({
     historyApiFallback: true,
     stats: 'errors-only',
     host, // Defaults to `localhost`
-    port, // Defaults to 8080
+    port, // Defaults to 8080,
+    proxy: {
+      '/api': 'http://localhost:3000'
+    },
     overlay: {
       errors: true,
       warnings: true
@@ -29,6 +32,25 @@ exports.lintJavascript = ({include, exclude, options}) => ({
     ]
   }
 });
+
+exports.lintCSS = ({include, exclude}) => {
+  const plugin = new StyleLintPlugin({
+    files: ['app/**/*.css']
+  });
+
+  return {
+    module: {
+      rules: [
+        {
+          test: /\.css$/,
+          include,
+          exclude
+        }
+      ]
+    },
+    plugins: [plugin]
+  };
+};
 
 exports.loadCSS = ({include, exclude} = {}) => ({
   module: {
@@ -86,12 +108,19 @@ exports.autoprefix = () => ({
   }
 });
 
-exports.lintCSS = ({include, exclude}) => {
-  const plugin = new StyleLintPlugin({
-    files: ['app/**/*.css']
-  });
+exports.loadImages = ({include, exclude, options} = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|svg)$/,
+        include,
+        exclude,
 
-  return {
-    plugins: [plugin]
+        use: {
+          loader: 'url-loader',
+          options
+        }
+      }
+    ]
   }
-};
+});

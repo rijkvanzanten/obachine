@@ -4,11 +4,12 @@ import footer from '../components/footer';
 import button from '../components/button';
 import styles from './body.css';
 
-export default function main() {
+export default function main(state, emit) {
   return html`
     <body class=${styles.body}>
-      ${header()}
-      ${button()}
+      ${header(state, emit)}
+      ${button()}      
+      ${state.modal.active ? modal(state, emit) : null}
       ${footer()}
     </body>
   `;
