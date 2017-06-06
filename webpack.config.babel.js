@@ -65,6 +65,10 @@ const productionConfig = merge([
   parts.extractBundles([
     {
       name: 'vendor'
+    },
+    {
+      name: 'manifest',
+      minChunks: Infinity
     }
   ]),
   parts.generateSourceMaps({type: 'source-map'}),
