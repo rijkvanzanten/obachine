@@ -13,7 +13,7 @@ export default function main(state, emit) {
       ${header(state, emit)}
       ${machineslider(state.machineslider, emit)}
       <form>
-        <ul>
+        <ul class=${styles.machine_ul}>
           ${Object.keys(state.machineparts).map(machine)}
         </ul>
         <button type="submit">Machine Aanzwengelen</button>
@@ -40,4 +40,3 @@ export default function main(state, emit) {
     `;
   }
 }
-
