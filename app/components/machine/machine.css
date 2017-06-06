@@ -1,0 +1,29 @@
+.machine {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+
+.tunnel {
+  width: 20%;
+  margin-left: 25%;
+}
+
+.pipem {
+  width: 15%;
+  margin: 0 auto;
+  display: block;
+}
+
+.piper {
+  width: 15%;
+  margin: 0 auto;
+  margin-left: 70%;
+  display: block;
+}
+
+.piperl {
+  width: 50%;
+  margin: 0 auto;
+  display: block;
+}

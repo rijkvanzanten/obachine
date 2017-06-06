@@ -12,6 +12,50 @@ app.mount('body');
 
 function setupState(state, emitter) {
   // Default state
+
+  state.machineslider = {
+    active: false,
+    item: [
+      'Genre', 'Type', 'Year', 'Place', 'Author', 'Pages', 'Color'
+    ],
+    number: 0,
+    activeItem: ''
+  };
+
+  state.machineslider.activeItem = state.machineslider.item[0];
+
+  let count = state.machineslider.number;
+
+  emitter.on('next', () => {
+    if (count >= 0 && count < (state.machineslider.item.length - 1)) {
+      count++;
+      state.machineslider.activeItem = state.machineslider.item[count];
+      console.log(state.machineslider.activeItem);
+      emitter.emit('render');
+    } else {
+      state.machineslider.activeItem = state.machineslider.item[count];
+      emitter.emit('render');
+    }
+  });
+
+  emitter.on('prev', () => {
+    console.log('prev');
+    if (count > 0) {
+      count--;
+      state.machineslider.activeItem = state.machineslider.item[count];
+      emitter.emit('render');
+    } else {
+      state.machineslider.activeItem = state.machineslider.item[count];
+      emitter.emit('render');
+    }
+  });
+
+  emitter.on('select', () => {
+    console.log(state.machineslider.activeItem);
+    console.log(state.machineslider.activeItem.svg);
+    emitter.emit('render');
+  });
+
   state.modal = {
     active: false,
     title: 'Kies het thema waar je boek over moet gaan!',

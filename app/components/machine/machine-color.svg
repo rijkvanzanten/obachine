@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="207" height="150" viewBox="0 0 207 150">
+  <defs>
+    <rect id="machine-color-a" width="178" height="71.093" rx="6"/>
+    <rect id="machine-color-c" width="75.717" height="34.023" x="120" y="103.274" rx="3"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <polygon fill="#FB0" points="23 102 27.877 102 27.877 113.635 77.214 113.635 77.214 102 83 102 83 119 23 119"/>
+    <rect width="13" height="6" x="18" y="99" fill="#000"/>
+    <rect width="13" height="6" x="74" y="99" fill="#000"/>
+    <path fill="#4A4A4A" d="M0,9.99666603 C0,4.47565983 4.46750431,0 10.0015086,0 L196.998491,0 C202.522172,0 207,4.46883267 207,10.0017993 L207,139.998201 C207,145.522042 202.528373,150 197.000999,150 L113.156887,150 C110.393481,150 108.153298,147.765208 108.153298,144.997122 L108.153298,104.50943 C108.153298,101.746417 105.919188,99.5065518 103.153748,99.5065518 L4.99954917,99.5065518 C2.23837441,99.5065518 0,97.2650374 0,94.5038132 L0,9.99666603 Z"/>
+    <g transform="translate(15 13.907)">
+      <mask id="machine-color-b" fill="#fff">
+        <use xlink:href="#machine-color-a"/>
+      </mask>
+      <use fill="#D8D8D8" xlink:href="#machine-color-a"/>
+      <g mask="url(#machine-color-b)">
+        <rect width="45" height="75.717" fill="#E30111"/>
+        <rect width="45" height="75.717" x="45" fill="#86138A"/>
+        <rect width="45" height="75.717" x="90" fill="#FFF"/>
+        <rect width="45" height="75.717" x="134" fill="#12C047"/>
+      </g>
+    </g>
+    <use fill="#FFF" xlink:href="#machine-color-c"/>
+    <rect width="74.717" height="33.023" x="120.5" y="103.774" stroke="#979797" rx="3"/>
+    <polyline stroke="#E30111" points="123.299 134.356 129.319 129.621 133.958 133.293 141.294 122.737 149.191 132.021 153.842 126.662 159.859 131.704 171.066 117.356 175.927 130.4 182.82 125.127 191.021 131.973"/>
+    <rect width="13" height="2" x="124" y="107" fill="#D8D8D8"/>
+    <rect width="8" height="2" x="124" y="111" fill="#D8D8D8"/>
+    <rect width="13" height="2" x="124" y="115" fill="#D8D8D8"/>
+  </g>
+</svg>

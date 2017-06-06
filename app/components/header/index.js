@@ -9,6 +9,7 @@ export default (state, emit) => {// Create html template
     <header class=${styles.header}>
       <img class=${styles.logo} src="${logo}" alt="oba logo">
       <img class=${styles.menu} src="${menu}" alt="menu" onclick=${openModal}>
+      <img class=${styles.logo} src="${logo}" alt="oba logo">
     </header>
   `;
 
