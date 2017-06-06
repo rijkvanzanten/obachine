@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const HappyPack = require('happypack');
 const parts = require('./webpack.parts');
 
 const PATHS = {
@@ -21,6 +22,11 @@ const commonConfig = merge([
     plugins: [
       new HtmlWebpackPlugin({
         title: 'Obachine'
+      }),
+      new HappyPack({
+        loaders: [
+          'babel-loader'
+        ]
       })
     ]
   },
