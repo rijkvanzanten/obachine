@@ -1,0 +1,174 @@
+{
+  "html-webpack-plugin for \"index.html\"": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/webpack/buildin/module.js": "3IRH",
+          "node_modules/webpack/buildin/global.js": "DuR2",
+          "node_modules/lodash/lodash.js": "M4fF",
+          "node_modules/html-webpack-plugin/lib/loader.js!node_modules/html-webpack-plugin/default_index.ejs": "a/t9"
+        },
+        "usedIds": {
+          "3IRH": "3IRH",
+          "DuR2": "DuR2",
+          "M4fF": "M4fF",
+          "a/t9": "a/t9"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "extract-text-webpack-plugin": [
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/url-loader/index.js??ref--3-0!node_modules/image-webpack-loader/index.js!app/components/logo.png": "8XJY",
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js?{\"modules\":true}!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!app/routes/body.css": "H/LF"
+        },
+        "usedIds": {
+          "8XJY": "8XJY",
+          "FZ+f": "FZ+f",
+          "H/LF": "H/LF"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    },
+    {
+      "modules": {
+        "byIdentifier": {
+          "node_modules/css-loader/lib/css-base.js": "FZ+f",
+          "node_modules/css-loader/index.js?{\"modules\":true}!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!app/components/header/header.css": "GQVn"
+        },
+        "usedIds": {
+          "FZ+f": "FZ+f",
+          "GQVn": "GQVn"
+        }
+      },
+      "chunks": {
+        "byName": {},
+        "byBlocks": {},
+        "usedIds": {
+          "0": 0
+        }
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "node_modules/choo/index.js": "/7bh",
+      "node_modules/bel/index.js": "23Jw",
+      "node_modules/babel-loader/lib/index.js??ref--2!node_modules/xo-loader/index.js!app/index.js": "2twT",
+      "node_modules/babel-loader/lib/index.js??ref--2!node_modules/xo-loader/index.js!app/routes/main.js": "3sPw",
+      "node_modules/url-loader/index.js??ref--3-0!node_modules/image-webpack-loader/index.js!app/components/logo.png": "8XJY",
+      "node_modules/nanomount/index.js": "ATRJ",
+      "node_modules/css-loader/index.js?{\"modules\":true}!node_modules/postcss-loader/lib/index.js?{}!app/routes/body.css": "CdM7",
+      "node_modules/webpack/buildin/global.js": "DuR2",
+      "node_modules/nanomorph/lib/events.js": "E9Fh",
+      "node_modules/css-loader/lib/css-base.js": "FZ+f",
+      "node_modules/css-loader/index.js?{\"modules\":true}!node_modules/postcss-loader/lib/index.js?{\"plugins\":[null]}!app/components/header/header.css": "GQVn",
+      "node_modules/nanoraf/index.js": "ILZ9",
+      "node_modules/document-ready/index.js": "J7/t",
+      "node_modules/hyperx/index.js": "JQ2X",
+      "node_modules/style-loader/lib/addStyles.js": "MTIv",
+      "ignored node_modules/global min-document": 0,
+      "multi choo": 1,
+      "node_modules/assert/assert.js": "N+Om",
+      "node_modules/babel-loader/lib/index.js??ref--2!node_modules/xo-loader/index.js!app/components/header/index.js": "Nbnb",
+      "node_modules/util/util.js": "OMJi",
+      "node_modules/util/node_modules/inherits/inherits_browser.js": "ONRY",
+      "node_modules/nanorouter/index.js": "OcpY",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--4-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js??ref--4-2!node_modules/postcss-loader/lib/index.js??ref--4-3!app/routes/body.css": "Pzfl",
+      "node_modules/nanohistory/index.js": "Rjjn",
+      "node_modules/hyperscript-attribute-to-property/index.js": "Vqpo",
+      "node_modules/process/browser.js": "W2nU",
+      "node_modules/wayfarer/trie.js": "Z+wr",
+      "node_modules/global/window.js": "awF4",
+      "node_modules/babel-loader/lib/index.js??ref--2!node_modules/xo-loader/index.js!app/components/footer/index.js": "bGxX",
+      "node_modules/nanomorph/lib/morph.js": "cpia",
+      "node_modules/global/document.js": "dwO+",
+      "node_modules/util/support/isBufferBrowser.js": "fC4T",
+      "node_modules/nanobus/index.js": "hRUR",
+      "node_modules/nanotiming/index.js": "lNPC",
+      "node_modules/style-loader/lib/urls.js": "mJPh",
+      "node_modules/nanomorph/index.js": "mf9r",
+      "node_modules/xtend/mutable.js": "ouFg",
+      "node_modules/nanohref/index.js": "po6R",
+      "node_modules/xtend/immutable.js": "q+vg",
+      "node_modules/choo/html.js": "qK+b",
+      "node_modules/wayfarer/index.js": "rlh1",
+      "node_modules/on-load/index.js": "yJAZ",
+      "node_modules/extract-text-webpack-plugin/loader.js??ref--4-0!node_modules/style-loader/index.js!node_modules/css-loader/index.js??ref--4-2!node_modules/postcss-loader/lib/index.js??ref--4-3!app/components/header/header.css": "ybOS"
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "/7bh": "/7bh",
+      "23Jw": "23Jw",
+      "2twT": "2twT",
+      "3sPw": "3sPw",
+      "8XJY": "8XJY",
+      "ATRJ": "ATRJ",
+      "CdM7": "CdM7",
+      "DuR2": "DuR2",
+      "E9Fh": "E9Fh",
+      "FZ+f": "FZ+f",
+      "GQVn": "GQVn",
+      "ILZ9": "ILZ9",
+      "J7/t": "J7/t",
+      "JQ2X": "JQ2X",
+      "MTIv": "MTIv",
+      "N+Om": "N+Om",
+      "Nbnb": "Nbnb",
+      "OMJi": "OMJi",
+      "ONRY": "ONRY",
+      "OcpY": "OcpY",
+      "Pzfl": "Pzfl",
+      "Rjjn": "Rjjn",
+      "Vqpo": "Vqpo",
+      "W2nU": "W2nU",
+      "Z+wr": "Z+wr",
+      "awF4": "awF4",
+      "bGxX": "bGxX",
+      "cpia": "cpia",
+      "dwO+": "dwO+",
+      "fC4T": "fC4T",
+      "hRUR": "hRUR",
+      "lNPC": "lNPC",
+      "mJPh": "mJPh",
+      "mf9r": "mf9r",
+      "ouFg": "ouFg",
+      "po6R": "po6R",
+      "q+vg": "q+vg",
+      "qK+b": "qK+b",
+      "rlh1": "rlh1",
+      "yJAZ": "yJAZ",
+      "ybOS": "ybOS"
+    }
+  },
+  "chunks": {
+    "byName": {
+      "vendor": 0,
+      "app": 1,
+      "manifest": 2
+    },
+    "byBlocks": {},
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2
+    }
+  }
+}

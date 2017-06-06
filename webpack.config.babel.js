@@ -31,6 +31,7 @@ const commonConfig = merge([
 
 const productionConfig = merge([
   {
+    recordsPath: path.join(__dirname, 'records.json'),
     plugins: [
       new webpack.HashedModuleIdsPlugin()
     ],
