@@ -12,43 +12,43 @@ loop(50);
 
 bigCircle.drag();
 
-//SVG robots
-const firstRobot = Snap("#bookRobot");
-const secondRobot = Snap("#bookRobot2");
-const thirdRobot = Snap("#bookRobot3");
+//cogwheelMachine
+const cogwheelMachine = Snap("#cogwheelMachine");
+
+const greenSwitch = cogwheelMachine.select("#greenSwitch");
+greenSwitch.animate({
+    cx: 38
+}, 1000);
+
+const redSwitch = cogwheelMachine.select("#redSwitch");
+redSwitch.animate({
+    cx: 55
+}, 1000);
+
+cogwheelMachine.drag();
+
+
 
 //First robot
-const button = firstRobot.select("#button");
-const upperbar = firstRobot.select("#upperbar");
+const displayMachine = Snap("#displayMachine");
+const button = displayMachine.select("#button");
+const upperbar = displayMachine.select("#upperbar");
 
 upperbar.attr({
-  fill: "red",
-  r: 50
+  fill: "red"
 });
 
-// button.animate({
+// upperbar.animate({
+//       x: 50,
+//       y: 50
+//   }, 1000);
 //
-// });
 
 //Make the SVG dragable
-firstRobot.drag();
-
-
-
-
-
-
-
-
-
-
+displayMachine.drag();
 
 //Second robot
+const secondRobot = Snap("#bookRobot2");
 
 //Make the SVG dragable
-secondRobot.drag();
-
-//Third robot
-
-//Make the SVG dragable
-thirdRobot.drag();
+// secondRobot.drag();
