@@ -3,17 +3,18 @@ import parts from '../components/parts';
 import header from '../components/header';
 import machineslider from '../components/machineslider';
 import modal from '../components/settings-modal';
-import styles from './body.css';
+import styles from './main.css';
+import bodyStyles from './body.css';
 
 export default function main(state, emit) {
   const {active} = state.modal;
 
   return html`
-    <body class=${styles.body}>
+    <body class=${bodyStyles.body}>
       ${header(state, emit)}
       ${machineslider(state.machineslider, emit)}
       <form>
-        <ul>
+        <ul class=${styles.machine_ul}>
           ${Object.keys(state.machineparts).map(machine)}
         </ul>
         <button type="submit">Machine Aanzwengelen</button>
@@ -40,4 +41,3 @@ export default function main(state, emit) {
     `;
   }
 }
-
