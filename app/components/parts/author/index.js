@@ -1,8 +1,6 @@
 import html from 'choo/html';
 import styles from '../parts.css';
 
-console.log(styles);
-
 export const modalSettings = {
   title: 'Kies auteur',
   children(id, emit) {
