@@ -1,0 +1,10 @@
+.machine_ul {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.machine_ul li {
+  margin: 0;
+  padding: 0;
+}
