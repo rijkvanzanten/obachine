@@ -1,4 +1,5 @@
 import html from 'choo/html';
+import axios from 'axios';
 import parts from '../components/parts';
 import header from '../components/header';
 import machineslider from '../components/machineslider';
@@ -13,7 +14,7 @@ export default function main(state, emit) {
     <body class=${bodyStyles.body}>
       ${header(state, emit)}
       ${machineslider(state.machineslider, emit)}
-      <form>
+      <form onsubmit=${submitForm}>
         <ul class=${styles.machine_ul}>
           ${Object.keys(state.machineparts).map(machine)}
         </ul>
@@ -39,5 +40,20 @@ export default function main(state, emit) {
         ${parts[type].machine()}
       </li>
     `;
+  }
+
+  function submitForm(e) {
+    const searchQuery = {};
+
+    e.target.querySelectorAll('input').forEach(input => {
+      searchQuery[input.name] = input.value;
+    });
+
+    axios.get('/api/search', {params: searchQuery})
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
+
+    e.preventDefault();
+    return false;
   }
 }

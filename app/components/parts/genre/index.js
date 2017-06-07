@@ -11,7 +11,7 @@ export const modalSettings = {
     function onButtonClick() {
       emit('updateValue', {
         id,
-        value: 'Test'
+        value: 'detective'
       });
     }
   },
