@@ -25,7 +25,7 @@ const commonConfig = merge([
       }),
       new HappyPack({
         loaders: [
-          'babel-loader'
+          'babel-loader', 'xo-loader'
         ]
       })
     ]
