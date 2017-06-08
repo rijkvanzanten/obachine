@@ -1,16 +1,51 @@
 import html from 'choo/html';
 import styles from '../parts.css';
 
+// Import genre icons
+import genreChildrenslife from './icons/genre-childrenslife.svg';
+import genreHumor from './icons/genre-humor.svg';
+import genreAdventure from './icons/genre-adventure.svg';
+import genreHorses from './icons/genre-horses.svg';
+import genreReligion from './icons/genre-religion.svg';
+import genreSchool from './icons/genre-school.svg';
+import genreSea from './icons/genre-sea.svg';
+import genreFamily from './icons/genre-family.svg';
+
 export const modalSettings = {
-  title: 'Hoi dit zijn instellingen tog',
+  title: 'Welk genre(s) wil je?',
   children(id, value, emit) {
     value = value ? value.split(',') : '';
 
     return html`
-      <form onsubmit=${preventSubmit} onclick=${saveValues} id=${id}>
-        <input type="checkbox" name="genre" value="kinderleven" ${select('kinderleven')} />
-        <input type="checkbox" name="genre" value="stripverhaal" ${select('stripverhaal')} />
-        <input type="checkbox" name="genre" value="thriller" ${select('thriller')} />
+      <form class=${styles.form} onsubmit=${preventSubmit} onclick=${saveValues} id=${id}>
+
+        <input id="humor" type="checkbox" name="genre" value="humor" ${select('humor')} />
+        <label for="humor"><img src=${genreHumor} /></label>
+
+        <input id="kinderleven" type="checkbox" name="genre" value="kinderleven" ${select('kinderleven')} />
+        <label for="kinderleven"><img src=${genreChildrenslife} /></label>
+
+        <input id="avontuur" type="checkbox" name="genre" value="avontuur" ${select('avontuur')} />
+        <label for="avontuur"><img src=${genreAdventure} /></label>
+
+        <input id="paarden" type="checkbox" name="genre" value="paarden" ${select('paarden')} />
+        <label for="paarden"><img src=${genreHorses} /></label>
+
+        <input type="checkbox" name="genre" value="religie" ${select('religie')} />
+        <label for="religie"><img src=${genreReligion} /></label>
+
+        <input id="school" type="checkbox" name="genre" value="school" ${select('school')} />
+        <label for="school"><img src=${genreSchool} /></label>
+
+        <input id="zee" type="checkbox" name="genre" value="zeeavonturen" ${select('zee')} />
+        <label for="zee"><img src=${genreSea} /></label>
+
+        <input id="familie" type="checkbox" name="genre" value="familie" ${select('familie')} />
+        <label for="familie"><img src=${genreFamily} /></label>
+
+        <input id="familie" type="checkbox" name="genre" value="familie" ${select('familie')} />
+        <label for="familie"><img src=${genreFamily} /></label>
+
       </form>
     `;
 
