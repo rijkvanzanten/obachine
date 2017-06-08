@@ -2,7 +2,7 @@ import html from 'choo/html';
 import styles from '../parts.css';
 
 export const modalSettings = {
-  title: 'Hoi dit zijn instellingen tog',
+  title: 'Hoi dit zijn instellingen toch',
   children(id, value, emit) {
     value = value ? value.split(',') : '';
 
