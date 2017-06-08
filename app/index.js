@@ -19,19 +19,19 @@ function setupState(state, emitter) {
       items: ['genre', 'author', 'type', 'place', 'pages', 'color'],
       current: 0
     },
+    machineparts: {
     /*
-     * {
-     *   [id]: {
-     *     type: String,
-     *     value: String,
-     *     order: Number
-     *   }
+     * [id]: {
+     *   type: String,
+     *   value: String,
+     *   order: Number
      * }
      */
-    machineparts: {},
+    },
     modal: {
       active: false,
-      content: {}
+      content: {},
+      id: '' // ID of machine
     }
   });
 

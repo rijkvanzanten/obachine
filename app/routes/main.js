@@ -27,19 +27,20 @@ export default function main(state, emit) {
   function machine(id) {
     const {type, value} = state.machineparts[id];
 
-    function showModal() {
-      emit('showModal', {
-        id,
-        content: parts[type].modal
-      });
-    }
-
     return html`
       <li data-id=${id} onclick=${showModal}>
         <input type="hidden" name=${type} value=${value || ''}/>
         ${parts[type].machine()}
       </li>
     `;
+
+    function showModal() {
+      emit('showModal', {
+        id,
+        content: parts[type].modal,
+        value // Current value of machine
+      });
+    }
   }
 
   function submitForm(e) {

@@ -3,22 +3,18 @@ import styles from '../parts.css';
 
 export const modalSettings = {
   title: 'Hoi dit zijn instellingen tog',
-  children(id, emit) {
+  children(id, value, emit) {
+    value = value ? value.split(',') : '';
+
     return html`
       <form onsubmit=${preventSubmit} onclick=${saveValues} id=${id}>
-        <input type="checkbox" name="genre" value="kinderleven">
-        <input type="checkbox" name="genre" value="stripverhaal">
-        <input type="checkbox" name="genre" value="thriller">
+        <input type="checkbox" name="genre" value="kinderleven" ${select('kinderleven')} />
+        <input type="checkbox" name="genre" value="stripverhaal" ${select('stripverhaal')} />
+        <input type="checkbox" name="genre" value="thriller" ${select('thriller')} />
       </form>
     `;
 
     function saveValues(e) {
-      /*
-       * Rijk, als je verder gaat:
-       * => Render state vanuit root index naar deze view
-       *    check in de options in de modal of een state item gelijk is
-       *    aan de value van de checkbox, geef 'm dan checked als attribute
-       */
       const values = Array.from(e.target.parentNode.querySelectorAll('input:checked')).map(input => input.value);
       emit('updateValue', {
         id,
@@ -29,6 +25,10 @@ export const modalSettings = {
     function preventSubmit(e) {
       e.preventDefault();
       return false;
+    }
+
+    function select(elVal) {
+      return value.indexOf(elVal) > -1 ? 'checked' : null;
     }
   },
   color: '#18A9E0'
