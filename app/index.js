@@ -91,6 +91,5 @@ function setupState(state, emitter) {
 
   function updateValue({id, value}) {
     state.machineparts[id].value = value;
-    emitter.emit('render');
   }
 }

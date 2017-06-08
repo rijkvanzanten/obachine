@@ -19,7 +19,9 @@ router.get('/search', (req, res) => {
 
   // If statements overloaddd!!1!!
   if (query.genre) {
-    apiSearchObject.facet.push(`Genre(${query.genre})`);
+    query.genre.split(',').forEach(genre => {
+      apiSearchObject.facet.push(`Genre(${genre})`);
+    });
   }
 
   client.get('search', apiSearchObject)

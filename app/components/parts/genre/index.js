@@ -5,14 +5,30 @@ export const modalSettings = {
   title: 'Hoi dit zijn instellingen tog',
   children(id, emit) {
     return html`
-      <button onclick=${onButtonClick}>Click me!</button>
+      <form onsubmit=${preventSubmit} onclick=${saveValues} id=${id}>
+        <input type="checkbox" name="genre" value="kinderleven">
+        <input type="checkbox" name="genre" value="stripverhaal">
+        <input type="checkbox" name="genre" value="thriller">
+      </form>
     `;
 
-    function onButtonClick() {
+    function saveValues(e) {
+      /*
+       * Rijk, als je verder gaat:
+       * => Render state vanuit root index naar deze view
+       *    check in de options in de modal of een state item gelijk is
+       *    aan de value van de checkbox, geef 'm dan checked als attribute
+       */
+      const values = Array.from(e.target.parentNode.querySelectorAll('input:checked')).map(input => input.value);
       emit('updateValue', {
         id,
-        value: 'detective'
+        value: values.join(',')
       });
+    }
+
+    function preventSubmit(e) {
+      e.preventDefault();
+      return false;
     }
   },
   color: '#18A9E0'
