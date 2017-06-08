@@ -5,14 +5,14 @@ require('dotenv').config();
 
 const client = new OBA({
   public: process.env.PUBLIC,
-  secret: process.env.SECRET
+  secret: process.env.SECRET,
 });
 
 router.get('/search', (req, res) => {
   const apiSearchObject = {
     facet: [],
     librarian: true,
-    q: 'id:*'
+    q: 'id:*',
   };
 
   const {query} = req;
