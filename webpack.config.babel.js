@@ -11,6 +11,7 @@ const PATHS = {
 };
 
 const commonConfig = merge([
+  parts.loadJavaScript({include: PATHS.app}),
   parts.lintJavascript({include: PATHS.app}),
   {
     entry: {
@@ -31,8 +32,7 @@ const commonConfig = merge([
       })
     ]
   },
-  parts.lintCSS({include: PATHS.app}),
-  parts.loadJavaScript({include: PATHS.app})
+  parts.lintCSS({include: PATHS.app})
 ]);
 
 const productionConfig = merge([
