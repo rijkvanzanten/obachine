@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon --watch webpack.config.babel.js --exec \"webpack-dev-server --env.target development\"",
     "build": "webpack --env.target production",
-    "lint:js": "xo",
+    "lint:js": "eslint app/ webpack.*.js --cache",
     "lint:style": "stylelint app/**/*.css",
     "stats": "webpack --env production --profile --json > stats.json"
   },
