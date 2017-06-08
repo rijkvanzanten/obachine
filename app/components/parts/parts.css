@@ -42,3 +42,22 @@ html {
 .form > input[type=checkbox]:checked + label {
   background-color: #fb0;
 }
+
+.button {
+  background-color: #fb0;
+  border: 0;
+  color: #86138a;
+  display: block;
+  transition: background-color color 300ms;
+  font-weight: 800;
+  font-size: 2rem;
+  padding: 2rem 0;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 2rem;
+}
+
+.button:hover {
+  background-color: #fb0;
+  color: #86138a;
+}
