@@ -32,7 +32,7 @@ exports.lintJavascript = ({include, exclude, options}) => ({
         exclude,
         enforce: 'pre',
 
-        loader: 'xo-loader',
+        loader: 'eslint-loader',
         options
       }
     ]
