@@ -18,7 +18,7 @@ export const modalSettings = {
       const values = Array.from(e.target.parentNode.querySelectorAll('input:checked')).map(input => input.value);
       emit('updateValue', {
         id,
-        value: values.join(',')
+        value: values.join(','),
       });
     }
 
@@ -31,7 +31,7 @@ export const modalSettings = {
       return value.indexOf(elVal) > -1 ? 'checked' : null;
     }
   },
-  color: '#18A9E0'
+  color: '#18A9E0',
 };
 
 export default () => html`

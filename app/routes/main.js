@@ -44,7 +44,7 @@ export default function main(state, emit) {
       emit('showModal', {
         id,
         content: parts[type].modal,
-        value // Current value of machine
+        value, // Current value of machine
       });
     }
   }

@@ -16,11 +16,11 @@ export const modalSettings = {
     function onButtonClick() {
       emit('updateValue', {
         id,
-        value: 'Test'
+        value: 'Test',
       });
     }
   },
-  color: '#da008c'
+  color: '#da008c',
 };
 
 export default () => html`
