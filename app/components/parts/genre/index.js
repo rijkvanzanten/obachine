@@ -3,16 +3,32 @@ import styles from '../parts.css';
 
 export const modalSettings = {
   title: 'Hoi dit zijn instellingen tog',
-  children(id, emit) {
+  children(id, value, emit) {
+    value = value ? value.split(',') : '';
+
     return html`
-      <button onclick=${onButtonClick}>Click me!</button>
+      <form onsubmit=${preventSubmit} onclick=${saveValues} id=${id}>
+        <input type="checkbox" name="genre" value="kinderleven" ${select('kinderleven')} />
+        <input type="checkbox" name="genre" value="stripverhaal" ${select('stripverhaal')} />
+        <input type="checkbox" name="genre" value="thriller" ${select('thriller')} />
+      </form>
     `;
 
-    function onButtonClick() {
+    function saveValues(e) {
+      const values = Array.from(e.target.parentNode.querySelectorAll('input:checked')).map(input => input.value);
       emit('updateValue', {
         id,
-        value: 'Test'
+        value: values.join(',')
       });
+    }
+
+    function preventSubmit(e) {
+      e.preventDefault();
+      return false;
+    }
+
+    function select(elVal) {
+      return value.indexOf(elVal) > -1 ? 'checked' : null;
     }
   },
   color: '#18A9E0'
