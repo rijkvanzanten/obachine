@@ -11,6 +11,7 @@ const PATHS = {
 };
 
 const commonConfig = merge([
+  parts.lintJavascript({include: PATHS.app}),
   {
     entry: {
       app: PATHS.app
@@ -21,16 +22,15 @@ const commonConfig = merge([
     },
     plugins: [
       new HtmlWebpackPlugin({
-        title: 'Obachine'
+        template: 'app/obachine-index.html'
       }),
       new HappyPack({
         loaders: [
-          'babel-loader', 'xo-loader'
+          'babel-loader'
         ]
       })
     ]
   },
-  parts.lintJavascript({include: PATHS.app}),
   parts.lintCSS({include: PATHS.app}),
   parts.loadJavaScript({include: PATHS.app})
 ]);

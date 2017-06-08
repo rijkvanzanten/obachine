@@ -32,7 +32,7 @@ exports.lintJavascript = ({include, exclude, options}) => ({
         exclude,
         enforce: 'pre',
 
-        loader: 'happypack/loader',
+        loader: 'xo-loader',
         options
       }
     ]
@@ -158,13 +158,13 @@ exports.generateSourceMaps = ({type}) => ({
   devtool: type
 });
 
-exports.extractBundles = (bundles) => ({
-  plugins: bundles.map((bundle) => (
+exports.extractBundles = bundles => ({
+  plugins: bundles.map(bundle => (
     new webpack.optimize.CommonsChunkPlugin(bundle)
   ))
 });
 
-exports.clean = (path) => ({
+exports.clean = path => ({
   plugins: [
     new CleanWebpackPlugin([path])
   ]
