@@ -35,7 +35,7 @@ export const modalSettings = {
 };
 
 export default () => html`
-  <svg class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="218" height="225" viewBox="0 0 218 225">
+  <svg class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 218 225">
     <defs>
       <rect id="machinegenre-a" width="201" height="24" rx="3"/>
     </defs>

@@ -4,6 +4,8 @@ import parts from '../components/parts';
 import header from '../components/header';
 import machineslider from '../components/machineslider';
 import modal from '../components/settings-modal';
+import startTunnel from '../components/parts/tunnels/start-tunnel.svg';
+import endTunnel from '../components/parts/tunnels/end-tunnel.svg';
 import styles from './main.css';
 import bodyStyles from './body.css';
 
@@ -14,10 +16,14 @@ export default function main(state, emit) {
     <body class=${bodyStyles.body}>
       ${header(state, emit)}
       ${machineslider(state.machineslider, emit)}
-      <form onsubmit=${submitForm}>
+      <form onsubmit=${submitForm} class=${styles.machineform}>
+        <img class=${styles.tunnel} src=${startTunnel}/>
         <ul class=${styles.machine_ul}>
-          ${Object.keys(state.machineparts).map(machine)}
+          ${Object.keys(state.machineparts).length > 0 ? Object.keys(state.machineparts).map(machine) : html`
+            <div class=${styles.placeholder}>Stel je machine samen...</div>
+          `}
         </ul>
+        <img class=${styles.tunnel} src=${endTunnel}/>
         <button type="submit">Machine Aanzwengelen</button>
       </form>
       ${active ? modal(state.modal.content, emit) : null}
