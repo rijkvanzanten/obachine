@@ -47,8 +47,7 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
-    "webpack-merge": "^4.1.0",
-    "xo": "^0.18.2"
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "axios": "^0.16.2",
