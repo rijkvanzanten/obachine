@@ -1,4 +1,58 @@
+html {
+  box-sizing: border-box;
+}
+
 .svg {
   width: 80%;
   margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.form > label {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  margin: 20px 0 0 4%;
+  flex-grow: 1;
+  height: 200px;
+  width: calc(100% * (1 / 4) - 20px - 5px);
+  position: relative;
+  padding: 0;
+  text-align: center;
+}
+
+.form > label > img {
+  margin: auto;
+  position: absolute;
+  width: 40%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.form > label > span {
+  font-size: 2rem;
+  color: #000;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-transform: capitalize;
+}
+
+.form > input[type=checkbox] {
+  display: none;
+}
+
+.form > input[type=checkbox]:checked + label {
+  background-color: #fb0;
 }
