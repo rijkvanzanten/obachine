@@ -1,5 +1,11 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const GitRevisionPlugin = require('git-revision-webpack-plugin');
+const BabiliPlugin = require('babili-webpack-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const cssnano = require('cssnano');
 
 exports.devServer = ({host, port} = {}) => ({
   devServer: {
@@ -8,13 +14,13 @@ exports.devServer = ({host, port} = {}) => ({
     host, // Defaults to `localhost`
     port, // Defaults to 8080,
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': 'http://localhost:3000',
     },
     overlay: {
       errors: true,
-      warnings: true
-    }
-  }
+      warnings: true,
+    },
+  },
 });
 
 exports.lintJavascript = ({include, exclude, options}) => ({
@@ -26,16 +32,16 @@ exports.lintJavascript = ({include, exclude, options}) => ({
         exclude,
         enforce: 'pre',
 
-        loader: 'xo-loader',
-        options
-      }
-    ]
-  }
+        loader: 'eslint-loader',
+        options,
+      },
+    ],
+  },
 });
 
 exports.lintCSS = ({include, exclude}) => {
   const plugin = new StyleLintPlugin({
-    files: ['app/**/*.css']
+    files: ['app/**/*.css'],
   });
 
   return {
@@ -44,11 +50,11 @@ exports.lintCSS = ({include, exclude}) => {
         {
           test: /\.css$/,
           include,
-          exclude
-        }
-      ]
+          exclude,
+        },
+      ],
     },
-    plugins: [plugin]
+    plugins: [plugin],
   };
 };
 
@@ -65,19 +71,19 @@ exports.loadCSS = ({include, exclude} = {}) => ({
           {
             loader: 'css-loader',
             options: {
-              modules: true
-            }
-          }
-        ]
-      }
-    ]
-  }
+              modules: true,
+            },
+          },
+        ],
+      },
+    ],
+  },
 });
 
 exports.extractCSS = ({include, exclude, use}) => {
   // Output extracted to CSS to a file
   const plugin = new ExtractTextPlugin({
-    filename: '[name].css'
+    filename: '[name].[contenthash:8].css',
   });
 
   return {
@@ -90,12 +96,12 @@ exports.extractCSS = ({include, exclude, use}) => {
 
           use: plugin.extract({
             use,
-            fallback: 'style-loader'
-          })
-        }
-      ]
+            fallback: 'style-loader',
+          }),
+        },
+      ],
     },
-    plugins: [plugin]
+    plugins: [plugin],
   };
 };
 
@@ -103,24 +109,87 @@ exports.autoprefix = () => ({
   loader: 'postcss-loader',
   options: {
     plugins: () => ([
-      require('autoprefixer')()
-    ])
-  }
+      require('autoprefixer')(),
+    ]),
+  },
 });
 
 exports.loadImages = ({include, exclude, options} = {}) => ({
   module: {
     rules: [
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.(png|jpe?g|gif|svg)$/i,
         include,
         exclude,
 
-        use: {
-          loader: 'url-loader',
-          options
-        }
-      }
-    ]
-  }
+        use: [
+          {
+            loader: 'url-loader',
+            options,
+          },
+          'image-webpack-loader',
+        ],
+      },
+    ],
+  },
+});
+
+exports.loadJavaScript = ({include, exclude}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include,
+        exclude,
+
+        loader: 'happypack/loader',
+        // Enable caching for improved performance during developmment
+        // It uses default OS directory by default. If you need something
+        // more custom, pass a path to it. I.e., {cacheDirectory: '<path>'}
+        options: {
+          cacheDirectory: true,
+        },
+      },
+    ],
+  },
+});
+
+exports.generateSourceMaps = ({type}) => ({
+  devtool: type,
+});
+
+exports.extractBundles = bundles => ({
+  plugins: bundles.map(bundle => (
+    new webpack.optimize.CommonsChunkPlugin(bundle)
+  )),
+});
+
+exports.clean = path => ({
+  plugins: [
+    new CleanWebpackPlugin([path]),
+  ],
+});
+
+exports.attachRevision = () => ({
+  plugins: [
+    new webpack.BannerPlugin({
+      banner: new GitRevisionPlugin().version(),
+    }),
+  ],
+});
+
+exports.minifyJavaScript = () => ({
+  plugins: [
+    new BabiliPlugin(),
+  ],
+});
+
+exports.minifyCSS = ({options}) => ({
+  plugins: [
+    new OptimizeCSSAssetsPlugin({
+      cssProcessor: cssnano,
+      cssProcessorOptions: options,
+      canPrint: false,
+    }),
+  ],
 });
