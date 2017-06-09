@@ -16,15 +16,15 @@ export const modalSettings = {
     function onButtonClick() {
       emit('updateValue', {
         id,
-        value: 'Test'
+        value: 'Test',
       });
     }
   },
-  color: '#da008c'
+  color: '#da008c',
 };
 
 export default () => html`
-  <svg class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="295" height="225" viewBox="0 0 295 225">
+  <svg class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 295 225">
     <defs>
       <path id="machineauthor-a" d="M8.36440678,4.99582647 C8.36440678,2.2367077 10.611347,0 13.3612887,0 L84.223457,0 C86.9831587,0 89.220339,2.24473649 89.220339,4.99582647 L89.220339,54.6623377 L8.36440678,54.6623377 L8.36440678,4.99582647 Z"/>
     </defs>

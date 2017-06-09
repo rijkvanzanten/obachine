@@ -16,8 +16,8 @@ function setupState(state, emitter) {
   Object.assign(state, {
     machineslider: {
       active: false,
-      items: ['genre', 'author', 'type', 'place', 'pages', 'color'],
-      current: 0
+      items: ['genre', 'auteur', 'type', 'plaats', 'kleur'],
+      current: 0,
     },
     machineparts: {
     /*
@@ -31,8 +31,8 @@ function setupState(state, emitter) {
     modal: {
       active: false,
       content: {},
-      id: '' // ID of machine
-    }
+      id: '', // ID of machine
+    },
   });
 
   emitter.on('select-nextItem', onSelectNextItem);
@@ -68,12 +68,12 @@ function setupState(state, emitter) {
     state.machineparts[id] = {
       type,
       value: '',
-      order: Object.keys(state.machineparts).length
+      order: Object.keys(state.machineparts).length,
     };
 
     emitter.emit('showModal', {
       id,
-      content: parts[type].modal
+      content: parts[type].modal,
     });
   }
 

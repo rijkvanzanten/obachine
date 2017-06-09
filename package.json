@@ -4,10 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --env.target development\"",
+    "start": "nodemon --watch webpack.config.babel.js --exec \"webpack-dev-server --env.target development\"",
     "build": "webpack --env.target production",
-    "lint:js": "xo",
-    "lint:style": "stylelint app/**/*.css"
+    "lint:js": "eslint server.js api.js app/ webpack.*.js --cache",
+    "lint:style": "stylelint app/**/*.css",
+    "stats": "webpack --env production --profile --json > stats.json"
   },
   "repository": {
     "type": "git",
@@ -22,12 +23,23 @@
   "homepage": "https://github.com/rijkvanzanten/oba#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
+    "babili-webpack-plugin": "^0.1.1",
+    "clean-webpack-plugin": "^0.1.16",
     "css-loader": "^0.28.4",
+    "cssnano": "^3.10.0",
+    "eslint": "^3.19.0",
+    "eslint-loader": "^1.7.1",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",
+    "git-revision-webpack-plugin": "^2.5.1",
+    "happypack": "^4.0.0-beta.1",
     "html-webpack-plugin": "^2.28.0",
     "image-webpack-loader": "^3.3.1",
     "nodemon": "^1.11.0",
+    "optimize-css-assets-webpack-plugin": "^2.0.0",
     "postcss-loader": "^2.0.5",
     "style-loader": "^0.18.1",
     "stylelint": "^7.10.1",
@@ -35,9 +47,7 @@
     "url-loader": "^0.5.8",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
-    "webpack-merge": "^4.1.0",
-    "xo": "^0.18.2",
-    "xo-loader": "^0.8.0"
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "axios": "^0.16.2",
