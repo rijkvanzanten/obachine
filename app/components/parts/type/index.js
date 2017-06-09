@@ -2,18 +2,26 @@ import html from 'choo/html';
 import styles from '../parts.css';
 
 export const modalSettings = {
-  title: 'Hoi dit zijn instellingen toch',
-  children(id, emit) {
+  title: 'Welk type zoek je?',
+  children(id) {
     return html`
-      <button onclick=${onButtonClick}>Click me!</button>
+      <form id=${id}>
+        <select class=${styles.select} name="type">
+          <option>Kies een type...</option>
+          <option value="boek">boek</option>
+          <option value="activiteiten" >activiteiten</option>
+          <option value="bladmuziek" >bladmuziek</option>
+          <option value="cassette" >cassette</option>
+          <option value="cd" >cd</option>
+          <option value="oba.nl" >oba.nl</option>
+          <option value="audiovisual" >audiovisual</option>
+          <option value="audiovisual" >audiovisual</option>
+          <option value="largetype" >largetype</option>
+          <option value="largetype" >largetype</option>
+        </select>
+      </form>
     `;
 
-    function onButtonClick() {
-      emit('updateValue', {
-        id,
-        value: 'Test',
-      });
-    }
   },
   color: '#18A9E0',
 };
