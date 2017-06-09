@@ -3,9 +3,9 @@ import styles from '../parts.css';
 
 export const modalSettings = {
   title: 'Welk type zoek je?',
-  children(id) {
+  children(id, value, emit) {
     return html`
-      <form id=${id}>
+      <form id=${id} onsubmit=${preventSubmit} onclick=${saveValues}>
         <select class=${styles.select} name="type">
           <option>Kies een type...</option>
           <option value="boek">boek</option>
@@ -21,6 +21,20 @@ export const modalSettings = {
         </select>
       </form>
     `;
+
+    function saveValues(e) {
+      const value = e.target.parentNode.querySelector('select').value;
+      console.log(value);
+      emit('updateValue', {
+        id,
+        value: value,
+      });
+    }
+
+    function preventSubmit(e) {
+      e.preventDefault();
+      return false;
+    }
 
   },
   color: '#18A9E0',
