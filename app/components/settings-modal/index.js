@@ -9,6 +9,7 @@ export default ({id, content, value}, emit) => {
 		  <button class=${styles.close} onclick=${close}>✕</button>
 			<h2>${title}</h2>
 			${children(id, value, emit)}
+      <button class=${styles.button} onclick=${close}>Opslaan</button>
 		</div>
   `;
 
@@ -16,4 +17,3 @@ export default ({id, content, value}, emit) => {
     emit('hideModal');
   }
 };
-

@@ -18,21 +18,35 @@ html {
   background-color: #fff;
   display: flex;
   flex-direction: column;
-  border-radius: 4px;
+  border-radius: 20px;
   margin: 20px 0 0 4%;
   flex-grow: 1;
-  height: 100px;
+  height: 200px;
   width: calc(100% * (1 / 4) - 20px - 5px);
   position: relative;
+  padding: 0;
+  text-align: center;
 }
 
 .form > label > img {
   margin: auto;
   position: absolute;
+  width: 40%;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+}
+
+.form > label > span {
+  font-size: 2rem;
+  color: #000;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-transform: capitalize;
 }
 
 .form > input[type=checkbox] {
@@ -41,23 +55,4 @@ html {
 
 .form > input[type=checkbox]:checked + label {
   background-color: #fb0;
-}
-
-.button {
-  background-color: #fb0;
-  border: 0;
-  color: #86138a;
-  display: block;
-  transition: background-color color 300ms;
-  font-weight: 800;
-  font-size: 2rem;
-  padding: 2rem 0;
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 2rem;
-}
-
-.button:hover {
-  background-color: #fb0;
-  color: #86138a;
 }
