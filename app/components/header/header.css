@@ -2,7 +2,7 @@
   background-color: #f7d80a;
   color: #86138a;
   font-weight: 800;
-  padding: 1rem;
+  padding: 0 1rem 0 0;
   display: flex;
   justify-content: space-between;
 }
