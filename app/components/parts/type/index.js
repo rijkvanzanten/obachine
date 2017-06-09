@@ -2,7 +2,7 @@ import html from 'choo/html';
 import styles from '../parts.css';
 
 export const modalSettings = {
-  title: 'Hoi dit zijn instellingen tog',
+  title: 'Hoi dit zijn instellingen toch',
   children(id, emit) {
     return html`
       <button onclick=${onButtonClick}>Click me!</button>
@@ -11,11 +11,11 @@ export const modalSettings = {
     function onButtonClick() {
       emit('updateValue', {
         id,
-        value: 'Test'
+        value: 'Test',
       });
     }
   },
-  color: '#18A9E0'
+  color: '#18A9E0',
 };
 
 export default () => html`

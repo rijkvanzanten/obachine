@@ -16,7 +16,7 @@ export default (state, emit) => {// Create html template
   function openModal() {
     emit('updateModal', {
       title: 'Welkom!',
-      content: 'Dit is de vernieuwde zoekmachine van de Openbare Bibliotheek van Amsterdam. Op deze applicatie kan je een eigen zoekmachine in elkaar zetten om zo altijd de juiste content te vinden waar jij naar zoekt.'
+      content: 'Dit is de vernieuwde zoekmachine van de Openbare Bibliotheek van Amsterdam. Op deze applicatie kan je een eigen zoekmachine in elkaar zetten om zo altijd de juiste content te vinden waar jij naar zoekt.',
     });
     emit('openModal');
   }
