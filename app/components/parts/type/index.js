@@ -15,8 +15,6 @@ export const modalSettings = {
           <option value="cd" >cd</option>
           <option value="oba.nl" >oba.nl</option>
           <option value="audiovisual" >audiovisual</option>
-          <option value="audiovisual" >audiovisual</option>
-          <option value="largetype" >largetype</option>
           <option value="largetype" >largetype</option>
         </select>
       </form>
