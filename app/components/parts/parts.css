@@ -25,7 +25,14 @@ html {
   flex-wrap: wrap;
 }
 
-.form > label {
+.form > legend {
+  color: #000;
+  font-weight: 800;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form > input[type=checkbox] + label {
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -60,10 +67,23 @@ html {
   text-transform: capitalize;
 }
 
-.form > input[type=checkbox] {
+.form > input[type=checkbox],
+.form > input[type=radio] {
   display: none;
 }
 
 .form > input[type=checkbox]:checked + label {
   background-color: #fb0;
+}
+
+.form > input[type=radio] + label {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 300ms;
+  padding: 0.5rem;
+}
+
+.form > input[type=radio]:checked + label {
+  background-color: #da008c;
+  color: #fff;
 }
