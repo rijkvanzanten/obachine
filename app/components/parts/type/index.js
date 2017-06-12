@@ -2,18 +2,38 @@ import html from 'choo/html';
 import styles from '../parts.css';
 
 export const modalSettings = {
-  title: 'Hoi dit zijn instellingen toch',
-  children(id, emit) {
+  title: 'Welk type zoek je?',
+  children(id, value, emit) {
     return html`
-      <button onclick=${onButtonClick}>Click me!</button>
+      <form id=${id} onsubmit=${preventSubmit} onclick=${saveValues}>
+        <select class=${styles.select} name="type">
+          <option>Kies een type...</option>
+          <option value="boek">boek</option>
+          <option value="activiteiten" >activiteiten</option>
+          <option value="bladmuziek" >bladmuziek</option>
+          <option value="cassette" >cassette</option>
+          <option value="cd" >cd</option>
+          <option value="oba.nl" >oba.nl</option>
+          <option value="audiovisual" >audiovisual</option>
+          <option value="largetype" >largetype</option>
+        </select>
+      </form>
     `;
 
-    function onButtonClick() {
+    function saveValues(e) {
+      const value = e.target.parentNode.querySelector('select').value;
+      console.log(value);
       emit('updateValue', {
         id,
-        value: 'Test',
+        value: value,
       });
     }
+
+    function preventSubmit(e) {
+      e.preventDefault();
+      return false;
+    }
+
   },
   color: '#18A9E0',
 };

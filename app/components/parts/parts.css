@@ -7,6 +7,17 @@ html {
   margin: 0 auto;
 }
 
+.select {
+  background: #fff;
+  color: #18a9e0;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+  border: 1px solid #fff;
+  height: 34px;
+  text-transform: capitalize;
+}
+
 .form {
   display: flex;
   flex-direction: row;
