@@ -16,6 +16,15 @@
   margin-bottom: 1rem;
   padding: 1rem;
   background-color: #86138a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list span {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.225rem;
 }
 
 .list > a > li {
@@ -37,5 +46,7 @@
 }
 
 .list > a > li > img {
-  width: 15%;
+  width: 70%;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
