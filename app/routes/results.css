@@ -6,13 +6,26 @@
   margin: 0 auto;
 }
 
+.list a {
+  text-decoration: none;
+}
+
 .list > a > li {
   color: #f7d80a;
   font-family: 'AvenirBold';
   font-weight: 800;
   margin-bottom: 1rem;
   padding: 1rem;
-  background-color: #86138a;
+  background-color: rgba(134, 19, 138, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list span {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.125rem;
 }
 
 .list > a > li {
@@ -35,5 +48,7 @@
 }
 
 .list > a > li > img {
-  width: 15%;
+  width: 70%;
+  height: auto;
+  margin-bottom: 1.5rem;
 }
