@@ -27,15 +27,25 @@
 
 .body p {
   margin-top: 2rem;
+  font-family: 'AvenirBold';
   font-weight: 800;
 }
 
 .body h2 {
   text-align: center;
+  color: #fff;
 }
 
 .body img {
   align-self: center;
   width: 70%;
   height: auto;
+}
+
+.header {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(24, 169, 224, 0.4);
 }
