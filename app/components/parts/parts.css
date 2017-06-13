@@ -14,8 +14,10 @@ html {
   max-width: 300px;
   font-size: 1rem;
   border: 1px solid #fff;
-  height: 34px;
+  height: 3rem;
   text-transform: capitalize;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .form {
@@ -39,6 +41,13 @@ html {
   border-radius: 20px;
 }
 
+.form legend {
+  color: #000;
+  font-weight: 800;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
 .form span {
   color: #000;
   text-transform: capitalize;
@@ -49,11 +58,31 @@ html {
   padding-bottom: 0.5rem;
 }
 
-.form input[type=checkbox] {
+.form input[type=checkbox] + label {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  text-transform: capitalize;
+}
+
+.form input[type=checkbox],
+.form input[type=radio] {
   position: absolute;
   clip: rect(0, 0, 0, 0);
 }
 
 .form input[type=checkbox]:checked + label {
   background-color: #fb0;
+}
+
+.form input[type=radio] + label {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 300ms;
+  padding: 0.5rem;
+}
+
+.form input[type=radio]:checked + label {
+  background-color: #da008c;
+  color: #fff;
 }
