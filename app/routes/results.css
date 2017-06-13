@@ -6,6 +6,10 @@
   margin: 0 auto;
 }
 
+.list a {
+  text-decoration: none;
+}
+
 .list > a > li {
   color: #f7d80a;
   font-weight: 800;
