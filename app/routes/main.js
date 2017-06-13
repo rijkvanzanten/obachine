@@ -8,6 +8,7 @@ import startTunnel from '../components/parts/tunnels/start-tunnel.svg';
 import endTunnel from '../components/parts/tunnels/end-tunnel.svg';
 import styles from './main.css';
 import bodyStyles from './body.css';
+import results from './results.css';
 
 export default function main(state, emit) {
   const {active} = state.modal;
@@ -27,6 +28,18 @@ export default function main(state, emit) {
         <button type="submit">Machine Aanzwengelen</button>
       </form>
       ${active ? modal(state.modal.content, emit) : null}
+      <div id="results-container">
+        <ul class=${results.list}>
+        ${state.results.map(item => html`
+          <a href="/item/${item.id.nativeid}">
+            <li>
+              <span>${item.titles['short-title']}</span>
+              <img src="${item.coverimages.coverimage[1]}" />
+            </li>
+          </a>
+        `)}
+        </ul>
+      </div>
     </body>
   `;
 
@@ -56,8 +69,17 @@ export default function main(state, emit) {
       searchQuery[input.name] = input.value;
     });
 
+    const resultsContainer = document.querySelector('#results-container');
+    console.log(resultsContainer);
+
     axios.get('/api/search', {params: searchQuery})
-      .then(res => console.log(res))
+      .then(res => {
+        resultsContainer.innerHTML = '';
+
+        const results = res.data.aquabrowser.results.result;
+
+        emit('results', results);
+      })
       .catch(err => console.error(err));
 
     e.preventDefault();
