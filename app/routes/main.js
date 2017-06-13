@@ -63,6 +63,7 @@ export default function main(state, emit) {
   }
 
   function submitForm(e) {
+
     const searchQuery = {};
 
     e.target.querySelectorAll('input').forEach(input => {

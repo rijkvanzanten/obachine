@@ -1,0 +1,19 @@
+.body {
+  font-family: 'Avenir';
+}
+
+.body > main {
+  width: 90%;
+  margin: auto;
+  padding: 1rem 0;
+}
+
+.body ul {
+  list-style: none;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.body p {
+  margin-bottom: 1rem;
+}
