@@ -6,8 +6,8 @@ export default ({id, content, value}, emit) => {
 
   return html`
     <div class=${styles.modal} style="background-color: ${color}">
+      <h2 class="${styles.title}">${title}</h2>
       <button class=${styles.close} onclick=${close}>✕</button>
-      <h2>${title}</h2>
       ${children(id, value, emit)}
       <button class=${styles.button} onclick=${close}>Opslaan</button>
     </div>

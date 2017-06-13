@@ -12,7 +12,7 @@ import genreSea from './icons/genre-sea.svg';
 import genreFamily from './icons/genre-family.svg';
 
 export const modalSettings = {
-  title: 'Welk genre(s) wil je?',
+  title: 'Welke genres wil je?',
   children(id, value, emit) {
     value = value ? value.split(',') : '';
 
@@ -23,7 +23,7 @@ export const modalSettings = {
           <input id="kinderleven" type="checkbox" name="genre" value="kinderleven" ${select('kinderleven')} />
           <label for="kinderleven"><img src=${genreChildrenslife} /><span>kinderleven</span></label>
           <input id="avonturenroman" type="checkbox" name="genre" value="avonturenroman" ${select('avonturenroman')} />
-          <label for="avonturenroman"><img src=${genreAdventure} /><span>avnonturen</span></label>
+          <label for="avonturenroman"><img src=${genreAdventure} /><span>avonturen</span></label>
           <input id="dieren" type="checkbox" name="genre" value="dieren" ${select('dieren')} />
           <label for="dieren"><img src=${genreAnimals} /><span>dieren</span></label>
           <input id="bijbels-verhaal" type="checkbox" name="genre" value="bijbels-verhaal" ${select('bijbels-verhaal')} />

@@ -1,23 +1,32 @@
 .modal {
   background-color: #da008c;
-  width: 80%;
-  max-width: 800px;
-  padding: 1rem 1.5rem;
-  position: absolute;
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  position: fixed;
   color: #fff;
   font-size: 1rem;
-  top: 3rem;
-  right: 0;
-  left: 0;
-  margin: auto;
+  width: 90%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .close {
   background-color: transparent;
   border: none;
   color: #fff;
-  font-size: 3rem;
-  float: right;
+  font-size: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+.title {
+  margin: auto;
+  padding-top: 1.5em;
+  padding-bottom: 1em;
 }
 
 .button {
@@ -25,13 +34,11 @@
   border: 0;
   color: #86138a;
   display: block;
-  transition: background-color color 300ms;
   font-weight: 800;
-  font-size: 2rem;
-  padding: 2rem 0;
+  font-size: 1.5rem;
+  padding: 1rem;
   width: 50%;
-  margin: 0 auto;
-  margin-top: 2rem;
+  margin: auto;
 }
 
 .button:hover {
