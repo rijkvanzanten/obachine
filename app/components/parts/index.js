@@ -20,6 +20,7 @@ export default {
   hardsort: {
     machine: sort,
     modal: sortSettings,
+  },
   locatie: {
     machine: location,
     modal: locationSettings,
