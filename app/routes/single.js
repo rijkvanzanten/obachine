@@ -25,8 +25,10 @@ export default function main(state, emit) {
       ${header(state, emit)}
       <main>
         <a href="/">◀ terug</a>
-        <h2>${state.store[state.params.id].titles['short-title']}</h2>
-        <img src=${state.store[state.params.id].coverimages.coverimage[1]} />
+        <section class=${singleStyles.header}>
+          <h2>${state.store[state.params.id].titles['short-title']}</h2>
+          <img src=${state.store[state.params.id].coverimages.coverimage[1]} />
+        </section>
         <p>Korte beschrijving</p>
         <div>${state.store[state.params.id].summaries.summary}</div>
         <p>Genres</p>
