@@ -1,19 +1,41 @@
 .body {
   font-family: 'Avenir';
+  margin: 0;
 }
 
 .body > main {
   width: 90%;
   margin: auto;
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.body a {
+  text-decoration: none;
+  font-size: 1.125rem;
 }
 
 .body ul {
-  list-style: none;
   text-transform: capitalize;
-  margin-bottom: 1rem;
+  margin: 0;
+}
+
+.body li {
+  margin-bottom: 0.5rem;
 }
 
 .body p {
-  margin-bottom: 1rem;
+  margin-top: 2rem;
+  font-weight: 800;
+}
+
+.body h2 {
+  text-align: center;
+}
+
+.body img {
+  align-self: center;
+  width: 70%;
+  height: auto;
 }

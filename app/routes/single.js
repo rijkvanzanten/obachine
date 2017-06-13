@@ -24,17 +24,20 @@ export default function main(state, emit) {
     <body class=${singleStyles.body}>
       ${header(state, emit)}
       <main>
-        <a href="/">◀</a>
+        <a href="/">◀ terug</a>
         <h2>${state.store[state.params.id].titles['short-title']}</h2>
+        <img src=${state.store[state.params.id].coverimages.coverimage[1]} />
+        <p>Korte beschrijving</p>
+        <div>${state.store[state.params.id].summaries.summary}</div>
+        <p>Genres</p>
+        <ul>${genres.map(genre => html`<li>${genre}</li>`)}</ul>
+        <p>Beschikbare formaten</p>
         <div>
           ${formats.length > 0 ?
             formats.map(format => html`<li>${format}</li>`) :
             null
           }
         </div>
-        <div>${state.store[state.params.id].summaries.summary}</div>
-        <img src=${state.store[state.params.id].coverimages.coverimage[1]} />
-        <ul>${genres.map(genre => html`<li>${genre}</li>`)}</ul>
       </main>
     </body>
   `;

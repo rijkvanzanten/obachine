@@ -83,7 +83,7 @@ export default () => html`
           </g>
         </g>
       </g>
-      <path fill="#FB0" d="M147,85 L127,85 L127,115 L123,115 L123,85 L103,85 L103,115 L99,115 L99,85 L79,85 C79,85.6914953 79,86.3559348 79,86.8678922 L79,115 L75,115 L75,82.0074612 C75,80.898771 75.8877296,80 77,80 L78.2483215,80 L176,80 L176,85 L151,85 L151,115 L147,115 L147,85 Z"/>
+      <path fill="#f7d80a" d="M147,85 L127,85 L127,115 L123,115 L123,85 L103,85 L103,115 L99,115 L99,85 L79,85 C79,85.6914953 79,86.3559348 79,86.8678922 L79,115 L75,115 L75,82.0074612 C75,80.898771 75.8877296,80 77,80 L78.2483215,80 L176,80 L176,85 L151,85 L151,115 L147,115 L147,85 Z"/>
       <rect width="10" height="49" x="25" y="65" fill="#D8D8D8"/>
       <rect width="5" height="49" x="25" y="65" fill="#4A4A4A"/>
       <g fill-rule="nonzero" transform="rotate(180 100.5 47.5)">
@@ -99,19 +99,19 @@ export default () => html`
         <g mask="url(#machinegenre-b)">
           <g transform="translate(-3 13)">
             <g>
-              <polyline fill="#FB0" points="0 7.627 9.489 0 18.978 7.627"/>
-              <polyline fill="#FB0" points="38.022 7.627 47.51 0 56.999 7.627"/>
-              <polyline fill="#FB0" points="76.043 7.627 85.532 0 95.021 7.627"/>
-              <polyline fill="#FB0" points="113.522 7.627 123.011 0 132.5 7.627"/>
-              <polyline fill="#FB0" points="19.011 7.627 28.5 0 37.989 7.627"/>
-              <polyline fill="#FB0" points="150.968 7.627 160.457 0 169.946 7.627"/>
-              <polyline fill="#FB0" points="188.989 7.627 198.478 0 207.967 7.627"/>
-              <polyline fill="#FB0" points="169.978 7.627 179.467 0 188.956 7.627"/>
-              <polyline fill="#FB0" points="57.032 7.627 66.521 0 76.01 7.627"/>
-              <polyline fill="#FB0" points="95.054 7.627 104.543 0 114.032 7.627"/>
-              <polyline fill="#FB0" points="132.533 7.627 142.022 0 151.51 7.627"/>
+              <polyline fill="#f7d80a" points="0 7.627 9.489 0 18.978 7.627"/>
+              <polyline fill="#f7d80a" points="38.022 7.627 47.51 0 56.999 7.627"/>
+              <polyline fill="#f7d80a" points="76.043 7.627 85.532 0 95.021 7.627"/>
+              <polyline fill="#f7d80a" points="113.522 7.627 123.011 0 132.5 7.627"/>
+              <polyline fill="#f7d80a" points="19.011 7.627 28.5 0 37.989 7.627"/>
+              <polyline fill="#f7d80a" points="150.968 7.627 160.457 0 169.946 7.627"/>
+              <polyline fill="#f7d80a" points="188.989 7.627 198.478 0 207.967 7.627"/>
+              <polyline fill="#f7d80a" points="169.978 7.627 179.467 0 188.956 7.627"/>
+              <polyline fill="#f7d80a" points="57.032 7.627 66.521 0 76.01 7.627"/>
+              <polyline fill="#f7d80a" points="95.054 7.627 104.543 0 114.032 7.627"/>
+              <polyline fill="#f7d80a" points="132.533 7.627 142.022 0 151.51 7.627"/>
             </g>
-            <rect width="206.882" height="9.143" y="6.857" fill="#FB0"/>
+            <rect width="206.882" height="9.143" y="6.857" fill="#f7d80a"/>
           </g>
         </g>
       </g>

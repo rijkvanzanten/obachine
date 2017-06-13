@@ -12,14 +12,14 @@
 .prev {
   background-color: transparent;
   border: none;
-  color: #fb0;
-  font-size: 1rem;
+  color: #f7d80a;
+  font-size: 1.125rem;
   -webkit-appearance: none;
 }
 
 .buildingblock {
   color: #86138a;
-  background-color: #fb0;
+  background-color: #f7d80a;
   padding: 1rem;
   font-size: 1rem;
   font-weight: 800;
