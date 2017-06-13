@@ -1,0 +1,37 @@
+.list {
+  list-style: none;
+  padding: 0;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.list > a > li {
+  color: #f7d80a;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #86138a;
+}
+
+.list > a > li {
+  color: #f7d80a;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: #86138a;
+  transition: padding 300ms;
+}
+
+.list > a > li:hover {
+  padding: 1rem 2rem;
+}
+
+.list > a > li:nth-child(even) {
+  background-color: #f7d80a;
+  color: #86138a;
+}
+
+.list > a > li > img {
+  width: 15%;
+}

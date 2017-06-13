@@ -4,11 +4,15 @@ import parts from './components/parts';
 
 import main from './routes/main';
 
+import single from './routes/result';
+
 const app = choo();
 
 app.use(setupState);
 
 app.route('/', main);
+
+app.route('/item/:id', single);
 
 app.mount('body');
 
@@ -16,7 +20,7 @@ function setupState(state, emitter) {
   Object.assign(state, {
     machineslider: {
       active: false,
-      items: ['genre', 'type', 'locatie'],
+      items: ['genre', 'type', 'hardsort'],
       current: 0,
     },
     machineparts: {
@@ -33,6 +37,8 @@ function setupState(state, emitter) {
       content: {},
       id: '', // ID of machine
     },
+    results: [],
+    store: {},
   });
 
   emitter.on('select-nextItem', onSelectNextItem);
@@ -43,6 +49,8 @@ function setupState(state, emitter) {
   emitter.on('hideModal', hideModal);
 
   emitter.on('updateValue', updateValue);
+
+  emitter.on('results', setResults);
 
   function onSelectNextItem() {
     state.machineslider.current++;
@@ -91,5 +99,12 @@ function setupState(state, emitter) {
 
   function updateValue({id, value}) {
     state.machineparts[id].value = value;
+  }
+
+  function setResults(results) {
+    state.results = results;
+
+    results.forEach(result => state.store[result.id.nativeid] = result);
+    emitter.emit('render');
   }
 }
