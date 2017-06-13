@@ -16,7 +16,7 @@ function setupState(state, emitter) {
   Object.assign(state, {
     machineslider: {
       active: false,
-      items: ['genre', 'type'],
+      items: ['genre', 'type', 'locatie'],
       current: 0,
     },
     machineparts: {
