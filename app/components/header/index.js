@@ -7,7 +7,7 @@ import menu from './menu.svg';
 export default (state, emit) => {// Create html template
   return html`
     <header class=${styles.header}>
-      <img class=${styles.logo} src="${logo}" alt="oba logo">
+      <a href="/"><img class=${styles.logo} src="${logo}" alt="oba logo"></a>
       <img class=${styles.menu} src="${menu}" alt="menu" onclick=${openModal}>
       <img class=${styles.logo} src="${logo}" alt="oba logo">
     </header>
