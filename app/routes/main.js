@@ -8,7 +8,7 @@ import startTunnel from '../components/parts/tunnels/start-tunnel.svg';
 import endTunnel from '../components/parts/tunnels/end-tunnel.svg';
 import styles from './main.css';
 import bodyStyles from './body.css';
-import results from './results.css';
+import resultsStyle from './results.css';
 
 export default function main(state, emit) {
   const {active} = state.modal;
@@ -29,7 +29,7 @@ export default function main(state, emit) {
       </form>
       ${active ? modal(state.modal.content, emit) : null}
       <div id="results-container">
-        <ul class=${results.list}>
+        <ul class=${resultsStyle.list}>
         ${state.results.map(item => html`
           <a href="/item/${item.id.nativeid}">
             <li>
