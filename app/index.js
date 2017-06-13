@@ -4,7 +4,7 @@ import parts from './components/parts';
 
 import main from './routes/main';
 
-import single from './routes/result';
+import single from './routes/single';
 
 const app = choo();
 
