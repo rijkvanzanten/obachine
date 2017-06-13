@@ -20,50 +20,40 @@ html {
 
 .form {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  height: 100%;
   flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0.5rem;
 }
 
-.form > label {
-  background-color: #fff;
+.form label {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 25%;
+  height: 5rem;
+  margin-bottom: 0.5em;
+  padding: 0.5rem;
   border-radius: 20px;
-  margin: 20px 0 0 4%;
-  flex-grow: 1;
-  height: 200px;
-  width: calc(100% * (1 / 4) - 20px - 5px);
-  position: relative;
-  padding: 0;
-  text-align: center;
 }
 
-.form > label > img {
-  margin: auto;
-  position: absolute;
-  width: 40%;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.form > label > span {
-  font-size: 2rem;
+.form span {
   color: #000;
-  margin: auto;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  right: 0;
   text-transform: capitalize;
 }
 
-.form > input[type=checkbox] {
-  display: none;
+.form img {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-.form > input[type=checkbox]:checked + label {
+.form input[type=checkbox] {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.form input[type=checkbox]:checked + label {
   background-color: #fb0;
 }

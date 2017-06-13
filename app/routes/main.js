@@ -24,7 +24,7 @@ export default function main(state, emit) {
           `}
         </ul>
         <img class=${styles.tunnel} src=${endTunnel}/>
-        <button type="submit">Machine Aanzwengelen</button>
+        <button class=${styles.button} type="submit">Machine Aanzwengelen</button>
       </form>
       ${active ? modal(state.modal.content, emit) : null}
     </body>
