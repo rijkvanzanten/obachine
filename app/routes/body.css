@@ -1,7 +1,38 @@
+@font-face {
+  font-family: 'AvenirNormal';
+  font-style: normal;
+  font-weight: 400, 800;
+  src: url('../fonts/AvenirLT-Roman.eot');
+  src:
+    local('Arial'),
+    local('Arial'),
+    url('../fonts/AvenirLT-Roman.woff2') format('woff2'),
+    url('../fonts/AvenirLT-Roman.woff') format('woff'),
+    url('../fonts/AvenirLT-Roman.ttf') format('truetype'),
+    url('../fonts/AvenirLT-Roman.svg#Avenir') format('svg');
+}
+
+@font-face {
+  font-family: 'AvenirBold';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/AvenirBold.eot');
+  src:
+    local('Arial'),
+    local('Arial'),
+    url('../fonts/AvenirBold.woff2') format('woff2'),
+    url('../fonts/AvenirLT-Black.woff') format('woff'),
+    url('../fonts/AvenirLT-Black.ttf') format('truetype'),
+    url('../fonts/AvenirLT-Black.svg#AvenirBold') format('svg');
+}
+
 .body {
   margin: 0;
   padding: 0;
-  font-family: 'Avenir';
+}
+
+* {
+  font-family: 'AvenirNormal';
 }
 
 h1 {

@@ -43,6 +43,7 @@ html {
 
 .form legend {
   color: #000;
+  font-family: 'AvenirBold';
   font-weight: 800;
   width: 100%;
   margin-bottom: 1rem;

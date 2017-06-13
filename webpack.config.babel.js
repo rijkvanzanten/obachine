@@ -32,6 +32,11 @@ const commonConfig = merge([
       }),
     ],
   },
+  parts.loadFonts({
+    options: {
+      name: './fonts/[name].[ext]',
+    },
+  }),
   parts.lintCSS({include: PATHS.app}),
 ]);
 
