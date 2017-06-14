@@ -59,3 +59,7 @@
   width: 99%;
   text-transform: capitalize;
 }
+
+.placeholder svg {
+  height: 20em;
+}
