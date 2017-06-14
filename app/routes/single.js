@@ -32,7 +32,7 @@ export default function main(state, emit) {
         <section class=${singleStyles.summary}>
           <p>Korte beschrijving</p>
           <div>${state.store[state.params.id].summaries.summary}</div>
-        </section
+        </section>
         <p>Genres</p>
         <ul>${genres.map(genre => html`<li>${genre}</li>`)}</ul>
         <p>Beschikbare formaten</p>
