@@ -1,5 +1,4 @@
 .machineslider {
-  background-color: #86138a;
   padding: 1rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -19,8 +18,7 @@
 
 .buildingblock {
   color: #86138a;
-  background-color: #f7d80a;
-  padding: 1rem;
+  background-color: #fff;
   font-size: 1rem;
   font-family: 'AvenirBold';
   font-weight: 800;
@@ -30,4 +28,34 @@
 
 .buildingblock:first-of-type {
   display: block;
+}
+
+.placeholder {
+  color: #86138a;
+  border: 4px dashed #86138a;
+  font-size: 1rem;
+  font-family: 'AvenirBold';
+  font-weight: 800;
+  padding-top: 1rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.placeholder p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.placeholder p:last-child {
+  color: #fff;
+  font-size: 1.125rem;
+  background-color: rgba(134, 19, 138, 0.7);
+  margin-bottom: 2px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 99%;
+  text-transform: capitalize;
 }
