@@ -20,7 +20,7 @@ function setupState(state, emitter) {
   Object.assign(state, {
     machineslider: {
       active: false,
-      items: ['genre', 'type', 'hardsort'],
+      items: ['genre', 'type', 'hardsort', 'keyword', 'location'],
       current: 0,
     },
     machineparts: {
@@ -98,10 +98,12 @@ function setupState(state, emitter) {
   }
 
   function updateValue({id, value}) {
+    console.log(value);
     state.machineparts[id].value = value;
   }
 
   function setResults(results) {
+    console.log(results);
     state.results = results;
 
     results.forEach(result => state.store[result.id.nativeid] = result);

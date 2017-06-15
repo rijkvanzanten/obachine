@@ -24,6 +24,10 @@ router.get('/search', (req, res) => {
     });
   }
 
+  if(query.keyword) {
+    apiSearchObject.q = query.keyword;
+  }
+
   client.get('search', apiSearchObject)
     .then(results => res.send(results))
     .catch(err => console.log(err));

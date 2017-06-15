@@ -2,26 +2,35 @@ import html from 'choo/html';
 import styles from '../parts.css';
 
 export const modalSettings = {
-  title: 'Kies auteur',
-  children(id, emit) {
+  title: 'Met welke zoekterm wil je zoeken?',
+  children(id, value, emit) {
+
     return html`
-      <div>
-        <form>
-          <input type="text">
+        <form class=${styles.form} onsubmit=${preventSubmit} id=${id}>
+          <input type="text" name="keyword" onchange=${saveValues}>
         </form>
-        <button onclick=${onButtonClick}>Click me!</button>
-      </div>
     `;
 
-    function onButtonClick() {
+    function saveValues(e) {
+      const values = e.target.value;
+
+      console.log(e.target.value);
+
       emit('updateValue', {
         id,
-        value: 'Test',
+        value: values,
       });
     }
+
+    function preventSubmit(e) {
+      e.preventDefault();
+      return false;
+    }
+
   },
-  color: '#da008c',
+  color: '#18A9E0',
 };
+
 
 export default () => html`
   <svg class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 295 225">

@@ -1,5 +1,5 @@
 import genre, {modalSettings as genreSettings} from './genre';
-import author, {modalSettings as authorSettings} from './author';
+import keyword, {modalSettings as keywordSettings} from './keyword';
 import type, {modalSettings as typeSettings} from './type';
 import sort, {modalSettings as sortSettings} from './sort';
 import location, {modalSettings as locationSettings} from './location';
@@ -9,9 +9,9 @@ export default {
     machine: genre,
     modal: genreSettings,
   },
-  author: {
-    machine: author,
-    modal: authorSettings,
+  keyword: {
+    machine: keyword,
+    modal: keywordSettings,
   },
   type: {
     machine: type,
@@ -21,7 +21,7 @@ export default {
     machine: sort,
     modal: sortSettings,
   },
-  locatie: {
+  location: {
     machine: location,
     modal: locationSettings,
   },
