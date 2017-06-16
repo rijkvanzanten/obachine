@@ -70,7 +70,6 @@ export default function main(state, emit) {
       searchQuery[input.name] = input.value;
     });
 
-    console.log(searchQuery);
 
     const resultsContainer = document.querySelector('#results-container');
     console.log(resultsContainer);
@@ -80,7 +79,6 @@ export default function main(state, emit) {
 
         resultsContainer.innerHTML = '';
 
-        console.log(res.data.aquabrowser);
         const results = res.data.aquabrowser.results.result;
 
         emit('results', results);

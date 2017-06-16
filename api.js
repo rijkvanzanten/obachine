@@ -28,6 +28,10 @@ router.get('/search', (req, res) => {
     apiSearchObject.q = query.keyword;
   }
 
+  if(query.author) {
+    apiSearchObject.facet.push('Auteur(' + query.author + ')');
+  }
+
   client.get('search', apiSearchObject)
     .then(results => res.send(results))
     .catch(err => console.log(err));
