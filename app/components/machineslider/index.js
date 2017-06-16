@@ -8,15 +8,17 @@ export default (state, emit) => {
   const currentItem = state.items[state.current];
   return html`
     <li class=${styles.machineslider}>
-      <button class=${styles.prev} onclick=${prev}><img src=${prevButton} alt="vorige machine"/></button>
       <div class=${styles.placeholder}>
+        <div class=${styles.flexcontainer}>
+          <button class=${styles.prev} onclick=${prev}><img src=${prevButton} alt="vorige machine"/></button>
+          <button data-item=${currentItem} class=${styles.buildingblock} onclick=${select}>
+            ${parts[currentItem].machine()}
+          </button>
+          <button class=${styles.next} onclick=${next}><img src=${nextButton} alt="volgende machine"/></button>
+        </div>
         <p>Kies een machine...</p>
-        <button data-item=${currentItem} class=${styles.buildingblock} onclick=${select}>
-          ${parts[currentItem].machine()}
-        </button>
         <p>${currentItem}</p>
       </div>
-      <button class=${styles.next} onclick=${next}><img src=${nextButton} alt="volgende machine"/></button>
     </li>
   `;
 

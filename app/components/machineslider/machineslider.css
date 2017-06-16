@@ -3,7 +3,7 @@
   margin-bottom: 1rem;
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 1rem;
 }
 
@@ -36,8 +36,7 @@
   font-size: 1rem;
   font-family: 'AvenirBold';
   font-weight: 800;
-  padding-top: 1rem;
-  width: 80%;
+  width: 95%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,5 +60,9 @@
 }
 
 .placeholder svg {
-  height: 20em;
+  width: 95%;
+}
+
+.flexcontainer {
+  display: flex;
 }
