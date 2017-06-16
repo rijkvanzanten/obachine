@@ -16,8 +16,6 @@ export default (state, emit) => {
           </button>
           <button class=${styles.next} onclick=${next}><img src=${nextButton} alt="volgende machine"/></button>
         </div>
-        <p>Kies een machine...</p>
-        <p>${currentItem}</p>
       </div>
     </li>
   `;

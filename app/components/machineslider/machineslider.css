@@ -14,16 +14,27 @@
   color: #f7d80a;
   font-size: 1.125rem;
   -webkit-appearance: none;
+  padding: 0;
+}
+
+.next {
+  padding-left: 1rem;
+  padding-right: 0.3rem;
+}
+
+.prev {
+  padding-right: 1rem;
+  padding-left: 0.3rem;
 }
 
 .buildingblock {
   color: #86138a;
   background-color: #fff;
-  font-size: 1rem;
   font-family: 'AvenirBold';
   font-weight: 800;
   border-radius: 3px;
   border: none;
+  padding-top: 0.3rem;
 }
 
 .buildingblock:first-of-type {
@@ -32,8 +43,7 @@
 
 .placeholder {
   color: #86138a;
-  border: 4px dashed #86138a;
-  font-size: 1rem;
+  border: 2px dashed #ccc;
   font-family: 'AvenirBold';
   font-weight: 800;
   width: 95%;
