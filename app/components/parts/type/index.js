@@ -5,11 +5,12 @@ export const modalSettings = {
   title: 'Welk type zoek je?',
   children(id, value, emit) {
     return html`
-      <form id=${id} onsubmit=${preventSubmit} onclick=${saveValues}>
+      <form id=${id} onsubmit=${preventSubmit} onchange=${saveValues}>
         <select class=${styles.select} name="type">
           <option>Kies een type...</option>
-          <option value="boek">boek</option>
+          <option value="book">boek</option>
           <option value="activiteiten" >activiteiten</option>
+          <option value="dvdvideo" >DVD</option>
           <option value="bladmuziek" >bladmuziek</option>
           <option value="cassette" >cassette</option>
           <option value="cd" >cd</option>
