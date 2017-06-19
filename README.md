@@ -37,7 +37,7 @@ SECRET=1234567890
 ```
 
 ## Usage
-- To use the app in development mode, use `npm start`.
+- To use the app in development mode, use `npm start`
 - To build the application use `npm run build`
 - To test your JS use `npm run lint:js`
 - To test your CSS use `npm run lint:style`
