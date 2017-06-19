@@ -9,6 +9,7 @@ import endTunnel from '../components/parts/tunnels/end-tunnel.svg';
 import styles from './main.css';
 import bodyStyles from './body.css';
 import resultsStyle from './results.css';
+import removeButton from './cross.svg';
 
 export default function main(state, emit) {
   const {active} = state.modal;
@@ -47,9 +48,14 @@ export default function main(state, emit) {
     const {type, value} = state.machineparts[id];
 
     return html`
-      <li data-id=${id} onclick=${showModal}>
+      <li data-id=${id} >
         <input type="hidden" name=${type} value=${value || ''}/>
-        ${parts[type].machine()}
+        <button onclick=${removeMachine}>
+          <img src=${removeButton} alt="Remove machine" />
+        </button>
+        <div onclick=${showModal}>
+          ${parts[type].machine()}
+        </div>
       </li>
     `;
 
@@ -60,19 +66,20 @@ export default function main(state, emit) {
         value, // Current value of machine
       });
     }
+
+    function removeMachine() {
+      emit('removeMachine', {id});
+    }
   }
 
   function submitForm(e) {
-
     const searchQuery = {};
 
     e.target.querySelectorAll('input').forEach(input => {
       searchQuery[input.name] = input.value;
     });
 
-
     const resultsContainer = document.querySelector('#results-container');
-    console.log(resultsContainer);
 
     axios.get('/api/search', {params: searchQuery})
       .then(res => {
