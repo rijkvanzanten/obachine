@@ -1,35 +1,7 @@
-.machine_ul {
-  font-size: 0;
-  margin: 0;
-  padding: 0;
-}
-
-.machine_ul li {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
 .machineform {
   display: flex;
   flex-direction: column;
   height: 100%;
-}
-
-.placeholder {
-  color: #86138a;
-  border: 4px dashed #18a9e0;
-  font-size: 1rem;
-  font-family: 'AvenirBold';
-  font-weight: 800;
-  padding: 4rem 0;
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.tunnel:last-of-type {
-  margin-bottom: 1rem;
 }
 
 .button {
