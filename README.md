@@ -1,5 +1,6 @@
 <h1 align="center">
-  [LOGO]
+  <img width="300" src="media/logo.png" alt="Logo">
+  <br>
   <br>
 </h1>
 
@@ -11,7 +12,7 @@
 [![Build Status](https://semaphoreci.com/api/v1/rijkvanzanten/obachine/branches/master/shields_badge.svg)](https://semaphoreci.com/rijkvanzanten/obachine)
 
 ## Overview
-Obachine is a search engine made for the [Amsterdam Public Library (OBA)](https://oba.nl) and is mainly built for their younger age demographic. The purpose of the application is to show them how a search engines operates based on the given inputs and to enhance the searching experience; making it easier and fun.
+Obachine is a search engine made for the [Amsterdam Public Library (OBA)](https://oba.nl) and is mainly built for their younger age demographic. The purpose of this application is to educate them on the inner workings of a search engine where the outcome is based on the given inputs. However, it's also developed to enhance the quest of finding a book to read; making it easier and more enjoyable.
 
 It works by literally building the search query with using the machine blocks which are acting as search filters (i.e. author, genre).
 
@@ -30,14 +31,14 @@ $ https://github.com/rijkvanzanten/obachine.git
 
 and run `npm install` to install all dependencies.
 
-You will need a `.env` file in the root of your project which contains a (server) Wit AI key and a public/secret keypair for the OBA API:
+You will need a `.env` file in the root of your project which contains a public/secret keypair for the OBA API:
 ```
 PUBLIC=1234567890
 SECRET=1234567890
 ```
 
 ## Usage
-- To use the app in development mode, use `npm start`.
+- To use the app in development mode, use `npm start`
 - To build the application use `npm run build`
 - To test your JS use `npm run lint:js`
 - To test your CSS use `npm run lint:style`
