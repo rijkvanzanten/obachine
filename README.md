@@ -2,11 +2,8 @@
   <img width="300" src="media/logo.png" alt="Logo">
   <br>
   <br>
-</h1>
-
-<p align="center">
   <b>🔎 Build your own search engine @ <a href="https://obachine.rijks.website">obachine.rijks.website</a> 🔍</b>
-</p>
+</h1>
 
 # Obachine
 [![Build Status](https://semaphoreci.com/api/v1/rijkvanzanten/obachine/branches/master/shields_badge.svg)](https://semaphoreci.com/rijkvanzanten/obachine)
