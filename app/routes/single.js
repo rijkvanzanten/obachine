@@ -30,18 +30,20 @@ export default function main(state, emit) {
           <img src=${state.store[state.params.id].coverimages.coverimage[1]} />
         </section>
         <section class=${singleStyles.summary}>
-          <p>Korte beschrijving</p>
-          <div>${state.store[state.params.id].summaries.summary}</div>
+          <h3>Korte beschrijving</h3>
+          <p>${state.store[state.params.id].summaries.summary}</p>
         </section>
-        <p>Genres</p>
+        <h3>Genres</h3>
         <ul>${genres.map(genre => html`<li>${genre}</li>`)}</ul>
-        <p>Beschikbare formaten</p>
-        <div>
+        <h3>Fysieke beschrijving</h3>
+        <p>${state.store[state.params.id].description['physical-description']}</p>
+        <h3>Beschikbare formaten</h3>
+        <ul>
           ${formats.length > 0 ?
             formats.map(format => html`<li>${format}</li>`) :
             null
           }
-        </div>
+        </ul>
       </main>
     </body>
   `;
