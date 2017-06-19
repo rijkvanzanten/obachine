@@ -98,12 +98,10 @@ function setupState(state, emitter) {
   }
 
   function updateValue({id, value}) {
-    console.log(value);
     state.machineparts[id].value = value;
   }
 
   function setResults(results) {
-    console.log(results);
     state.results = results;
 
     results.forEach(result => state.store[result.id.nativeid] = result);
