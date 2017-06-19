@@ -16,7 +16,7 @@ export default function main(state, emit) {
       ${machineslider(state, emit)}
       ${machine(state, emit)}
       ${machineForm(state, emit)}
-      ${active ? modal(state.modal.content, emit) : null}
+      ${active ? modal(state, emit) : null}
       ${results(state, emit)}
     </body>
   `;

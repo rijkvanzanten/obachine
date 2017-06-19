@@ -1,7 +1,7 @@
 import html from 'choo/html';
 import styles from './modal.css';
 
-export default ({id, content, value}, emit) => {
+export default ({machineparts, modal: {content: {id, content, value}}}, emit) => {
   const {title, children, color} = content;
 
   return html`
@@ -14,7 +14,13 @@ export default ({id, content, value}, emit) => {
     </div>
   `;
 
-  function close() {
-    emit('hideModal');
+  function close({target}) {
+    if (machineparts[id].value) {
+      return emit('hideModal');
+    }
+
+    target.classList.add(styles.deny);
+
+    setTimeout(() => target.classList.remove(styles.deny), 1000);
   }
 };
