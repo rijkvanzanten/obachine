@@ -30,14 +30,14 @@ $ https://github.com/rijkvanzanten/obachine.git
 
 and run `npm install` to install all dependencies.
 
-You will need a `.env` file in the root of your project which contains a (server) Wit AI key and a public/secret keypair for the OBA API:
+You will need a `.env` file in the root of your project which contains a public/secret keypair for the OBA API:
 ```
 PUBLIC=1234567890
 SECRET=1234567890
 ```
 
 ## Usage
-- To use the app in development mode, use `npm start`.
+- To use the app in development mode, use `npm start`
 - To build the application use `npm run build`
 - To test your JS use `npm run lint:js`
 - To test your CSS use `npm run lint:style`
