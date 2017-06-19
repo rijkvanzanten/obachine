@@ -1,24 +1,6 @@
 .header {
   background-color: #f7d80a;
-  color: #86138a;
-  font-weight: 800;
   font-family: 'AvenirBold';
-  padding: 0 1rem 0 0;
-  display: flex;
-  justify-content: space-between;
+  padding: 1em;
 }
 
-.logo {
-  width: 15%;
-  height: auto;
-}
-
-.menu {
-  width: 10%;
-  max-width: 50px;
-}
-
-.logo {
-  width: 40%;
-  padding: 1.2rem;
-}
