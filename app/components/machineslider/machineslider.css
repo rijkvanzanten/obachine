@@ -1,10 +1,9 @@
 .machineslider {
-  background-color: #86138a;
   padding: 1rem;
   margin-bottom: 1rem;
   text-align: center;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   font-size: 1rem;
 }
 
@@ -15,19 +14,65 @@
   color: #f7d80a;
   font-size: 1.125rem;
   -webkit-appearance: none;
+  padding: 0;
+}
+
+.next {
+  padding-left: 1rem;
+  padding-right: 0.3rem;
+}
+
+.prev {
+  padding-right: 1rem;
+  padding-left: 0.3rem;
 }
 
 .buildingblock {
   color: #86138a;
-  background-color: #f7d80a;
-  padding: 1rem;
-  font-size: 1rem;
+  background-color: #fff;
   font-family: 'AvenirBold';
   font-weight: 800;
   border-radius: 3px;
   border: none;
+  padding-top: 0.3rem;
 }
 
 .buildingblock:first-of-type {
   display: block;
+}
+
+.placeholder {
+  color: #86138a;
+  border: 2px dashed #ccc;
+  font-family: 'AvenirBold';
+  font-weight: 800;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.placeholder p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.placeholder p:last-child {
+  color: #fff;
+  font-size: 1.125rem;
+  background-color: rgba(134, 19, 138, 0.7);
+  margin-bottom: 2px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  width: 99%;
+  text-transform: capitalize;
+}
+
+.placeholder svg {
+  width: 95%;
+}
+
+.flexcontainer {
+  display: flex;
 }

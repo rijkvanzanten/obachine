@@ -16,30 +16,31 @@ export default function main(state, emit) {
   return html`
     <body class=${bodyStyles.body}>
       ${header(state, emit)}
-      ${machineslider(state.machineslider, emit)}
-      <form onsubmit=${submitForm} class=${styles.machineform}>
+      <main class=${styles.main}>
         <img class=${styles.tunnel} src=${startTunnel}/>
         <ul class=${styles.machine_ul}>
-          ${Object.keys(state.machineparts).length > 0 ? Object.keys(state.machineparts).map(machine) : html`
-            <div class=${styles.placeholder}>Stel je machine samen...</div>
-          `}
-        </ul>
-        <img class=${styles.tunnel} src=${endTunnel}/>
-        <button class=${styles.button} type="submit">Start de Machine</button>
-      </form>
-      ${active ? modal(state.modal.content, emit) : null}
-      <div id="results-container">
+          ${Object.keys(state.machineparts).length > 0 ? Object.keys(state.machineparts).map(machine) : null}
+          ${machineslider(state.machineslider, emit)}
+          </ul>
+          <img class=${styles.tunnel} src=${endTunnel}/>
+          <form onsubmit=${submitForm} class=${styles.machineform}>
+          ${Object.keys(state.machineparts).length > 0 ? Object.keys(state.machineparts).map(input) : null}
+            <button class=${styles.button} type="submit">Start de Machine</button>
+          </form>
+          ${active ? modal(state.modal.content, emit) : null}
+          <div id="results-container">
         <ul class=${resultsStyle.list}>
-        ${state.results.map(item => html`
-          <a href="/item/${item.id.nativeid}">
-            <li>
-              <span>${item.titles['short-title']}</span>
-              <img src="${item.coverimages.coverimage[1]}" />
-            </li>
-          </a>
-        `)}
-        </ul>
-      </div>
+          ${state.results.map(item => html`
+            <a href="/item/${item.id.nativeid}">
+              <li>
+                <span>${item.titles['short-title']}</span>
+                <img src="${item.coverimages.coverimage[1]}" />
+              </li>
+            </a>
+          `)}
+          </ul>
+        </div>
+      </main>
     </body>
   `;
 
@@ -48,7 +49,6 @@ export default function main(state, emit) {
 
     return html`
       <li data-id=${id} onclick=${showModal}>
-        <input type="hidden" name=${type} value=${value || ''}/>
         ${parts[type].machine()}
       </li>
     `;
@@ -60,6 +60,14 @@ export default function main(state, emit) {
         value, // Current value of machine
       });
     }
+  }
+
+  function input(id) {
+    const {type, value} = state.machineparts[id];
+
+    return html`
+      <input type="hidden" name=${type} value=${value || ''}/>
+    `;
   }
 
   function submitForm(e) {
