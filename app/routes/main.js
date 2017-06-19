@@ -18,7 +18,7 @@ export default function main(state, emit) {
     <body class=${bodyStyles.body}>
       ${header(state, emit)}
       ${machineslider(state.machineslider, emit)}
-      <form onsubmit=${submitForm} class=${styles.machineform}>
+      <div class=${machine}>
         <img class=${styles.tunnel} src=${startTunnel}/>
         <ul class=${styles.machine_ul}>
           ${Object.keys(state.machineparts).length > 0 ? Object.keys(state.machineparts).map(machine) : html`
@@ -26,6 +26,11 @@ export default function main(state, emit) {
           `}
         </ul>
         <img class=${styles.tunnel} src=${endTunnel}/>
+      </div>
+      <form onsubmit=${submitForm} class=${styles.machineform}>
+        ${Object.keys(state.machineparts).map(id => html`
+          <input type="hidden" name=${state.machineparts[id].type} value=${state.machineparts[id].value || ''}/>
+        `)}
         <button class=${styles.button} type="submit">Start de Machine</button>
       </form>
       ${active ? modal(state.modal.content, emit) : null}
@@ -49,7 +54,6 @@ export default function main(state, emit) {
 
     return html`
       <li data-id=${id} >
-        <input type="hidden" name=${type} value=${value || ''}/>
         <button onclick=${removeMachine}>
           <img src=${removeButton} alt="Remove machine" />
         </button>
