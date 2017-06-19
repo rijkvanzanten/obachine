@@ -52,6 +52,8 @@ function setupState(state, emitter) {
 
   emitter.on('results', setResults);
 
+  emitter.on('removeMachine', removeMachine);
+
   function onSelectNextItem() {
     state.machineslider.current++;
     if (state.machineslider.current >= state.machineslider.items.length) {
@@ -105,6 +107,11 @@ function setupState(state, emitter) {
     state.results = results;
 
     results.forEach(result => state.store[result.id.nativeid] = result);
+    emitter.emit('render');
+  }
+
+  function removeMachine({id}) {
+    delete state.machineparts[id];
     emitter.emit('render');
   }
 }
