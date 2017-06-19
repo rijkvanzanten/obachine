@@ -28,8 +28,6 @@
 
 .machine li button {
   position: absolute;
-  top: 5px;
-  right: 5px;
   appearance: none;
   border: 0;
   background-color: transparent;
