@@ -4,13 +4,14 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --watch webpack.config.babel.js --exec \"webpack-dev-server --env.target development\"",
+    "dev": "nodemon --watch webpack.config.babel.js --exec \"webpack-dev-server --env.target development\"",
     "build": "webpack --env.target production",
     "server": "nodemon server.js",
     "lint:js": "eslint server.js api.js app/ webpack.*.js --cache",
     "lint:style": "stylelint app/**/*.css",
     "stats": "webpack --env production --profile --json > stats.json",
-    "expose": "ngrok http 8080 -host-header=localhost:8080"
+    "expose": "ngrok http 8080 -host-header=localhost:8080",
+    "start": "concurrently -p \"[{name}]\" -n \"WEBP,SERV\" -c \"red,blue\" \"npm run dev\" \"npm run server\""
   },
   "repository": {
     "type": "git",
