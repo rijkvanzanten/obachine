@@ -14,7 +14,7 @@ export default function main(state, emit) {
   return html`
     <body class=${bodyStyles.body}>
       ${header(state, emit)}
-      ${machineslider(state.machineslider, emit)}
+      ${machineslider(state, emit)}
       ${machine(state, emit)}
       <form onsubmit=${submitForm} class=${styles.machineform}>
         ${Object.keys(state.machineparts).map(id => html`
