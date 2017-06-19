@@ -24,16 +24,6 @@
   background: rgba(0, 0, 0, 0.7);
 }
 
-.close {
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  font-size: 1.5rem;
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-}
-
 .title {
   margin: auto;
   padding-top: 1.5em;
