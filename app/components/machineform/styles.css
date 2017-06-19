@@ -1,3 +1,11 @@
+.machineform {
+  box-sizing: border-box;
+  max-width: 400px;
+  width: 100%;
+  padding: 1em;
+  margin: 1em auto;
+}
+
 .machineform button {
   background-color: #f7d80a;
   border: 0;
@@ -7,8 +15,5 @@
   font-weight: 800;
   font-size: 1.5rem;
   padding: 1rem;
-  width: 90%;
-  align-self: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin: 0 auto;
 }

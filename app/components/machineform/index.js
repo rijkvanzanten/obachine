@@ -5,12 +5,17 @@ import styles from './styles.css';
 export default (state, emit) => {
   const {machineparts} = state;
   const machinepartsIDs = Object.keys(machineparts);
-  return html`
-    <form onsubmit=${submitForm} class=${styles.machineform}>
-      ${machinepartsIDs.map(renderInput)}
-      <button type="submit">Start de Machine</button>
-    </form>
-  `;
+
+  if (machinepartsIDs.length > 0) {
+    return html`
+      <form onsubmit=${submitForm} class=${styles.machineform}>
+        ${machinepartsIDs.map(renderInput)}
+        <button type="submit">Start de Machine</button>
+      </form>
+    `;
+  } else {
+    return null;
+  }
 
   function submitForm(e) {
     const searchQuery = {};
