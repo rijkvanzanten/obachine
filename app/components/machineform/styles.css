@@ -1,10 +1,4 @@
-.machineform {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.button {
+.machineform button {
   background-color: #f7d80a;
   border: 0;
   color: #86138a;
@@ -17,10 +11,4 @@
   align-self: center;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-}
-
-.submit:hover {
-  background-color: #86138a;
-  transition: background-color 500ms;
-  color: #f7d80a;
 }
