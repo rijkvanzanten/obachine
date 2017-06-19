@@ -32,9 +32,8 @@ and run `npm install` to install all dependencies.
 
 You will need a `.env` file in the root of your project which contains a (server) Wit AI key and a public/secret keypair for the OBA API:
 ```
-WIT_KEY=1234567890
-OBA_PUBLIC=1234567890
-OBA_SECRET=1234567890
+PUBLIC=1234567890
+SECRET=1234567890
 ```
 
 ## Usage
