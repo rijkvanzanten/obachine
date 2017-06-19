@@ -1,6 +1,8 @@
 import html from 'choo/html';
 import styles from './modal.css';
 
+import buttonAnimation from '../buttonAnimation.css';
+
 export default ({machineparts, modal: {content: {id, content, value}}}, emit) => {
   const {title, children, color} = content;
 
@@ -9,7 +11,7 @@ export default ({machineparts, modal: {content: {id, content, value}}}, emit) =>
       <div class=${styles.modal} style="background-color: ${color}">
         <h2 class="${styles.title}">${title}</h2>
         ${children(id, value, emit)}
-        <button class=${styles.button} onclick=${close}>Opslaan</button>
+        <button class=${styles.button + ' ' + buttonAnimation.hoverEffect} onclick=${close}>Opslaan</button>
       </div>
     </div>
   `;
