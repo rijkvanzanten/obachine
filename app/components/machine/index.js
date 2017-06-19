@@ -8,7 +8,7 @@ import styles from './styles.css';
 export default (state, emit) => {
   const {machineparts} = state;
   const machinepartsIDs = Object.keys(machineparts);
-  const showEmptyState = machinepartsIDs.length > 0;
+  const showEmptyState = machinepartsIDs.length === 0;
 
   return html`
     <div class=${styles.wrapper}>
