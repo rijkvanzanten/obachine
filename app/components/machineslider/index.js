@@ -4,7 +4,9 @@ import prevButton from './prev.svg';
 import nextButton from './next.svg';
 
 export default (state, emit) => {
-  const currentItem = state.items[state.current];
+  const {machineslider: {items, current}} = state;
+  const currentItem = items[current];
+
   return html`
     <div class=${styles.machineslider}>
       <button class=${styles.prev} onclick=${prev}><img src=${prevButton} alt="vorige machine"/></button>
