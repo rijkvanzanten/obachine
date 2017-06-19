@@ -4,21 +4,53 @@
 </h1>
 
 <p align="center">
-  <b>🔎 Build your own search engine @ a href="https://obachine.rijks.website">obachine.rijks.website</a> 🔍</b>
+  <b>🔎 Build your own search engine @ <a href="https://obachine.rijks.website">obachine.rijks.website</a> 🔍</b>
 </p>
 
 # Obachine
 [![Build Status](https://semaphoreci.com/api/v1/rijkvanzanten/obachine/branches/master/shields_badge.svg)](https://semaphoreci.com/rijkvanzanten/obachine)
 
 ## Overview
+Obachine is a search engine made for the [Amsterdam Public Library (OBA)](https://oba.nl) and is mainly built for their younger age demographic. The purpose of the application is to show them how a search engines operates based on the given inputs and to enhance the searching experience; making it easier and fun.
+
+It works by literally building the search query with using the machine blocks which are acting as search filters (i.e. author, genre).
 
 ## Tech Stack
+- HTML, CSS & JS
+- [Node.JS](http://nodejs.org) w/
+  - [Express](https://expressjs.com) webserver
+- [Webpack](https://webpack.js.org/) automation
+- [Greensock](https://greensock.com) animation
 
 ## Installation
+Clone this repo
+```bash
+$ https://github.com/rijkvanzanten/obachine.git
+```
+
+and run `npm install` to install all dependencies.
+
+You will need a `.env` file in the root of your project which contains a (server) Wit AI key and a public/secret keypair for the OBA API:
+```
+WIT_KEY=1234567890
+OBA_PUBLIC=1234567890
+OBA_SECRET=1234567890
+```
 
 ## Usage
+- To use the app in development mode, use `npm start`.
+- To build the application use `npm run build`
+- To test your JS use `npm run lint:js`
+- To test your CSS use `npm run lint:style`
+
+The last two commands are running within Webpack, but they are there if you want to use them besides Webpack.
 
 ## Wishlist
+- [ ] Add gamification for a better user experience
+- [ ] Add swiping mechanism for filters
+- [ ] Add dyslexia filter
+- [ ] Add animations for a richer experience
+- [ ] Add better responsive handling for desktops
 
 ## Contributing
 PRs are — as always — very welcome.
