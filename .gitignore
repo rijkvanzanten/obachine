@@ -63,3 +63,5 @@ build
 # stats and analyzing
 records.json
 stats.json
+
+.DS_Store
