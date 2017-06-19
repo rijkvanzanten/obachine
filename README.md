@@ -1,5 +1,6 @@
 <h1 align="center">
-  [LOGO]
+  <img width="300" src="media/logo.png" alt="Logo">
+  <br>
   <br>
 </h1>
 
