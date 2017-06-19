@@ -2,7 +2,7 @@ import html from 'choo/html';
 import styles from '../parts.css';
 
 export const modalSettings = {
-  title: 'Van welke auteur zoek je een boek?',
+  title: 'Met welke zoekterm wil je zoeken?',
   children(id, value, emit) {
 
     return html`
@@ -13,6 +13,8 @@ export const modalSettings = {
 
     function saveValues(e) {
       const values = e.target.value;
+
+      console.log(e.target.value);
 
       emit('updateValue', {
         id,

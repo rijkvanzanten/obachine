@@ -70,11 +70,13 @@ export default function main(state, emit) {
       searchQuery[input.name] = input.value;
     });
 
+
     const resultsContainer = document.querySelector('#results-container');
     console.log(resultsContainer);
 
     axios.get('/api/search', {params: searchQuery})
       .then(res => {
+
         resultsContainer.innerHTML = '';
 
         const results = res.data.aquabrowser.results.result;
