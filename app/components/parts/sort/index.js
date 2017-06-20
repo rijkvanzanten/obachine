@@ -9,16 +9,16 @@ export const modalSettings = {
 
         <legend>Sorteer op:</legend>
 
-        <input id="relevance" type="radio" name="hardsort" value="relevance"/>
+        <input id="relevance" type="radio" name="hardsort" />
         <label for="relevance">relevant</label>
 
-        <input id="author" type="radio" name="hardsort" value="author"/>
+        <input id="author" type="radio" name="hardsort" value="Author(default)" />
         <label for="author">auteur</label>
 
-        <input id="year" type="radio" name="hardsort" value="year"/>
+        <input id="year" type="radio" name="hardsort" value="Year(default)" />
         <label for="year">jaar</label>
 
-        <input id="title" type="radio" name="hardsort" value="title"/>
+        <input id="title" type="radio" name="hardsort" value="Title(default)" />
         <label for="title">titel</label>
 
       </form>
