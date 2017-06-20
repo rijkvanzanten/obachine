@@ -6,11 +6,11 @@
   margin: 0 auto;
 }
 
-.list a {
+.list > li > a {
   text-decoration: none;
 }
 
-.list > a > li {
+.list > li > a {
   color: #f7d80a;
   font-family: 'AvenirBold';
   font-weight: 800;
@@ -28,7 +28,7 @@
   font-size: 1.125rem;
 }
 
-.list > a > li {
+.list > li > a {
   color: #f7d80a;
   font-family: 'AvenirBold';
   font-weight: 800;
@@ -38,16 +38,16 @@
   transition: padding 300ms;
 }
 
-.list > a > li:hover {
+.list > li:hover {
   padding: 1rem 2rem;
 }
 
-.list > a > li:nth-child(even) {
+.list > li:nth-child(even) {
   background-color: #f7d80a;
   color: #86138a;
 }
 
-.list > a > li > img {
+.list > li > a > img {
   width: 70%;
   height: auto;
   margin-bottom: 1.5rem;
