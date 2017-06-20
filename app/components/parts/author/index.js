@@ -27,6 +27,7 @@ export const modalSettings = {
 
   },
   color: '#18A9E0',
+  machineSmall: '/small/author-small.svg',
 };
 
 
