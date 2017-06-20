@@ -40,6 +40,10 @@ router.get('/search', (req, res) => {
     apiSearchObject.sort = query.hardsort;
   }
 
+  if(query.location) {
+    apiSearchObject.branch = query.location;
+  }
+
   client.get('search', apiSearchObject)
     .then(results => res.send(results))
     .catch(err => console.log(err));
