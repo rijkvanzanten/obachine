@@ -23,7 +23,6 @@ export const modalSettings = {
 
     function saveValues(e) {
       const value = e.target.parentNode.querySelector('select').value;
-      console.log(value);
       emit('updateValue', {
         id,
         value: value,
