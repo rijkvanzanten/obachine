@@ -21,10 +21,23 @@
   color: #86138a;
   background-color: #f7d80a;
   padding: 1rem;
-  font-size: 1rem;
-  font-family: 'AvenirBold';
-  font-weight: 800;
   border-radius: 3px;
   border: none;
 }
 
+.machineslider > button {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+
+.machineslider > button > img {
+  margin-left: 1rem;
+}
+
+.machineslider > button > span {
+  padding-top: 0.5rem;
+  font-weight: 800;
+  font-size: 1rem;
+  font-family: 'AvenirBold';
+}

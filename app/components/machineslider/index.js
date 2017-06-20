@@ -2,6 +2,7 @@ import html from 'choo/html';
 import styles from './machineslider.css';
 import prevButton from './prev.svg';
 import nextButton from './next.svg';
+import parts from '../parts';
 
 import buttonAnimation from '../buttonAnimation.css';
 
@@ -13,7 +14,8 @@ export default (state, emit) => {
     <div class=${styles.machineslider}>
       <button class=${styles.prev + ' ' + buttonAnimation.hoverEffect} onclick=${prev}><img src=${prevButton} alt="vorige machine"/></button>
       <button data-item=${currentItem} class=${styles.buildingblock + ' ' + buttonAnimation.hoverEffect} onclick=${select}>
-        ${currentItem}
+        <span>${currentItem}</span>
+        <img src=${parts[currentItem].image} />
       </button>
       <button class=${styles.next + ' ' + buttonAnimation.hoverEffect} onclick=${next}><img src=${nextButton} alt="volgende machine"/></button>
     </div>
