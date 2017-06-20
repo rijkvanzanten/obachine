@@ -8,40 +8,36 @@ export const modalSettings = {
       <form id=${id} onsubmit=${preventSubmit} onclick=${saveValues}>
         <select class=${styles.select} name="location">
           <option>Kies een locatie...</option>
-          <option value="centrale OBA">centrale OBA</option>
-          <option value="banne">banne</option>
-          <option value="bijlmer" >bijlmer</option>
-          <option value="bos en lommer" >bos en lommer</option>
-          <option value="buitenveldert" >buitenveldert</option>
-          <option value="cinétol" >cinétol</option>
-          <option value="de hallen" >de hallen</option>
-          <option value="diemen" >diemen</option>
-          <option value="duivendrecht" >duivendrecht</option>
-          <option value="gezenveld" >gezenveld</option>
-          <option value="van der pek" >van der pek</option>
-          <option value="javaplein" >javaplein</option>
-          <option value="ijburg" >ijburg</option>
-          <option value="linnaeus" >linnaeus</option>
-          <option value="mercatorplein" >mercatorplein</option>
-          <option value="molenwijk" >molenwijk</option>
-          <option value="olympisch kwartier" >olympisch kwartier</option>
-          <option value="reigersbos" >reigersbos</option>
-          <option value="roelof hartplein" >roelof hartplein</option>
-          <option value="slotermeer" >slotermeer</option>
-          <option value="slotervaart" >slotervaart</option>
-          <option value="spaarndammerbuurt" >spaarndammerbuurt</option>
-          <option value="staatsliedenbuurt" >staatsliedenbuurt</option>
-          <option value="waterlandplein" >waterlandplein</option>
-          <option value="magazijn" >magazijn</option>
-          <option value="kluis" >kluis</option>
-          <option value="wisselcollecties" >wisselcollecties</option>
+          <option value="Centrale OBA">Centrale OBA</option>
+          <option value="OBA Banne">OBA Banne</option>
+          <option value="OBA Bijlmer">OBA Bijlmer</option>
+          <option value="OBA Bos en Lommer">OBA Bos en Lommer</option>
+          <option value="OBA Buitenveldert">OBA Buitenveldert</option>
+          <option value="OBA Cinétol">OBA Cinétol</option>
+          <option value="OBA De Hallen">OBA De Hallen</option>
+          <option value="OBA Diemen">OBA Diemen</option>
+          <option value="OBA Duivendrecht">OBA Duivendrecht</option>
+          <option value="OBA Geuzenveld">OBA Geuzenveld</option>
+          <option value="OBA Hagedoornplein">OBA Van der Pek</option>
+          <option value="OBA Javaplein">OBA Javaplein</option>
+          <option value="OBA IJburg">OBA IJburg</option>
+          <option value="OBA Linnaeus">OBA Linnaeus</option>
+          <option value="OBA Mercatorplein">OBA Mercatorplein</option>
+          <option value="OBA Molenwijk">OBA Molenwijk</option>
+          <option value="OBA Olympisch Kwartier">OBA Olympisch Kwartier</option>
+          <option value="OBA Reigersbos">OBA Reigersbos</option>
+          <option value="OBA Roelof Hartplein">OBA Roelof Hartplein</option>
+          <option value="OBA Slotermeer">OBA Slotermeer</option>
+          <option value="OBA Slotervaart">OBA Slotervaart</option>
+          <option value="OBA Spaarndammerbuurt">OBA Spaarndammerbuurt</option>
+          <option value="OBA Staatsliedenbuurt">OBA Staatsliedenbuurt</option>
+          <option value="OBA Waterlandplein">OBA Waterlandplein</option>
         </select>
       </form>
     `;
 
     function saveValues(e) {
       const value = e.target.parentNode.querySelector('select').value;
-      console.log(value);
       emit('updateValue', {
         id,
         value: value,
