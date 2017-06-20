@@ -38,10 +38,6 @@
   transition: padding 300ms;
 }
 
-.list > li:hover {
-  padding: 1rem 2rem;
-}
-
 .list > li:nth-child(even) {
   background-color: #f7d80a;
   color: #86138a;
