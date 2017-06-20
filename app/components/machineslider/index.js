@@ -4,8 +4,6 @@ import prevButton from './prev.svg';
 import nextButton from './next.svg';
 import parts from '../parts';
 
-console.log(parts.author.image);
-
 import buttonAnimation from '../buttonAnimation.css';
 
 export default (state, emit) => {
