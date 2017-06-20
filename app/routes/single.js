@@ -45,6 +45,7 @@ export default function main(state, emit) {
           }
         </ul>
         <h3>Editie</h3>
+        <p>${state.store[state.params.id].publication.editions.edition}</p>
         <h3>Uitgeverij</h3>
         <p>${state.store[state.params.id].publication.publishers.publisher.$t} - ${state.store[state.params.id].publication.publishers.publisher.year}</p>
         <h3>ISBN</h3>
