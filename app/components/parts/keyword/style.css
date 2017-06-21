@@ -1,14 +1,27 @@
-[data-animating="true"].svg g {
-  animation: rotate 3s linear infinite;
+[data-animating="true"].svg #needle {
+  animation: height 1s linear infinite;
 }
 
-@keyframes rotate {
+@keyframes height {
   from {
-    transform: rotate(0deg);
+    height: 16px;
   }
 
   to {
-    transform: rotate(360deg);
+    height: 25px;
   }
 }
 
+[data-animating="true"].svg #loop {
+  animation: fill 1s linear infinite;
+}
+
+@keyframes fill {
+  from {
+    fill: #90c5ff;
+  }
+
+  to {
+    fill: transparent;
+  }
+}
