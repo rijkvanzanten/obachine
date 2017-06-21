@@ -15,7 +15,6 @@ export default state => {
         <a href="/item/${item.id.nativeid}">
           <span>${item.titles['short-title']}</span>
           <img src="${item.coverimages.coverimage[1]}" />
-          ${console.log(item)}
           <span>${item.description['physical-description']}</span>
         </a>
       </li>
