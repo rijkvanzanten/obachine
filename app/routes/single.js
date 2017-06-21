@@ -27,7 +27,7 @@ export default function main(state, emit) {
         <a href="/">◀ terug</a>
         <section class=${singleStyles.header}>
           <h2>${state.store[state.params.id].titles['short-title']}</h2>
-          <img src=${state.store[state.params.id].coverimages.coverimage[1]} />
+          <img class=${singleStyles.cover} src=${state.store[state.params.id].coverimages.coverimage[1]} />
         </section>
         <section class=${singleStyles.summary}>
           <h3>Korte beschrijving</h3>
