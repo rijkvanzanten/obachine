@@ -1,16 +1,19 @@
-[data-animating="true"].svg g {
-  animation: rotate 3s linear infinite;
+[data-animating="true"].svg .lamp {
+  animation: changeColor 1s linear infinite;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
+@keyframes changeColor {
+  0% {
+    fill: #ffe98f;
   }
 
-  to {
-    transform: rotate(360deg);
+  50% {
+    fill: #ff4503;
   }
-}
+
+  100% {
+    fill: #ffe98f;
+  }
 
 .form {
   display: flex;
