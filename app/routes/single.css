@@ -5,6 +5,7 @@
 h3 {
   color: #86138a;
   font-weight: 800;
+  margin-top: 0.5rem;
 }
 
 .body > main {
@@ -24,7 +25,7 @@ h3 {
   text-transform: capitalize;
   list-style: none;
   margin: 0;
-  padding: 1.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .body li {
@@ -62,7 +63,7 @@ h3 {
   padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
-  background-color: rgba(24, 169, 224, 0.4);
+  background-color: #18a9e0;
 }
 
 .summary {
@@ -70,11 +71,11 @@ h3 {
   padding: 1rem;
   margin-top: 1rem;
   color: #86138a;
+  border-bottom: 4px solid;
 }
 
 .section {
   margin: 0;
   padding: 1rem;
-  margin-top: 1rem;
   color: #86138a;
 }

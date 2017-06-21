@@ -43,8 +43,9 @@
   color: #86138a;
 }
 
-.list > li > a > img {
-  width: 70%;
+.cover {
+  align-self: center;
+  max-width: 160px;
   height: auto;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
