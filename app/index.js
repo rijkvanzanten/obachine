@@ -54,6 +54,11 @@ function setupState(state, emitter) {
 
   emitter.on('removeMachine', removeMachine);
 
+  emitter.on('startAnimation', startAnimation);
+  emitter.on('startAnimationAll', startAnimationAll);
+  emitter.on('stopAnimation', stopAnimation);
+  emitter.on('stopAnimationAll', stopAnimationAll);
+
   function onSelectNextItem() {
     state.machineslider.current++;
     if (state.machineslider.current >= state.machineslider.items.length) {
@@ -95,9 +100,11 @@ function setupState(state, emitter) {
     emitter.emit('render');
   }
 
-  function hideModal() {
+  function hideModal(id) {
     state.modal.active = false;
-    emitter.emit('render');
+    emitter.emit('startAnimation', id);
+
+    setTimeout(() => emitter.emit('stopAnimation', id), 1000);
   }
 
   function updateValue({id, value}) {
@@ -114,5 +121,33 @@ function setupState(state, emitter) {
   function removeMachine({id}) {
     delete state.machineparts[id];
     emitter.emit('render');
+  }
+
+  function startAnimation(id) {
+    if (state.machineparts[id]) {
+      state.machineparts[id].animating = true;
+      emitter.emit('render');
+    }
+  }
+
+  function startAnimationAll() {
+    Object.keys(state.machineparts).forEach(id => {
+      state.machineparts[id].animating = true;
+      emitter.emit('render');
+    });
+  }
+
+  function stopAnimation(id) {
+    if (state.machineparts[id]) {
+      state.machineparts[id].animating = false;
+      emitter.emit('render');
+    }
+  }
+
+  function stopAnimationAll() {
+    Object.keys(state.machineparts).forEach(id => {
+      state.machineparts[id].animating = false;
+      emitter.emit('render');
+    });
   }
 }

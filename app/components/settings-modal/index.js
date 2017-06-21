@@ -18,7 +18,7 @@ export default ({machineparts, modal: {content: {id, content, value}}}, emit) =>
 
   function close({target}) {
     if (machineparts[id].value) {
-      return emit('hideModal');
+      return emit('hideModal', id);
     }
 
     target.classList.add(styles.deny);
