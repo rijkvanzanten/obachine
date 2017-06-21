@@ -11,9 +11,6 @@ export default function main(state, emit) {
   const summaries = getValue(state, 'store', state.params.id, 'summaries', 'summary');
   const specifications = getValue(state, 'store', state.params.id, 'description', 'physical-description');
   const editions = getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition');
-  const publishers = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', '$t');
-  const publishersYear = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', 'year');
-  const isbn = getValue(state, 'store', state.params.id, 'identifiers', 'isbn-id');
 
   return html`
     <body class=${singleStyles.body}>
@@ -21,8 +18,8 @@ export default function main(state, emit) {
       <main>
         <a href="/">◀ terug</a>
         <section class=${singleStyles.header}>
-          <h2>${titles}</h2>
-          <img src=${coverimages[1]} />
+          <h2>${state.store[state.params.id].titles['short-title']}</h2>
+          <img class=${singleStyles.cover} src=${state.store[state.params.id].coverimages.coverimage[1]} />
         </section>
         <section class=${singleStyles.summary}>
           <h3>Korte beschrijving</h3>
@@ -44,19 +41,8 @@ export default function main(state, emit) {
           }
         </ul>
         ${editions.length > 0 ? html`
-          <div>
-            <h3>Editie</h3>
-            <p>${editions}</p>
-          </div>
-        ` : null
-        }
-        <h3>Uitgeverij</h3>
-        <p>${publishers} - ${publishersYear}</p>
-        <${isbn.length > 0 ? html`
-          <div>
-            <h3>ISBN</h3>
-            <p>${isbn}</p>
-          </div>
+          <h3>Editie</h3>
+          <p>${editions}</p>
         ` : null
         }
       </main>
