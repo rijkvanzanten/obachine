@@ -16,7 +16,7 @@ export default state => {
           <span>${item.titles['short-title']}</span>
           <img class=${styles.cover} src="${item.coverimages.coverimage[1]}" />
           ${item.description['physical-description'] ?
-            html`<li>${item.description['physical-description']}</li>` : ''
+            html`<li>${item.description['physical-description']}</li>` : null
           }
         </a>
       </li>
