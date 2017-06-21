@@ -38,9 +38,6 @@ export default function main(state, emit) {
   const summaries = getValue(state, 'store', state.params.id, 'summaries', 'summary') ? getValue(state, 'store', state.params.id, 'summaries', 'summary') : 'Onbekend';
   const specifications = getValue(state, 'store', state.params.id, 'description', 'physical-description') ? getValue(state, 'store', state.params.id, 'description', 'physical-description') : 'Onbekend';
   const editions = getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition');
-  const publishers = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', '$t') ? getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', '$t') : 'Onbekend';
-  const publishersYear = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', 'year') ? getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', 'year') : 'Onbekend';
-  const isbn = getValue(state, 'store', state.params.id, 'identifiers', 'isbn-id');
 
   return html`
     <body class=${singleStyles.body}>
@@ -70,15 +67,6 @@ export default function main(state, emit) {
           <div>
             <h3>Editie</h3>
             <p>${editions}</p>
-          </div>
-        ` : null
-        }
-        <h3>Uitgeverij</h3>
-        <p>${publishers} - ${publishersYear}</p>
-        <${isbn.length > 0 ? html`
-          <div>
-            <h3>ISBN</h3>
-            <p>${isbn}</p>
           </div>
         ` : null
         }
