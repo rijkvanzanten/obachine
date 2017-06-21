@@ -12,3 +12,15 @@
   }
 }
 
+.select {
+  background: #fff;
+  color: #18a9e0;
+  width: 100%;
+  max-width: 300px;
+  font-size: 1rem;
+  border: 1px solid #fff;
+  height: 3rem;
+  text-transform: capitalize;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

@@ -15,11 +15,6 @@
   padding: 1rem;
 }
 
-.overlay input {
-  font-size: 1.5rem;
-  padding: 0.5rem;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -32,8 +27,7 @@
 
 .modal {
   background-color: #da008c;
-  padding-top: 1rem;
-  padding-bottom: 1.5rem;
+  padding: 0.5rem;
   color: #fff;
   font-size: 1rem;
   width: 90%;
@@ -99,6 +93,8 @@
   padding: 1rem;
   width: 50%;
   margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .button:hover {
