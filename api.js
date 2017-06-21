@@ -29,7 +29,7 @@ router.get('/search', (req, res) => {
   }
 
   if(query.author) {
-    apiSearchObject.facet.push('Auteur(' + query.author + ')');
+    apiSearchObject.q = query.author;
   }
 
   if(query.type) {
