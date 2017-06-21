@@ -6,8 +6,6 @@ import {toArray, getValue} from '../utils';
 export default function main(state, emit) {
   const genres = toArray(getValue(state, 'store', state.params.id, 'genres', 'genre'));
   const formats = toArray(getValue(state, 'store', state.params.id, 'formats', 'format'));
-  const titles = getValue(state, 'store', state.params.id, 'titles', 'short-title');
-  const coverimages = getValue(state, 'store', state.params.id, 'coverimages', 'coverimage');
   const summaries = getValue(state, 'store', state.params.id, 'summaries', 'summary');
   const specifications = getValue(state, 'store', state.params.id, 'description', 'physical-description');
   const editions = getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition');
