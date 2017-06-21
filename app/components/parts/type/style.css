@@ -12,6 +12,11 @@
   }
 }
 
+form {
+  display: flex;
+  justify-content: center;
+}
+
 .select {
   background: #fff;
   color: #18a9e0;

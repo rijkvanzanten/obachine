@@ -20,8 +20,8 @@ export const modalSettings = {
         <form class=${styles.form} onsubmit=${preventSubmit} onclick=${saveValues} id=${id}>
           <input id="humor" type="checkbox" name="genre" value="humor" ${select('humor')} />
           <label for="humor"><img src=${genreHumor} /><span>humor</span></label>
-          <input id="kinderleven" type="checkbox" name="genre" value="kinderleven" ${select('kinderleven')} />
-          <label for="kinderleven"><img src=${genreChildrenslife} /><span>kinderleven</span></label>
+          <input id="kinderen" type="checkbox" name="genre" value="kinderen" ${select('kinderen')} />
+          <label for="kinderen"><img src=${genreChildrenslife} /><span>kinderen</span></label>
           <input id="avonturenroman" type="checkbox" name="genre" value="avonturenroman" ${select('avonturenroman')} />
           <label for="avonturenroman"><img src=${genreAdventure} /><span>avonturen</span></label>
           <input id="dieren" type="checkbox" name="genre" value="dieren" ${select('dieren')} />
