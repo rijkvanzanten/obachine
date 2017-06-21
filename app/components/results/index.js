@@ -14,9 +14,10 @@ export default state => {
       <li>
         <a href="/item/${item.id.nativeid}">
           <span>${item.titles['short-title']}</span>
-          <img src="${item.coverimages.coverimage[1]}" />
-          ${console.log(item)}
-          <span>${item.description['physical-description']}</span>
+          <img class=${styles.cover} src="${item.coverimages.coverimage[1]}" />
+          ${item.description['physical-description'] ?
+            html`<li>${item.description['physical-description']}</li>` : null
+          }
         </a>
       </li>
     `;

@@ -66,7 +66,7 @@ function setupState(state, emitter) {
   function onSelectPrevItem() {
     state.machineslider.current--;
     if (state.machineslider.current < 0) {
-      state.machineslider.current = state.machineslider.items.length;
+      state.machineslider.current = state.machineslider.items.length - 1;
     }
 
     emitter.emit('render');

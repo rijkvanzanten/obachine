@@ -38,17 +38,13 @@
   transition: padding 300ms;
 }
 
-.list > li:hover {
-  padding: 1rem 2rem;
-}
-
 .list > li:nth-child(even) {
   background-color: #f7d80a;
   color: #86138a;
 }
 
-.list > li > a > img {
-  width: 70%;
-  height: auto;
-  margin-bottom: 1.5rem;
+.cover {
+  align-self: center;
+  max-width: 160px;
+  margin-bottom: 1rem;
 }

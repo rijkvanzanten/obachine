@@ -32,6 +32,18 @@ router.get('/search', (req, res) => {
     apiSearchObject.facet.push('Auteur(' + query.author + ')');
   }
 
+  if(query.type) {
+    apiSearchObject.facet.push(`Type(${query.type})`);
+  }
+
+  if(query.hardsort) {
+    apiSearchObject.sort = query.hardsort;
+  }
+
+  if(query.location) {
+    apiSearchObject.branch = query.location;
+  }
+
   client.get('search', apiSearchObject)
     .then(results => res.send(results))
     .catch(err => console.log(err));
