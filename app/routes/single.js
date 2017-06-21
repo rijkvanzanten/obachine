@@ -6,11 +6,9 @@ import {toArray, getValue} from '../utils';
 export default function main(state, emit) {
   const genres = toArray(getValue(state, 'store', state.params.id, 'genres', 'genre'));
   const formats = toArray(getValue(state, 'store', state.params.id, 'formats', 'format'));
-  const titles = getValue(state, 'store', state.params.id, 'titles', 'short-title');
-  const coverimages = getValue(state, 'store', state.params.id, 'coverimages', 'coverimage');
-  const summaries = getValue(state, 'store', state.params.id, 'summaries', 'summary');
-  const specifications = getValue(state, 'store', state.params.id, 'description', 'physical-description');
-  const editions = getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition');
+  const summaries = toArray(getValue(state, 'store', state.params.id, 'summaries', 'summary'));
+  const specifications = toArray(getValue(state, 'store', state.params.id, 'description', 'physical-description'));
+  const editions = toArray(getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition'));
 
   return html`
     <body class=${singleStyles.body}>
@@ -25,28 +23,25 @@ export default function main(state, emit) {
           <h3>Korte beschrijving</h3>
           <p>${summaries}</p>
         </section>
-        ${genres.length > 0 ? html`
-          <h3>Genres</h3>
-          <ul>${genres.map(genre => html`<li>${genre}</li>`)}</ul>
-        ` : null}
-        ${specifications.length > 0 ? html`
-          <h3>Specificaties</h3>
-          <p>${specifications}</p>
-        ` : null}
-        <h3>Beschikbare formaten</h3>
-        <ul>
-          ${formats.length > 0 ?
-            formats.map(format => html`<li>${format}</li>`) :
-            null
-          }
-        </ul>
-        ${editions.length > 0 ? html`
-          <h3>Editie</h3>
-          <p>${editions}</p>
-        ` : null
-        }
+        ${genres.length > 0 ? renderList('Genres', genres) : null}
+        ${specifications.length > 0 ? renderList('Specifications', specifications) : null}
+        ${formats.length > 0 ? renderList('Formats', formats) : null}
+        ${editions.length > 0 ? renderList('Editions', editions) : null}
       </main>
     </body>
   `;
+
+  function renderList(title, values) {
+    return html`
+      <div>
+        <h3>${title}</h3>
+        <ul>${values.map(value => renderLI(value))}</ul>
+      </div>
+    `;
+
+    function renderLI(value) {
+      return html`<li>${value}</li>`;
+    }
+  }
 
 }
