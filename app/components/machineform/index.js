@@ -21,6 +21,8 @@ export default (state, emit) => {
   function submitForm(e) {
     const searchQuery = {};
 
+    emit('startAnimationAll');
+
     e.target.querySelectorAll('input').forEach(input => {
       searchQuery[input.name] = input.value;
     });
@@ -28,6 +30,7 @@ export default (state, emit) => {
     axios.get('/api/search', {params: searchQuery})
       .then(res => {
         const results = toArray(getValue(res, 'data', 'aquabrowser', 'results', 'result'));
+        emit('stopAnimationAll');
         emit('results', results);
       })
       .catch(err => console.error(err));
