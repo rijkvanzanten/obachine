@@ -20,6 +20,28 @@ export default function main(state, emit) {
   const genres = toArray(state.store[state.params.id].genres.genre);
   const formats = toArray(state.store[state.params.id].formats.format);
 
+  function getValue(object, ...keys) {
+    keys.forEach(key => {
+      if (object[key]) {
+        object = object[key];
+      } else {
+        console.log('Key ' + key + ' bestaat niet op object');
+        return false;
+      }
+    });
+
+    return object;
+  }
+
+  const titles = getValue(state, 'store', state.params.id, 'titles', 'short-title') || 'Onbekend';
+  const coverimages = getValue(state, 'store', state.params.id, 'coverimages', 'coverimage') || 'Onbekend';
+  const summaries = getValue(state, 'store', state.params.id, 'summaries', 'summary') || 'Onbekend';
+  const physicalDescriptions = getValue(state, 'store', state.params.id, 'description', 'physical-description') || 'Onbekend';
+  const editions = getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition') || 'Onbekend';
+  const publishers = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', '$t') || 'Onbekend';
+  const publishersYear = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', 'year') || 'Onbekend';
+  const isbn = getValue(state, 'store', state.params.id, 'identifiers', 'isbn-id') || 'Onbekend';
+
   return html`
     <body class=${singleStyles.body}>
       ${header(state, emit)}
@@ -31,7 +53,7 @@ export default function main(state, emit) {
         </section>
         <section class=${singleStyles.summary}>
           <h3>Korte beschrijving</h3>
-          <p>${state.store[state.params.id].summaries.summary}</p>
+          <p>${summaries}</p>
         </section>
         <section class=${singleStyles.section}>
           <h3>Genres</h3>
