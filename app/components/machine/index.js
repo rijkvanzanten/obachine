@@ -33,7 +33,7 @@ export default (state, emit) => {
           <img src=${removeButton} alt="Remove machine" />
         </button>
         <div onclick=${showModal}>
-          ${parts[type].machine()}
+          ${parts[type].machine(state, emit, id)}
         </div>
       </li>
     `;
