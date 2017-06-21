@@ -1,6 +1,10 @@
 .body {
-  font-family: 'Avenir';
   margin: 0;
+}
+
+h3 {
+  color: #86138a;
+  font-weight: 800;
 }
 
 .body > main {
@@ -18,6 +22,7 @@
 
 .body ul {
   text-transform: capitalize;
+  text-decoration: none;
   margin: 0;
 }
 
@@ -46,4 +51,18 @@
   display: flex;
   flex-direction: column;
   background-color: rgba(24, 169, 224, 0.4);
+}
+
+.summary {
+  background-color: #f7d80a;
+  padding: 1rem;
+  margin-top: 1rem;
+  color: #86138a;
+}
+
+.section {
+  margin: 0;
+  padding: 1rem;
+  margin-top: 1rem;
+  color: #86138a;
 }

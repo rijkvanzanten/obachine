@@ -33,22 +33,24 @@ export default function main(state, emit) {
           <h3>Korte beschrijving</h3>
           <p>${state.store[state.params.id].summaries.summary}</p>
         </section>
-        <h3>Genres</h3>
-        <ul>${genres.map(genre => html`<li>${genre}</li>`)}</ul>
-        <h3>Fysieke beschrijving</h3>
-        <p>${state.store[state.params.id].description['physical-description']}</p>
-        <h3>Beschikbare formaten</h3>
-        <ul>
-          ${formats.length > 0 ?
-            formats.map(format => html`<li>${format}</li>`) :
-            null
-          }
-        </ul>
-        <h3>Editie</h3>
-        <h3>Uitgeverij</h3>
-        <p>${state.store[state.params.id].publication.publishers.publisher.$t} - ${state.store[state.params.id].publication.publishers.publisher.year}</p>
-        <h3>ISBN</h3>
-        <p>${state.store[state.params.id].identifiers['isbn-id']}</p>
+        <section class=${singleStyles.section}>
+          <h3>Genres</h3>
+          <ul>${genres.map(genre => html`<li>${genre}</li>`)}</ul>
+          <h3>Fysieke beschrijving</h3>
+          <p>${state.store[state.params.id].description['physical-description']}</p>
+          <h3>Beschikbare formaten</h3>
+          <ul>
+            ${formats.length > 0 ?
+              formats.map(format => html`<li>${format}</li>`) :
+              null
+            }
+          </ul>
+          <h3>Editie</h3>
+          <h3>Uitgeverij</h3>
+          <p>${state.store[state.params.id].publication.publishers.publisher.$t} - ${state.store[state.params.id].publication.publishers.publisher.year}</p>
+          <h3>ISBN</h3>
+          <p>${state.store[state.params.id].identifiers['isbn-id']}</p>
+        </section>
       </main>
     </body>
   `;
