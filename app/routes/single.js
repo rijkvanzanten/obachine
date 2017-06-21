@@ -64,10 +64,8 @@ export default function main(state, emit) {
           }
         </ul>
         ${editions.length > 0 ? html`
-          <div>
-            <h3>Editie</h3>
-            <p>${editions}</p>
-          </div>
+          <h3>Editie</h3>
+          <p>${editions}</p>
         ` : null
         }
       </main>
