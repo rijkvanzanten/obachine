@@ -79,6 +79,7 @@ function setupState(state, emitter) {
       type,
       value: '',
       order: Object.keys(state.machineparts).length,
+      animating: false,
     };
 
     emitter.emit('showModal', {
