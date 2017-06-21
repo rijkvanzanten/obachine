@@ -1,6 +1,7 @@
 import html from 'choo/html';
 import axios from 'axios';
 import styles from './styles.css';
+import {getValue, toArray} from '../../utils';
 
 export default (state, emit) => {
   const {machineparts} = state;
@@ -26,7 +27,7 @@ export default (state, emit) => {
 
     axios.get('/api/search', {params: searchQuery})
       .then(res => {
-        const results = res.data.aquabrowser.results.result;
+        const results = toArray(getValue(res, 'data', 'aquabrowser', 'results', 'result'));
         emit('results', results);
       })
       .catch(err => console.error(err));
