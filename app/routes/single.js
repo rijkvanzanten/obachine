@@ -33,14 +33,14 @@ export default function main(state, emit) {
     return object;
   }
 
-  const titles = getValue(state, 'store', state.params.id, 'titles', 'short-title') || 'Onbekend';
-  const coverimages = getValue(state, 'store', state.params.id, 'coverimages', 'coverimage') || 'Onbekend';
-  const summaries = getValue(state, 'store', state.params.id, 'summaries', 'summary') || 'Onbekend';
-  const physicalDescriptions = getValue(state, 'store', state.params.id, 'description', 'physical-description') || 'Onbekend';
-  const editions = getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition') || 'Onbekend';
-  const publishers = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', '$t') || 'Onbekend';
-  const publishersYear = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', 'year') || 'Onbekend';
-  const isbn = getValue(state, 'store', state.params.id, 'identifiers', 'isbn-id') || 'Onbekend';
+  const titles = getValue(state, 'store', state.params.id, 'titles', 'short-title') ? getValue(state, 'store', state.params.id, 'titles', 'short-title') : 'Onbekend';
+  const coverimages = getValue(state, 'store', state.params.id, 'coverimages', 'coverimage') ? getValue(state, 'store', state.params.id, 'coverimages', 'coverimage') : 'Onbekend';
+  const summaries = getValue(state, 'store', state.params.id, 'summaries', 'summary') ? getValue(state, 'store', state.params.id, 'summaries', 'summary') : 'Onbekend';
+  const specifications = getValue(state, 'store', state.params.id, 'description', 'physical-description') ? getValue(state, 'store', state.params.id, 'description', 'physical-description') : 'Onbekend';
+  const editions = getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition');
+  const publishers = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', '$t') ? getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', '$t') : 'Onbekend';
+  const publishersYear = getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', 'year') ? getValue(state, 'store', state.params.id, 'publication', 'publishers', 'publisher', 'year') : 'Onbekend';
+  const isbn = getValue(state, 'store', state.params.id, 'identifiers', 'isbn-id');
 
   return html`
     <body class=${singleStyles.body}>
@@ -57,8 +57,8 @@ export default function main(state, emit) {
         </section>
         <h3>Genres</h3>
         <ul>${genres.map(genre => html`<li>${genre}</li>`)}</ul>
-        <h3>Fysieke beschrijving</h3>
-        <p>${physicalDescriptions}</p>
+        <h3>Specificaties</h3>
+        <p>${specifications}</p>
         <h3>Beschikbare formaten</h3>
         <ul>
           ${formats.length > 0 ?
@@ -66,12 +66,22 @@ export default function main(state, emit) {
             null
           }
         </ul>
-        <h3>Editie</h3>
-        <p>${editions}</p>
+        ${editions.length > 0 ? html`
+          <div>
+            <h3>Editie</h3>
+            <p>${editions}</p>
+          </div>
+        ` : null
+        }
         <h3>Uitgeverij</h3>
         <p>${publishers} - ${publishersYear}</p>
-        <h3>ISBN</h3>
-        <p>${isbn}</p>
+        <${isbn.length > 0 ? html`
+          <div>
+            <h3>ISBN</h3>
+            <p>${isbn}</p>
+          </div>
+        ` : null
+        }
       </main>
     </body>
   `;
