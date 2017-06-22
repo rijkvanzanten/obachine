@@ -1,5 +1,6 @@
-[data-animating="true"].svg g {
-  animation: rotate 3s linear infinite;
+[data-animating="true"].svg .compass {
+  transform-origin: center;
+  animation: rotate 0.6s linear;
 }
 
 @keyframes rotate {
@@ -12,6 +13,42 @@
   }
 }
 
+[data-animating="true"].svg .world {
+  transform-origin: center;
+  animation: color 0.5s ease-in;
+}
+
+@keyframes color {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+[data-animating="true"].svg #light {
+  animation: fill 1s ease-in;
+}
+
+@keyframes fill {
+  0% {
+    fill: #d16a70;
+  }
+
+  50% {
+    fill: green;
+  }
+
+  100% {
+    fill: #d16a70;
+  }
+
 .select {
   background: #fff;
   color: #18a9e0;
@@ -23,4 +60,4 @@
   text-transform: capitalize;
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
+  }
