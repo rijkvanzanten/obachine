@@ -62,6 +62,7 @@ function setupState(state, emitter) {
   emitter.on('stopAnimationAll', stopAnimationAll);
 
   emitter.on('getItem', getItem);
+  emitter.on('getAvailability', getAvailability);
 
   function onSelectNextItem() {
     state.machineslider.current++;
@@ -160,6 +161,18 @@ function setupState(state, emitter) {
       .then(res => {
         state.store[id] = getValue(res, 'data', 'aquabrowser');
         emitter.emit('render');
+      })
+      .catch(err => console.error(err));
+  }
+
+  function getAvailability(id) {
+    axios.get(`/api/availability?id=|oba-catalogus|${id}`)
+      .then(res => {
+        const locations = getValue(res, 'data', 'aquabrowser', 'locations', 'location');
+        if (locations && locations.length > 0) {
+          state.store[id].availability = locations.map(({name, available}) => ({name, available}));
+          emitter.emit('render');
+        }
       })
       .catch(err => console.error(err));
   }
