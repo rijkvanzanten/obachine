@@ -117,9 +117,16 @@ function setupState(state, emitter) {
   }
 
   function setResults(results) {
+    // Filter out all items without an ID
+    results = results.filter(result => result.id && result.id.nativeid);
     state.results = results;
 
-    results.forEach(result => state.store[result.id.nativeid] = result);
+    results.forEach(result => {
+      const itemID = getValue(result, 'id', 'nativeid');
+      if (itemID) {
+        state.store[itemID] = result;
+      }
+    });
     emitter.emit('render');
   }
 
