@@ -60,6 +60,17 @@ router.get('/details', (req, res) => {
     });
 });
 
+router.get('/availability', (req, res) => {
+  client.get('availability', {
+    id: req.query.id,
+  })
+    .then(results => res.send(results))
+    .catch(err => {
+      console.log(err);
+      res.status(500).end();
+    });
+});
+
 router.get('*', (req, res) => res.status(404).send('Route not defined'));
 
 module.exports = router;
