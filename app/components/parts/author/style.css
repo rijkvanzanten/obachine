@@ -1,14 +1,41 @@
-[data-animating="true"].svg g {
-  animation: rotate 3s linear infinite;
+[data-animating="true"].svg .bar {
+  transform-origin: top;
+  animation: height 3s linear;
 }
 
-@keyframes rotate {
+@keyframes height {
   from {
-    transform: rotate(0deg);
+    height: 0;
   }
 
   to {
-    transform: rotate(360deg);
+    height: -50px;
+  }
+}
+
+[data-animating="true"].svg #paper {
+  transform-origin: top;
+  animation: heightPaper 1s linear;
+}
+
+@keyframes heightPaper {
+  from {
+    height: 0;
+  }
+
+  to {
+    height: 25px;
+  }
+}
+
+[data-animating="true"].svg #light {
+  transform-origin: top;
+  animation: backgroundColor 1s linear;
+}
+
+@keyframes backgroundColor {
+  to {
+    fill: red;
   }
 }
 
