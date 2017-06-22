@@ -1,18 +1,90 @@
-[data-animating="true"].svg .lamp {
-  animation: changeColor 1s linear infinite;
+[data-animating="true"].svg #controlTop {
+  animation: moveControlTop 1s linear infinite;
 }
 
-@keyframes changeColor {
+@keyframes moveControlTop {
   0% {
-    fill: #ffe98f;
+    transform: translateY(0);
   }
 
   50% {
-    fill: #ff4503;
+    transform: translateY(22px);
   }
 
   100% {
+    transform: translateY(0);
+  }
+}
+
+[data-animating="true"].svg #controlBottom {
+  animation: moveControlBottom 1s linear infinite;
+}
+
+@keyframes moveControlBottom {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-22px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+[data-animating="true"].svg #rightSide {
+  animation: changeColorRight 0.5s infinite;
+}
+
+@keyframes changeColorRight {
+  0% {
+    fill: #c1f4ff;
+  }
+
+  50% {
+    fill: #ffda44;
+  }
+
+  100% {
+    fill: #c1f4ff;
+  }
+}
+
+[data-animating="true"].svg #leftSide {
+  animation: changeColorLeft 0.5s infinite;
+}
+
+@keyframes changeColorLeft {
+  0% {
+    fill: #dbf9ff;
+  }
+
+  50% {
     fill: #ffe98f;
+  }
+
+  100% {
+    fill: #dbf9ff;
+  }
+}
+
+[data-animating="true"].svg #rectanglePoints {
+  animation: moveChart 1s linear infinite;
+}
+
+@keyframes moveChart {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(15px);
+  }
+
+  100% {
+    transform: translateX(0);
   }
 }
 
