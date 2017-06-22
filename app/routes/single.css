@@ -218,3 +218,11 @@ h3 {
     transform: scale(1);
   }
 }
+
+[data-available=false].location {
+  color: red;
+}
+
+[data-available=true].location {
+  color: green;
+}
