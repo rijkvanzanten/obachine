@@ -1,5 +1,7 @@
 import choo from 'choo';
 import shortid from 'shortid';
+import axios from 'axios';
+import {getValue} from './utils';
 import parts from './components/parts';
 
 import main from './routes/main';
@@ -58,6 +60,8 @@ function setupState(state, emitter) {
   emitter.on('startAnimationAll', startAnimationAll);
   emitter.on('stopAnimation', stopAnimation);
   emitter.on('stopAnimationAll', stopAnimationAll);
+
+  emitter.on('getItem', getItem);
 
   function onSelectNextItem() {
     state.machineslider.current++;
@@ -149,5 +153,14 @@ function setupState(state, emitter) {
       state.machineparts[id].animating = false;
       emitter.emit('render');
     });
+  }
+
+  function getItem(id) {
+    axios.get(`/api/details?id=|oba-catalogus|${id}`)
+      .then(res => {
+        state.store[id] = getValue(res, 'data', 'aquabrowser');
+        emitter.emit('render');
+      })
+      .catch(err => console.error(err));
   }
 }
