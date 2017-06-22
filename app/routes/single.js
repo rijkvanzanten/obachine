@@ -1,47 +1,84 @@
 import html from 'choo/html';
 import header from '../components/header';
-import singleStyles from './single.css';
+import styles from './single.css';
 import {toArray, getValue} from '../utils';
 
-export default function main(state, emit) {
-  const genres = toArray(getValue(state, 'store', state.params.id, 'genres', 'genre'));
-  const formats = toArray(getValue(state, 'store', state.params.id, 'formats', 'format'));
-  const summaries = toArray(getValue(state, 'store', state.params.id, 'summaries', 'summary'));
-  const specifications = toArray(getValue(state, 'store', state.params.id, 'description', 'physical-description'));
-  const editions = toArray(getValue(state, 'store', state.params.id, 'publication', 'editions', 'edition'));
+export default function single(state, emit) {
+  const itemID = state.params.id;
+  const item = getValue(state, 'store', itemID);
 
-  return html`
-    <body class=${singleStyles.body}>
-      ${header(state, emit)}
-      <main>
-        <a href="/">◀ terug</a>
-        <section class=${singleStyles.header}>
-          <h2>${state.store[state.params.id].titles['short-title']}</h2>
-          <img class=${singleStyles.cover} src=${state.store[state.params.id].coverimages.coverimage[1]} />
-        </section>
-        <section class=${singleStyles.summary}>
-          <h3>Korte beschrijving</h3>
-          <p>${summaries}</p>
-        </section>
-        ${genres.length > 0 ? renderList('Genres', genres) : null}
-        ${specifications.length > 0 ? renderList('Specifications', specifications) : null}
-        ${formats.length > 0 ? renderList('Formats', formats) : null}
-        ${editions.length > 0 ? renderList('Editions', editions) : null}
-      </main>
-    </body>
-  `;
+  if (Object.keys(item).length === 0) {
+    emit('getItem', itemID);
+    return renderLoader();
+  }
 
-  function renderList(title, values) {
+  return renderPage(item);
+
+  function renderPage(item) {
+    const title = getValue(item, 'titles', 'short-title');
+    const imageSrc = getValue(item, 'coverimages', 'coverimage')[1];
+    const genres = toArray(getValue(item, 'genres', 'genre'));
+    const formats = toArray(getValue(item, 'formats', 'format'));
+    const summaries = toArray(getValue(item, 'summaries', 'summary'));
+    const specifications = toArray(getValue(item, 'description', 'physical-description'));
+    const editions = toArray(getValue(item, 'publication', 'editions', 'edition'));
+
     return html`
-      <div>
-        <h3>${title}</h3>
-        <ul>${values.map(value => renderLI(value))}</ul>
-      </div>
+      <body class=${styles.body}>
+        ${header(state, emit)}
+        <main>
+          <a href="/">◀ terug</a>
+          <section class=${styles.header}>
+            <h2>${title}</h2>
+            <img class=${styles.cover} src=${imageSrc} />
+          </section>
+          <section class=${styles.summary}>
+            <h3>Korte beschrijving</h3>
+            <p>${summaries}</p>
+          </section>
+          ${genres.length > 0 ? renderList('Genres', genres) : null}
+          ${specifications.length > 0 ? renderList('Specifications', specifications) : null}
+          ${formats.length > 0 ? renderList('Formats', formats) : null}
+          ${editions.length > 0 ? renderList('Editions', editions) : null}
+        </main>
+      </body>
     `;
 
-    function renderLI(value) {
-      return html`<li>${value}</li>`;
+    function renderList(title, values) {
+      return html`
+        <div>
+          <h3>${title}</h3>
+          <ul>${values.map(value => renderLI(value))}</ul>
+        </div>
+      `;
+
+      function renderLI(value) {
+        return html`<li>${value}</li>`;
+      }
     }
   }
 
+  function renderLoader() {
+    return html`
+      <body class=${styles.body}>
+        ${header(state, emit)}
+        <main>
+          <div class="${styles.loader}">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </main>
+      </body>
+    `;
+  }
 }

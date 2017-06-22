@@ -20,6 +20,7 @@ const commonConfig = merge([
     output: {
       path: PATHS.build,
       filename: '[name].js',
+      publicPath: '/',
     },
     plugins: [
       new HtmlWebpackPlugin({
