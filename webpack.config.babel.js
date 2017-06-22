@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const HappyPack = require('happypack');
 const parts = require('./webpack.parts');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -26,6 +27,9 @@ const commonConfig = merge([
     plugins: [
       new HtmlWebpackPlugin({
         template: 'app/obachine-index.html',
+      }),
+      new ManifestPlugin({
+        fileName: 'manifest.json',
       }),
       new FaviconsWebpackPlugin({
         logo: './app/favicon.png',
