@@ -48,6 +48,7 @@
   100% {
     fill: #d16a70;
   }
+}
 
 .select {
   background: #fff;
@@ -60,4 +61,4 @@
   text-transform: capitalize;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  }
+}
