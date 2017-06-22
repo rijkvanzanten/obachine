@@ -21,7 +21,6 @@ It works by literally building the search query with using the machine blocks wh
 - [Node.JS](http://nodejs.org) w/
   - [Express](https://expressjs.com) webserver
 - [Webpack](https://webpack.js.org/) automation
-- [Greensock](https://greensock.com) animation
 
 ## Installation
 Clone this repo
