@@ -8,7 +8,7 @@ export const modalSettings = {
       <form id=${id} class=${styles.form} onsubmit=${preventSubmit} onclick=${saveValues}>
 
         <input id="relevance" type="radio" name="hardsort" />
-        <label for="relevance">relevantie</label>
+        <label for="relevance">relevant</label>
 
         <input id="author" type="radio" name="hardsort" value="Author(default)" />
         <label for="author">auteur</label>
