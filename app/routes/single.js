@@ -21,7 +21,12 @@ export default function single(state, emit) {
     const formats = toArray(getValue(item, 'formats', 'format'));
     const summaries = toArray(getValue(item, 'summaries', 'summary'));
     const specifications = toArray(getValue(item, 'description', 'physical-description'));
-    const editions = toArray(getValue(item, 'publication', 'editions', 'edition'));
+
+    const availability = item.availability;
+
+    if (!availability) {
+      emit('getAvailability', itemID);
+    }
 
     return html`
       <body class=${styles.body}>
@@ -39,7 +44,7 @@ export default function single(state, emit) {
           ${genres.length > 0 ? renderList('Genres', genres) : null}
           ${specifications.length > 0 ? renderList('Specifications', specifications) : null}
           ${formats.length > 0 ? renderList('Formats', formats) : null}
-          ${editions.length > 0 ? renderList('Editions', editions) : null}
+          ${renderAvailability(availability)}
         </main>
       </body>
     `;
@@ -55,6 +60,21 @@ export default function single(state, emit) {
       function renderLI(value) {
         return html`<li>${value}</li>`;
       }
+    }
+
+    function renderAvailability(availability) {
+      if (availability && availability.length > 0) {
+        return html`
+          <div>
+            <h3>Beschikbaarheid</h3>
+            <ul>
+              ${availability.map(({name, available}) => html`<li class="${styles.location}" data-available="${available}">${name}</li>`)}
+            </ul>
+          </div>
+        `;
+      }
+
+      return null;
     }
   }
 
