@@ -2,6 +2,18 @@
   margin: 0;
 }
 
+.body > main {
+  max-width: 600px;
+}
+
+.body div:nth-of-type(1) {
+  margin-top: 2rem;
+}
+
+.body div:last-child {
+  margin-bottom: 2rem;
+}
+
 h3 {
   color: #86138a;
   font-weight: 800;
@@ -25,6 +37,7 @@ h3 {
   text-transform: capitalize;
   list-style: none;
   margin: 0;
+  position: relative;
   padding: 0.5rem 1.5rem;
 }
 
@@ -38,7 +51,7 @@ h3 {
   width: 1rem;
   height: 2rem;
   position: absolute;
-  left: 2.5rem;
+  left: 0;
   background-size: 65%;
   background-repeat: no-repeat;
 }
