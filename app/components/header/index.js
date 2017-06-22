@@ -4,6 +4,6 @@ import logo from './oba-logo.svg';
 
 export default () => html`
   <header class=${styles.header}>
-    <img class=${styles.logo} src="${logo}" alt="oba logo">
+    <a href="/"><img class=${styles.logo} src="${logo}" alt="oba logo"></a>
   </header>
 `;
