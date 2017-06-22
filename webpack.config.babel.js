@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const HappyPack = require('happypack');
 const parts = require('./webpack.parts');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
@@ -25,6 +26,26 @@ const commonConfig = merge([
     plugins: [
       new HtmlWebpackPlugin({
         template: 'app/obachine-index.html',
+      }),
+      new FaviconsWebpackPlugin({
+        logo: './app/favicon.png',
+        prefix: 'icons.[hash]/',
+        emitStats: false,
+        inject: true,
+        background: '#fff',
+        title: 'Obachine',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          opengraph: false,
+          twitter: false,
+          yandex: false,
+          windows: false,
+        },
       }),
       new HappyPack({
         loaders: [
