@@ -49,6 +49,17 @@ router.get('/search', (req, res) => {
     .catch(err => console.log(err));
 });
 
+router.get('/details', (req, res) => {
+  client.get('details', {
+    id: req.query.id,
+  })
+    .then(results => res.send(results))
+    .catch(err => {
+      console.log(err);
+      res.status(500).end();
+    });
+});
+
 router.get('*', (req, res) => res.status(404).send('Route not defined'));
 
 module.exports = router;
