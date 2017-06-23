@@ -12,6 +12,7 @@ import keywordImage from './keyword/keyword-small.svg';
 import typeImage from './type/type-small.svg';
 import locationImage from './location/location-small.svg';
 import sortImage from './sort/relevance-small.svg';
+import languageImage from './language/language-small.svg';
 
 export default {
   genre: {
@@ -47,5 +48,6 @@ export default {
   language: {
     machine: language,
     modal: languageSettings,
+    image: languageImage,
   },
 };
