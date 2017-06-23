@@ -2,6 +2,7 @@
   max-width: 400px;
   width: 100%;
   margin: auto;
+  margin-bottom: 2rem;
 }
 
 .machineform > button {
