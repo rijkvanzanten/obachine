@@ -24,7 +24,7 @@ It works by literally building the search query with using the machine blocks wh
 
 ## API's
 - OBA API for all OBA related content
-- BoekenLiefde.nl API for Dutch reviews and ratings
+- BoekenLiefde API for Dutch reviews and ratings
 
 ## Installation
 Clone this repo
