@@ -131,20 +131,15 @@
   }
 }
 
-form {
-  display: flex;
-  justify-content: center;
-}
-
 .select {
   background: #fff;
   color: #18a9e0;
-  width: 100%;
   max-width: 300px;
   font-size: 1rem;
   border: 1px solid #fff;
   height: 3rem;
-  text-transform: capitalize;
+  padding: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-transform: capitalize;
 }

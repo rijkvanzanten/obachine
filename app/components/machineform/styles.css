@@ -1,6 +1,8 @@
 .machineform {
   max-width: 400px;
   width: 100%;
+  display: flex;
+  justify-content: center;
   margin: auto;
 }
 
