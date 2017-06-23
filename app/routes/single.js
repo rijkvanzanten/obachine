@@ -1,6 +1,7 @@
 import html from 'choo/html';
 import header from '../components/header';
 import styles from './single.css';
+import backArrow from './back-arrow.svg';
 import {toArray, getValue} from '../utils';
 
 export default function single(state, emit) {
@@ -32,7 +33,7 @@ export default function single(state, emit) {
       <body class=${styles.body}>
         ${header(state, emit)}
         <main>
-          <a href="/">◀ terug</a>
+          <a href="/"><img src="${backArrow}">terug</a>
           <section class=${styles.header}>
             <h2>${title}</h2>
             <img class=${styles.cover} src=${imageSrc} />
