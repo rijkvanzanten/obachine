@@ -23,7 +23,7 @@ It works by literally building the search query with using the machine blocks wh
 - [Webpack](https://webpack.js.org/) automation
 
 ## API's
-- OBA API for all OBA related content
+- OBA API for OBA related content
 - BoekenLiefde API for Dutch reviews and ratings
 
 ## Installation
