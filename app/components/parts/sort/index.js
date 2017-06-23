@@ -7,16 +7,16 @@ export const modalSettings = {
     return html`
       <form id=${id} class=${styles.form} onsubmit=${preventSubmit} onclick=${saveValues}>
 
-        <input id="relevance" type="radio" name="hardsort" />
+        <input id="relevance" type="radio" name="hardsort" value="" ${value === '' ? 'checked' : null}/>
         <label for="relevance">relevant</label>
 
-        <input id="author" type="radio" name="hardsort" value="Author(default)" />
+        <input id="author" type="radio" name="hardsort" value="Author(default)" ${value === 'Author(default)' ? 'checked' : null}/>
         <label for="author">auteur</label>
 
-        <input id="year" type="radio" name="hardsort" value="Year(default)" />
+        <input id="year" type="radio" name="hardsort" value="Year(default)" ${value === 'Year(default)' ? 'checked' : null}/>
         <label for="year">jaar</label>
 
-        <input id="title" type="radio" name="hardsort" value="Title(default)" />
+        <input id="title" type="radio" name="hardsort" value="Title(default)" ${value === 'Title(default)' ? 'checked' : null}/>
         <label for="title">titel</label>
 
       </form>

@@ -17,7 +17,7 @@ export default ({machineparts, modal: {content: {id, content, value}}}, emit) =>
   `;
 
   function close({target}) {
-    if (machineparts[id].value) {
+    if (machineparts[id].value !== undefined) {
       return emit('hideModal', id);
     }
 
