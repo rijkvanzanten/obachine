@@ -1,14 +1,133 @@
-[data-animating="true"].svg g {
+[data-animating="true"].svg #greenR {
+  animation: moveGreenControlRight 1s linear infinite;
+}
+
+@keyframes moveGreenControlRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-17px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+[data-animating="true"].svg #greenL {
+  animation: moveGreenControlLeft 1s linear infinite;
+}
+
+@keyframes moveGreenControlLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-17px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+[data-animating="true"].svg .cdType {
+  animation: changeColor 1s linear infinite;
+}
+
+[data-animating="true"].svg .cdBook {
+  animation: changeColor 1s linear infinite;
+  animation-delay: 0.6s;
+}
+
+[data-animating="true"].svg .bookRect {
+  animation: changeColor 1s linear infinite;
+  animation-delay: 0.3s;
+}
+
+@keyframes changeColor {
+  0% {
+    fill: #fff;
+  }
+
+  50% {
+    fill: #5fc9ed;
+  }
+
+  100% {
+    fill: #fff;
+  }
+}
+
+[data-animating="true"].svg #controlTop {
+  animation: moveControlTop 1s linear infinite;
+}
+
+@keyframes moveControlTop {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(22px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+[data-animating="true"].svg #controlBottom {
+  animation: moveControlBottom 1s linear infinite;
+}
+
+@keyframes moveControlBottom {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-22px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+[data-animating="true"].svg #cogwheelTop,
+[data-animating="true"].svg #cogwheelBottom {
   animation: rotate 3s linear infinite;
 }
 
 @keyframes rotate {
   from {
+    transform-origin: center;
     transform: rotate(0deg);
   }
 
   to {
+    transform-origin: center;
     transform: rotate(360deg);
+  }
+}
+
+[data-animating="true"].svg #cogwheelCenter {
+  animation: rotateReverse 3s linear infinite;
+}
+
+@keyframes rotateReverse {
+  from {
+    transform-origin: center;
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform-origin: center;
+    transform: rotate(0deg);
   }
 }
 

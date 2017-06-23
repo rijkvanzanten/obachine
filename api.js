@@ -48,6 +48,10 @@ router.get('/search', (req, res) => {
     apiSearchObject.branch = query.location;
   }
 
+  if(query.language) {
+    apiSearchObject.facet.push(`Language(${query.language})`);
+  }
+
   client.get('search', apiSearchObject)
     .then(results => res.send(results))
     .catch(err => console.log(err));
