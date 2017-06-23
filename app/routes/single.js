@@ -74,9 +74,10 @@ export default function single(state, emit) {
         return html`
           <div>
             <h3>Beschikbaarheid</h3>
-            <ul>
-              ${availability.map(({name, available}) => html`<li class="${styles.location}" data-available="${available}">${name}</li>`)}
-            </ul>
+            <details>
+              <summary>Klik hier om de beschikbaarheid te bekijken</summary>
+              <ul>${availability.map(({name, available}) => html`<li class="${styles.location}" data-available="${available}">${name}</li>`)}</ul>
+            </details>
           </div>
         `;
       }
