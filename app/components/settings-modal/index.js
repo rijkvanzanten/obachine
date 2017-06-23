@@ -7,7 +7,8 @@ export default ({machineparts, modal: {content: {id, content, value}}}, emit) =>
   const {title, children, color} = content;
 
   return html`
-    <div class=${styles.overlay}>
+    <div class=${styles.wrapper}>
+      <div class=${styles.overlay} onclick=${close}></div>
       <div class=${styles.modal} style="background-color: ${color}">
         <h2 class="${styles.title}">${title}</h2>
         ${children(id, value, emit)}
@@ -17,7 +18,7 @@ export default ({machineparts, modal: {content: {id, content, value}}}, emit) =>
   `;
 
   function close({target}) {
-    if (machineparts[id].value) {
+    if (machineparts[id].value !== undefined) {
       return emit('hideModal', id);
     }
 

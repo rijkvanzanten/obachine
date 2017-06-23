@@ -8,30 +8,30 @@ export const modalSettings = {
       <form id=${id} onsubmit=${preventSubmit} onclick=${saveValues}>
         <select class=${styles.select} name="location">
           <option>Kies een locatie...</option>
-          <option value="Centrale OBA">Centrale OBA</option>
-          <option value="OBA Banne">OBA Banne</option>
-          <option value="OBA Bijlmer">OBA Bijlmer</option>
-          <option value="OBA Bos en Lommer">OBA Bos en Lommer</option>
-          <option value="OBA Buitenveldert">OBA Buitenveldert</option>
-          <option value="OBA Cinétol">OBA Cinétol</option>
-          <option value="OBA De Hallen">OBA De Hallen</option>
-          <option value="OBA Diemen">OBA Diemen</option>
-          <option value="OBA Duivendrecht">OBA Duivendrecht</option>
-          <option value="OBA Geuzenveld">OBA Geuzenveld</option>
-          <option value="OBA Hagedoornplein">OBA Van der Pek</option>
-          <option value="OBA Javaplein">OBA Javaplein</option>
-          <option value="OBA IJburg">OBA IJburg</option>
-          <option value="OBA Linnaeus">OBA Linnaeus</option>
-          <option value="OBA Mercatorplein">OBA Mercatorplein</option>
-          <option value="OBA Molenwijk">OBA Molenwijk</option>
-          <option value="OBA Olympisch Kwartier">OBA Olympisch Kwartier</option>
-          <option value="OBA Reigersbos">OBA Reigersbos</option>
-          <option value="OBA Roelof Hartplein">OBA Roelof Hartplein</option>
-          <option value="OBA Slotermeer">OBA Slotermeer</option>
-          <option value="OBA Slotervaart">OBA Slotervaart</option>
-          <option value="OBA Spaarndammerbuurt">OBA Spaarndammerbuurt</option>
-          <option value="OBA Staatsliedenbuurt">OBA Staatsliedenbuurt</option>
-          <option value="OBA Waterlandplein">OBA Waterlandplein</option>
+          <option ${value === 'Centrale OBA' ? 'selected' : null} value="Centrale OBA">Centrale OBA</option>
+          <option ${value === 'OBA Banne' ? 'selected' : null} value="OBA Banne">OBA Banne</option>
+          <option ${value === 'OBA Bijlmer' ? 'selected' : null} value="OBA Bijlmer">OBA Bijlmer</option>
+          <option ${value === 'OBA Bos en Lommer' ? 'selected' : null} value="OBA Bos en Lommer">OBA Bos en Lommer</option>
+          <option ${value === 'OBA Buitenveldert' ? 'selected' : null} value="OBA Buitenveldert">OBA Buitenveldert</option>
+          <option ${value === 'OBA Cinétol' ? 'selected' : null} value="OBA Cinétol">OBA Cinétol</option>
+          <option ${value === 'OBA De Hallen' ? 'selected' : null} value="OBA De Hallen">OBA De Hallen</option>
+          <option ${value === 'OBA Diemen' ? 'selected' : null} value="OBA Diemen">OBA Diemen</option>
+          <option ${value === 'OBA Duivendrecht' ? 'selected' : null} value="OBA Duivendrecht">OBA Duivendrecht</option>
+          <option ${value === 'OBA Geuzenveld' ? 'selected' : null} value="OBA Geuzenveld">OBA Geuzenveld</option>
+          <option ${value === 'OBA Hagedoornplein' ? 'selected' : null} value="OBA Hagedoornplein">OBA Van der Pek</option>
+          <option ${value === 'OBA Javaplein' ? 'selected' : null} value="OBA Javaplein">OBA Javaplein</option>
+          <option ${value === 'OBA IJburg' ? 'selected' : null} value="OBA IJburg">OBA IJburg</option>
+          <option ${value === 'OBA Linnaeus' ? 'selected' : null} value="OBA Linnaeus">OBA Linnaeus</option>
+          <option ${value === 'OBA Mercatorplein' ? 'selected' : null} value="OBA Mercatorplein">OBA Mercatorplein</option>
+          <option ${value === 'OBA Molenwijk' ? 'selected' : null} value="OBA Molenwijk">OBA Molenwijk</option>
+          <option ${value === 'OBA Olympsich Kwartier' ? 'selected' : null} value="OBA Olympisch Kwartier">OBA Olympisch Kwartier</option>
+          <option ${value === 'OBA Reigersbos' ? 'selected' : null} value="OBA Reigersbos">OBA Reigersbos</option>
+          <option ${value === 'OBA Roelof Hartplein' ? 'selected' : null} value="OBA Roelof Hartplein">OBA Roelof Hartplein</option>
+          <option ${value === 'OBA Slotermeer' ? 'selected' : null} value="OBA Slotermeer">OBA Slotermeer</option>
+          <option ${value === 'OBA Slotervaart' ? 'selected' : null} value="OBA Slotervaart">OBA Slotervaart</option>
+          <option ${value === 'OBA Spaarndammerbuurt' ? 'selected' : null} value="OBA Spaarndammerbuurt">OBA Spaarndammerbuurt</option>
+          <option ${value === 'OBA Staatsliedenbuurt' ? 'selected' : null} value="OBA Staatsliedenbuurt">OBA Staatsliedenbuurt</option>
+          <option ${value === 'OBA Waterlandplein' ? 'selected' : null} value="OBA Waterlandplein">OBA Waterlandplein</option>
         </select>
       </form>
     `;
