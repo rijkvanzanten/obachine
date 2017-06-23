@@ -22,6 +22,10 @@ It works by literally building the search query with using the machine blocks wh
   - [Express](https://expressjs.com) webserver
 - [Webpack](https://webpack.js.org/) automation
 
+## API's
+- OBA API for all OBA related content
+- BoekenLiefde.nl API for Dutch reviews and ratings
+
 ## Installation
 Clone this repo
 ```bash
