@@ -1,9 +1,7 @@
 .wrapper {
   position: fixed;
-  top: 0;
   right: 0;
   bottom: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,13 +36,7 @@
   background-color: #da008c;
   padding: 0.5rem;
   color: #fff;
-  font-size: 1rem;
-  width: 90%;
   max-width: 500px;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
   animation: bounceIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
@@ -87,9 +79,9 @@
 }
 
 .title {
-  margin: auto;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
+  padding: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .button {
