@@ -1,14 +1,38 @@
-[data-animating="true"].svg g {
-  animation: rotate 3s linear infinite;
+[data-animating="true"].svg #handle {
+  transform-origin: right;
+  transform: translate(68px, 40px) rotate(30deg);
+  animation: handle 1s ease-in;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
+@keyframes handle {
+  0% {
+    transform: translate(68px, 40px) rotate(30deg);
   }
 
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translate(68px, 40px) rotate(-30deg);
+  }
+
+  100% {
+    transform: translate(68px, 40px) rotate(30deg);
+  }
+}
+
+[data-animating="true"].svg .rectangles {
+  animation: rectanglesColor 1s ease-in;
+}
+
+@keyframes rectanglesColor {
+  0% {
+    fill: #f6a623;
+  }
+
+  50% {
+    fill: #f6a623;
+  }
+
+  100% {
+    fill: #f6a623;
   }
 }
 
