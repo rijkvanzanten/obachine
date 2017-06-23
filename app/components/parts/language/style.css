@@ -1,52 +1,20 @@
-[data-animating="true"].svg .compass {
-  transform-origin: center;
-  animation: rotate 0.6s linear;
+[data-animating="true"].svg #satelite {
+  transform-origin: 57% 81%;
+  transform: rotate(28deg) translate(18px);
+  animation: rotateSatelite 1s linear;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-[data-animating="true"].svg .world {
-  transform-origin: center;
-  animation: color 0.5s ease-in;
-}
-
-@keyframes color {
+@keyframes rotateSatelite {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(28deg) translate(18px);
   }
 
   50% {
-    transform: rotate(-180deg);
+    transform: rotate(-42deg) translate(18px);
   }
 
   100% {
-    transform: rotate(-360deg);
-  }
-}
-
-[data-animating="true"].svg #light {
-  animation: fill 1s ease-in;
-}
-
-@keyframes fill {
-  0% {
-    fill: #d16a70;
-  }
-
-  50% {
-    fill: green;
-  }
-
-  100% {
-    fill: #d16a70;
+    transform: rotate(28deg) translate(18px);
   }
 }
 
