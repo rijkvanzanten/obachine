@@ -62,9 +62,9 @@ export const modalSettings = {
 export default (state, emit, id) => {
   const {animating} = state.machineparts[id] || false;
   return html`
-    <svg data-animating="${animating}" class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="235" height="225" viewBox="0 0 235 225">
+    <svg data-animating="${animating}" class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 235 225">
       <defs>
-        <rect id="path-1" width="201" height="24" rx="3"/>
+        <rect id="path-1-genre" width="201" height="24" rx="3"/>
       </defs>
       <g id="Page-1" fill="none" fill-rule="evenodd">
         <g id="machine-core-copy-8" transform="translate(-38)">
@@ -99,9 +99,9 @@ export default (state, emit, id) => {
               <rect id="Rectangle-33" width="218" height="38" y="112" fill="#4A4A4A" rx="5"/>
               <g id="graphContainer" transform="translate(9 119)">
                 <mask id="mask-2" fill="#fff">
-                  <use xlink:href="#path-1"/>
+                  <use xlink:href="#path-1-genre"/>
                 </mask>
-                <use id="Mask" fill="#FFF" xlink:href="#path-1"/>
+                <use id="MaskGenre" fill="#FFF" xlink:href="#path-1-genre"/>
                 <g id="graph" mask="url(#mask-2)">
                   <g transform="translate(-18 13)">
                     <g id=${styles.rectanglePoints}>
