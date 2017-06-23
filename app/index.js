@@ -63,6 +63,7 @@ function setupState(state, emitter) {
 
   emitter.on('getItem', getItem);
   emitter.on('getAvailability', getAvailability);
+  emitter.on('getReviews', getReviews);
 
   function onSelectNextItem() {
     state.machineslider.current++;
@@ -182,5 +183,16 @@ function setupState(state, emitter) {
         }
       })
       .catch(err => console.error(err));
+  }
+
+  function getReviews({itemID: id, isbn}) {
+    axios.get('/api/reviews?isbn=' + isbn)
+    .then(({data: reviews}) => {
+      if (reviews && reviews.length > 0) {
+        state.store[id].reviews = reviews;
+        emitter.emit('render');
+      }
+    })
+    .catch(err => console.error(err));
   }
 }

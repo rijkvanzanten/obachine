@@ -1,5 +1,6 @@
 const router = require('express').Router(); // eslint-disable-line
 const OBA = require('oba-api');
+const axios = require('axios');
 
 require('dotenv').config();
 
@@ -7,6 +8,9 @@ const client = new OBA({
   public: process.env.PUBLIC,
   secret: process.env.SECRET,
 });
+
+const BL_URL = process.env.BL_URL;
+const BL_KEY = process.env.BL_KEY;
 
 router.get('/search', (req, res) => {
   const apiSearchObject = {
@@ -69,6 +73,22 @@ router.get('/availability', (req, res) => {
       console.log(err);
       res.status(500).end();
     });
+});
+
+router.get('/reviews', (req, res) => {
+  axios.get(BL_URL, {
+    params: {
+      key: BL_KEY,
+      isbn: req.query.isbn,
+      type: 'text',
+    },
+  })
+  .then(reviews => reviews.data.reviews)
+  .then(reviews => res.json(reviews))
+  .catch(err => {
+    console.log(err);
+    res.status(500).end();
+  });
 });
 
 router.get('*', (req, res) => res.status(404).send('Route not defined'));

@@ -23,9 +23,15 @@ export default function single(state, emit) {
     const specifications = toArray(getValue(item, 'description', 'physical-description'));
 
     const availability = item.availability;
+    const reviews = item.reviews;
+    const isbn = getValue(item, 'identifiers', 'isbn-id');
 
     if (!availability) {
       emit('getAvailability', itemID);
+    }
+
+    if (!reviews) {
+      emit('getReviews', {itemID, isbn});
     }
 
     return html`
@@ -45,6 +51,7 @@ export default function single(state, emit) {
           ${specifications.length > 0 ? renderList('Specifications', specifications) : null}
           ${formats.length > 0 ? renderList('Formats', formats) : null}
           ${renderAvailability(availability)}
+          ${renderReviews(reviews)}
         </main>
       </body>
     `;
@@ -69,6 +76,21 @@ export default function single(state, emit) {
             <h3>Beschikbaarheid</h3>
             <ul>
               ${availability.map(({name, available}) => html`<li class="${styles.location}" data-available="${available}">${name}</li>`)}
+            </ul>
+          </div>
+        `;
+      }
+
+      return null;
+    }
+
+    function renderReviews(reviews) {
+      if (reviews && reviews.length > 0) {
+        return html`
+          <div>
+            <h3>Reviews</h3>
+            <ul>
+              ${reviews.map(({rating, review}) => html`<li>${rating}—${review}</li>`)}
             </ul>
           </div>
         `;
