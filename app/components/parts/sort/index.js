@@ -67,14 +67,14 @@ export default (state, emit, id) => {
             <path fill="#ECF0F1" d="M32.4310345 83.8793103L8.53448276 83.8793103C7.59227586 83.8793103 6.82758621 83.1163276 6.82758621 82.1724138 6.82758621 81.2285 7.59227586 80.4655172 8.53448276 80.4655172L32.4310345 80.4655172C33.3732414 80.4655172 34.137931 81.2285 34.137931 82.1724138 34.137931 83.1163276 33.3732414 83.8793103 32.4310345 83.8793103zM92.1724138 83.8793103L90.4655172 83.8793103C89.5233103 83.8793103 88.7586207 83.1163276 88.7586207 82.1724138 88.7586207 81.2285 89.5233103 80.4655172 90.4655172 80.4655172L92.1724138 80.4655172C93.1146207 80.4655172 93.8793103 81.2285 93.8793103 82.1724138 93.8793103 83.1163276 93.1146207 83.8793103 92.1724138 83.8793103z"/>
             <path fill="#DA008C" d="M52.9137931,5.36206897 L83.637931,5.36206897 C83.637931,5.36206897 83.637931,12.0323815 83.637931,14.75 C83.637931,17.4676185 83.637931,24.137931 83.637931,24.137931 L52.9137931,24.137931 L52.9137931,5.36206897 Z"/>
             <rect width="85.345" height="6.828" x="6.828" y="68.517" fill="#000"/>
-            <rect width="6.828" height="6.828" x="52.914" y="30.966" fill="#F29C1F"/>
-            <rect width="6.828" height="6.828" x="64.862" y="30.966" fill="#F29C1F"/>
-            <rect width="6.828" height="6.828" x="76.81" y="30.966" fill="#F29C1F"/>
-            <rect width="6.828" height="6.828" x="52.914" y="42.914" fill="#F29C1F"/>
-            <rect width="6.828" height="6.828" x="64.862" y="42.914" fill="#F29C1F"/>
-            <rect width="6.828" height="6.828" x="76.81" y="42.914" fill="#F29C1F"/>
-            <rect width="6.828" height="6.828" x="52.914" y="54.862" fill="#F29C1F"/>
-            <rect width="6.828" height="6.828" x="64.862" y="54.862" fill="#F29C1F"/>
+            <rect class=${styles.rectangles} width="6.828" height="6.828" x="52.914" y="30.966" fill="#F29C1F"/>
+            <rect class=${styles.rectangles} width="6.828" height="6.828" x="64.862" y="30.966" fill="#F29C1F"/>
+            <rect class=${styles.rectangles} width="6.828" height="6.828" x="76.81" y="30.966" fill="#F29C1F"/>
+            <rect class=${styles.rectangles} width="6.828" height="6.828" x="52.914" y="42.914" fill="#F29C1F"/>
+            <rect class=${styles.rectangles} width="6.828" height="6.828" x="64.862" y="42.914" fill="#F29C1F"/>
+            <rect class=${styles.rectangles} width="6.828" height="6.828" x="76.81" y="42.914" fill="#F29C1F"/>
+            <rect class=${styles.rectangles} width="6.828" height="6.828" x="52.914" y="54.862" fill="#F29C1F"/>
+            <rect class=${styles.rectangles} width="6.828" height="6.828" x="64.862" y="54.862" fill="#F29C1F"/>
             <rect width="6.828" height="6.828" x="76.81" y="54.862" fill="#71C285"/>
             <path fill="#6D6D6E" d="M40.9655172,58.2758621 L10.2413793,58.2758621 C9.29917241,58.2758621 8.53448276,57.5128793 8.53448276,56.5689655 C8.53448276,55.6250517 9.29917241,54.862069 10.2413793,54.862069 L40.9655172,54.862069 C41.9077241,54.862069 42.6724138,55.6250517 42.6724138,56.5689655 C42.6724138,57.5128793 41.9077241,58.2758621 40.9655172,58.2758621 Z"/>
             <rect width="23.897" height="30.724" x="13.655" y="25.845" fill="#F0EDE0"/>
@@ -95,12 +95,12 @@ export default (state, emit, id) => {
           <rect width="44.821" height="8.766" x="1.179" y="32.234" fill="#4A4A4A"/>
           <rect width="44.821" height="8.766" fill="#4A4A4A"/>
         </g>
-        <rect width="6" height="6" x="192" y="10" fill="#D8D8D8"/>
-        <rect width="6" height="6" x="192" y="20" fill="#D8D8D8"/>
-        <rect width="6" height="6" x="192" y="30" fill="#D8D8D8"/>
-        <rect width="6" height="6" x="192" y="40" fill="#F6A623"/>
-        <rect width="6" height="6" x="192" y="50" fill="#D8D8D8"/>
-        <rect width="6" height="6" x="192" y="60" fill="#D8D8D8"/>
+        <rect class=${styles.rectangles} width="6" height="6" x="192" y="10" fill="#D8D8D8"/>
+        <rect class=${styles.rectangles} width="6" height="6" x="192" y="20" fill="#D8D8D8"/>
+        <rect class=${styles.rectangles} width="6" height="6" x="192" y="30" fill="#D8D8D8"/>
+        <rect class=${styles.rectangles} width="6" height="6" x="192" y="40" fill="#F6A623"/>
+        <rect class=${styles.rectangles} width="6" height="6" x="192" y="50" fill="#D8D8D8"/>
+        <rect class=${styles.rectangles} width="6" height="6" x="192" y="60" fill="#D8D8D8"/>
         <path stroke="#F10000" stroke-linecap="square" stroke-width="2" d="M138,90.5 L138,95.5"/>
         <path stroke="#F8E81C" stroke-linecap="square" stroke-width="2" d="M142,90.5 L142,95.5"/>
         <path stroke="#4990E2" stroke-linecap="square" stroke-width="2" d="M146,90.5 L146,95.5"/>
@@ -109,7 +109,7 @@ export default (state, emit, id) => {
         <rect width="22" height="2" x="135" y="89" fill="#D8D8D8"/>
         <rect width="22" height="2" x="135" y="95" fill="#D8D8D8"/>
         <polygon fill="#FB0" points="153.541 66.041 159.907 66.041 159.907 96.094 251.34 96.094 251.34 84.459 257.041 84.459 257.041 101.459 153.541 101.459" transform="rotate(-90 205.291 83.75)"/>
-        <g transform="rotate(28 -3.36 167.74)">
+        <g id=${styles.handle} transform="rotate(28 -3.36 167.74)">
           <rect width="35.244" height="4.597" x="8.428" y="5.363" fill="#4A4A4A"/>
           <circle cx="6.896" cy="6.896" r="6.896" fill="#D0011B"/>
         </g>
