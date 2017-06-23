@@ -7,7 +7,7 @@ export const modalSettings = {
 
     return html`
         <form class=${styles.form} onsubmit=${preventSubmit} id=${id}>
-          <input type="text" name="keyword" oninput=${saveValues}>
+          <input type="text" name="keyword" oninput=${saveValues} value="${value || ''}>
         </form>
     `;
 
