@@ -2,7 +2,7 @@ import html from 'choo/html';
 import header from '../components/header';
 import machineslider from '../components/machineslider';
 import machineForm from '../components/machineform';
-import modal from '../components/settings-modal';
+import modal from '../components/modal';
 import bodyStyles from './main.css';
 import machine from '../components/machine';
 import results from '../components/results';
