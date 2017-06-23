@@ -62,7 +62,7 @@ export const modalSettings = {
 export default (state, emit, id) => {
   const {animating} = state.machineparts[id] || false;
   return html`
-    <svg data-animating="${animating}" class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="235" height="225" viewBox="0 0 235 225">
+    <svg data-animating="${animating}" class=${styles.svg} xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 235 225">
       <defs>
         <rect id="path-1" width="201" height="24" rx="3"/>
       </defs>
