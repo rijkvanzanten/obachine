@@ -65,7 +65,7 @@ export default function single(state, emit) {
       `;
 
       function renderLI(value) {
-        return html`<li>${value}</li>`;
+        return html`<li><p>${value}</p></li>`;
       }
     }
 
