@@ -1,5 +1,5 @@
 import html from 'choo/html';
-import styles from './modal.css';
+import styles from './styles.css';
 
 import buttonAnimation from '../buttonAnimation.css';
 

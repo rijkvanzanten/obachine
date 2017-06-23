@@ -1,5 +1,5 @@
 import html from 'choo/html';
-import styles from './header.css';
+import styles from './styles.css';
 import logo from './oba-logo.svg';
 
 export default () => html`

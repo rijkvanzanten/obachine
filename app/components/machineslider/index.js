@@ -1,5 +1,5 @@
 import html from 'choo/html';
-import styles from './machineslider.css';
+import styles from './styles.css';
 import prevButton from './prev.svg';
 import nextButton from './next.svg';
 import parts from '../parts';
