@@ -34,10 +34,12 @@ $ https://github.com/rijkvanzanten/obachine.git
 
 and run `npm install` to install all dependencies.
 
-You will need a `.env` file in the root of your project which contains a public/secret keypair for the OBA API:
+You will need a `.env` file in the root of your project which contains a public/secret keypair for the OBA API and BoekenLiefde API:
 ```
 PUBLIC=1234567890
 SECRET=1234567890
+BL_URL=https://apiurl
+BL_KEY=1234567890
 ```
 
 ## Usage
