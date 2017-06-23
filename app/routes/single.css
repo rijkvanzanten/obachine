@@ -97,6 +97,26 @@ h3 {
   color: #86138a;
 }
 
+.availability {
+  background-color: yellow;
+}
+
+.reviews {
+  background-color: yellow;
+}
+
+.formats {
+  background-color: yellow;
+}
+
+.genres {
+  background-color: yellow;
+}
+
+.specifications {
+  background-color: yellow;
+}
+
 .loader {
   margin: 100px auto;
   width: 60px;

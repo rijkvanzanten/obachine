@@ -47,11 +47,11 @@ export default function single(state, emit) {
             <h3>Korte beschrijving</h3>
             <p>${summaries}</p>
           </section>
-          ${renderAvailability(availability)}
-          ${renderReviews(reviews)}
-          ${formats.length > 0 ? renderList('Formats', formats) : null}
-          ${genres.length > 0 ? renderList('Genres', genres) : null}
-          ${specifications.length > 0 ? renderList('Specifications', specifications) : null}
+          <div class="${styles.availability}">${renderAvailability(availability)}</div>
+          <div class="${styles.reviews}">${renderReviews(reviews)}</div>
+          <div class="${styles.formats}">${formats.length > 0 ? renderList('Formats', formats) : null}</div>
+          <div class="${styles.genres}">${genres.length > 0 ? renderList('Genres', genres) : null}</div>
+          <div class="${styles.specifications}">${specifications.length > 0 ? renderList('Specifications', specifications) : null}</div>
         </main>
       </body>
     `;
