@@ -88,9 +88,15 @@ export default function single(state, emit) {
       if (reviews && reviews.length > 0) {
         return html`
           <div>
-            <h3>Reviews</h3>
+            <h3>Reviews <small>van Boekenliefde.nl</small></h3>
             <ul>
-              ${reviews.map(({rating, review}) => html`<li>${rating}—${review}</li>`)}
+              ${reviews.map(({link, username, dateadded, ratingtitle, rating, review}) => html`
+                <li>
+                  <a href="${link}"><h4>${username} - ${dateadded}</h4></a>
+                  <p>${ratingtitle} - ${rating}</p>
+                  <p>${review}</p>
+                </li>
+              `)}
             </ul>
           </div>
         `;
