@@ -4,6 +4,7 @@ import type, {modalSettings as typeSettings} from './type';
 import sort, {modalSettings as sortSettings} from './sort';
 import location, {modalSettings as locationSettings} from './location';
 import author, {modalSettings as authorSettings} from './author';
+import language, {modalSettings as languageSettings} from './language';
 
 import authorImage from './author/author-small.svg';
 import genreImage from './genre/genre-small.svg';
@@ -42,5 +43,9 @@ export default {
     machine: author,
     modal: authorSettings,
     image: authorImage,
+  },
+  language: {
+    machine: language,
+    modal: languageSettings,
   },
 };

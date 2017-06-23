@@ -22,7 +22,7 @@ function setupState(state, emitter) {
   Object.assign(state, {
     machineslider: {
       active: false,
-      items: ['genre', 'type', 'keyword', 'location', 'author', 'hardsort'],
+      items: ['genre', 'type', 'keyword', 'location', 'author', 'hardsort', 'language'],
       current: 0,
     },
     machineparts: {
