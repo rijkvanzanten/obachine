@@ -8,14 +8,13 @@ export const modalSettings = {
       <form id=${id} onsubmit=${preventSubmit} onchange=${saveValues}>
         <select class=${styles.select} name="type">
           <option>Kies een type...</option>
-          <option value="book">boek</option>
-          <option value="activiteiten" >activiteiten</option>
-          <option value="dvdvideo" >DVD</option>
-          <option value="bladmuziek" >bladmuziek</option>
-          <option value="cassette" >cassette</option>
-          <option value="cd" >cd</option>
-          <option value="audiovisual" >audiovisual</option>
-          <option value="largetype" >largetype</option>
+          <option value="book" ${value === 'book' ? 'selected' : null}>boek</option>
+          <option value="dvdvideo" ${value === 'dvdvideo' ? 'selected' : null}>DVD</option>
+          <option value="bladmuziek" ${value === 'bladmuziek' ? 'selected' : null}>bladmuziek</option>
+          <option value="cassette" ${value === 'casette' ? 'selected' : null}>cassette</option>
+          <option value="cd" ${value === 'cd' ? 'selected' : null}>cd</option>
+          <option value="audiovisual" ${value === 'audiovisual' ? 'selected' : null}>audiovisual</option>
+          <option value="largetype" ${value === 'largetype' ? 'selected' : null}>largetype</option>
         </select>
       </form>
     `;
