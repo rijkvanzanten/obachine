@@ -40,6 +40,7 @@
   background-color: #da008c;
   padding: 0.5rem;
   color: #fff;
+  width: 90%;
   max-width: 500px;
   animation: bounceIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
