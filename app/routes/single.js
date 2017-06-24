@@ -98,7 +98,7 @@ export default function single(state, emit) {
                   <p><em>"${ratingtitle}"</em></p>
                   <p>${rating}</p>
                   <details>
-                    <summary>Lees het review</summary>
+                    <summary>Lees de review</summary>
                     <p>${review}</p>
                   </details>
                 </li>
