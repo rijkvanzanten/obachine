@@ -1,8 +1,6 @@
 .list {
-  list-style: none;
-  padding: 0;
   width: 90%;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -23,27 +21,24 @@
 
 .list > li > a {
   text-decoration: none;
-}
-
-.list > li > a {
   color: #f7d80a;
   font-family: 'AvenirBold';
   font-weight: 800;
-  margin-bottom: 1rem;
-  padding: 1rem;
-  background-color: #86138a;
-  height: 90%;
+  padding: 1.25rem;
+  background-color: rgba(134, 19, 138, 0.9);
+  height: 100%;
   transition: padding 300ms;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .list span {
-  margin-top: 1rem;
-  margin-bottom: 1.5rem;
+  margin: 1rem;
   font-size: 1.125rem;
+  text-align: center;
+  text-transform: capitalize;
 }
 
 .list > li > a:nth-child(even) {
@@ -52,7 +47,5 @@
 }
 
 .cover {
-  align-self: center;
-  max-width: 160px;
   margin-bottom: 1rem;
 }

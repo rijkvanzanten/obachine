@@ -1,20 +1,22 @@
 .machineslider {
-  background-color: #86138a;
+  background-color: rgba(134, 19, 138, 0.9);
   padding: 1rem;
-  margin-bottom: 1rem;
-  text-align: center;
   display: flex;
-  justify-content: space-around;
-  font-size: 1rem;
+  justify-content: center;
+}
+
+.prev {
+  margin-right: 2rem;
+}
+
+.next {
+  margin-left: 2rem;
 }
 
 .next,
 .prev {
   background-color: transparent;
   border: none;
-  color: #f7d80a;
-  font-size: 1.125rem;
-  -webkit-appearance: none;
 }
 
 .buildingblock {
@@ -25,14 +27,13 @@
   border: none;
 }
 
-.machineslider > button {
-  display: flex;
-  justify-content: space-between;
-  text-transform: capitalize;
+.machineslider > button:nth-of-type(2) img {
+  margin-left: 1rem;
 }
 
-.machineslider > button > img {
-  margin-left: 1rem;
+.machineslider > button {
+  display: flex;
+  text-transform: capitalize;
 }
 
 .machineslider > button > span {

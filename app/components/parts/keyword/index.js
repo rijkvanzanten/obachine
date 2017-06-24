@@ -1,5 +1,5 @@
 import html from 'choo/html';
-import styles from './style.css';
+import styles from './styles.css';
 
 export const modalSettings = {
   title: 'Met welke zoekterm wil je zoeken?',
@@ -7,7 +7,7 @@ export const modalSettings = {
 
     return html`
         <form class=${styles.form} onsubmit=${preventSubmit} id=${id}>
-          <input type="text" name="keyword" oninput=${saveValues} value="${value || ''}"/>
+          <input autofocus type="text" name="keyword" oninput=${saveValues} value="${value || ''}"/>
         </form>
     `;
 
