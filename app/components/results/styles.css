@@ -38,6 +38,7 @@
   margin: 1rem;
   font-size: 1.125rem;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .list > li > a:nth-child(even) {
