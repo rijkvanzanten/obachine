@@ -31,7 +31,6 @@
     "babel-preset-env": "^1.5.1",
     "babili-webpack-plugin": "^0.1.1",
     "clean-webpack-plugin": "^0.1.16",
-    "compression-webpack-plugin": "^0.4.0",
     "concurrently": "^3.4.0",
     "css-loader": "^0.28.4",
     "cssnano": "^3.10.0",

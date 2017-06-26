@@ -128,7 +128,6 @@ const productionConfig = merge([
       parts.autoprefix(),
     ],
   }),
-  parts.compressAssets(),
 ]);
 
 const developmentConfig = merge([
