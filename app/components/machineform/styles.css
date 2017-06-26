@@ -15,4 +15,12 @@
   font-weight: 800;
   font-size: 1.5rem;
   padding: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.machineform > button:hover {
+  background-color: rgba(134, 19, 138, 0.9);
+  color: #fff;
+  transform: scale(1.1);
+  transition: 0.7s;
 }
