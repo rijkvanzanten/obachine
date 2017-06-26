@@ -6,7 +6,6 @@ const GitRevisionPlugin = require('git-revision-webpack-plugin');
 const BabiliPlugin = require('babili-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
-const CompressionPlugin = require('compression-webpack-plugin');
 
 exports.devServer = ({host, port} = {}) => ({
   devServer: {
