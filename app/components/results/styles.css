@@ -56,6 +56,14 @@
   margin-bottom: 1rem;
 }
 
+.noresults {
+  font-family: 'AvenirBold';
+  color: #f7d80a;
+  background-color: #86138a;
+  padding: 1rem;
+  line-height: 1.5;
+}
+
 .cover:hover {
   transform: scale(1.1);
   transition: 0.5s;
