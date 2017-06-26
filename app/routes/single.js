@@ -39,7 +39,7 @@ export default function single(state, emit) {
       <body>
         ${header(state, emit)}
         <main class=${styles.main}>
-          <a class="${styles.back}" href="/"><img src="${backArrow}">terug</a>
+          <a class="${styles.back}" href="/"><img src="${backArrow}"><p>terug</p></a>
           <section class=${styles.header}>
             <h2>${title}</h2>
             <img src=${imageSrc} />

@@ -39,10 +39,6 @@
   transition: 0.5s;
 }
 
-.main a img {
-  margin-right: 0.5rem;
-}
-
 .main li > p::first-letter {
   text-transform: uppercase;
 }
@@ -70,15 +66,20 @@
 
 .back {
   position: fixed;
-  display: block;
+  display: flex;
   background-color: #fff;
   padding: 1rem;
+  padding-bottom: 0.5rem;
   right: 9vw;
   bottom: 5vh;
   border: 2px solid #86138a;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   text-decoration: none;
   color: #000;
+}
+
+.back > img {
+  margin-right: 0.2rem;
 }
 
 .header {
