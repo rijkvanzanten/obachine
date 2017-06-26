@@ -15,4 +15,12 @@
   font-weight: 800;
   font-size: 1.5rem;
   padding: 1rem;
+  box-shadow: 3px 3px rgba(134, 19, 138, 0.9);
+  transition: none;
+  position: relative;
+}
+
+.machineform > button:hover {
+  box-shadow: 1px 1px rgba(134, 19, 138, 0.9);
+  top: 2px;
 }

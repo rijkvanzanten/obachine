@@ -36,9 +36,14 @@
 
 .list span {
   margin: 1rem;
+  margin-bottom: 1.3rem;
   font-size: 1.125rem;
   text-align: center;
   text-transform: capitalize;
+}
+
+.list > li > a > li {
+  margin: 0.5rem;
 }
 
 .list > li > a:nth-child(even) {
@@ -47,5 +52,11 @@
 }
 
 .cover {
+  box-shadow: 5px 3px 20px rgba(0, 0, 0, 0.16), 0 4px 16px rgba(0, 0, 0, 0.23);
   margin-bottom: 1rem;
+}
+
+.cover:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }
