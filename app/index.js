@@ -23,6 +23,7 @@ function setupState(state, emitter) {
     machineslider: {
       active: false,
       items: ['genre', 'type', 'keyword', 'language', 'author', 'hardsort', 'location'],
+      names: ['genre', 'type', 'trefwoord', 'taal', 'auteur', 'sorteer', 'locatie'],
       current: 0,
     },
     machineparts: {
