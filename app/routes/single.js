@@ -42,7 +42,9 @@ export default function single(state, emit) {
           <a class="${styles.back}" href="/"><img src="${backArrow}"><span>terug</span></a>
           <section class=${styles.header}>
             <h2>${title}</h2>
-            <img src=${imageSrc} />
+            ${imageSrc.startsWith('https://v19.nbc.bibliotheek.nl') ?
+              html`<img src="${imageSrc}" />` :  html`<p>Geen afbeelding beschikbaar</p>`
+            }
             <p>${specifications}</p>
           </section>
           <section class=${styles.summary}>
