@@ -117,12 +117,22 @@
   margin: 1rem;
 }
 
+.reviews {
+  padding: 0;
+}
+
 .reviews ul {
   list-style: none;
 }
 
 .reviews li {
   margin-bottom: 1.5rem;
+  background-color: rgba(247, 216, 10, 0.6);
+  padding: 1rem;
+}
+
+.reviews li:first-of-type {
+  border-top: 0;
 }
 
 .reviews a,
@@ -276,4 +286,20 @@
 
 [data-available=true].location {
   color: green;
+}
+
+.reviewname {
+  text-decoration: none;
+  color: #4a4a4a;
+  display: table;
+  display: flex;
+  justify-content: space-between;
+  font-family: 'AvenirBold';
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.rating {
+  font-size: 0.8rem;
+  text-align: right;
 }
