@@ -21,7 +21,7 @@ export default (state, emit) => {
   `;
 
   function emptyState() {
-    return html`<div class=${styles.placeholder}>Stel je machine samen..</div>`;
+    return html`<div class=${styles.placeholder}>Klik hier om je zoekmachine samen te stellen...</div>`;
   }
 
   function machine(id) {
