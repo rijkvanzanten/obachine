@@ -49,3 +49,11 @@
 .cover {
   margin-bottom: 1rem;
 }
+
+.noresults {
+  font-family: 'AvenirBold';
+  color: #f7d80a;
+  background-color: #86138a;
+  padding: 1rem;
+  line-height: 1.5;
+}

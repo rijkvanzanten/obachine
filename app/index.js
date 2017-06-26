@@ -39,7 +39,7 @@ function setupState(state, emitter) {
       content: {},
       id: '', // ID of machine
     },
-    results: [],
+    results: false,
     store: {},
   });
 

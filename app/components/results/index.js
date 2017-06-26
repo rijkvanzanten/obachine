@@ -6,7 +6,12 @@ export default state => {
   const {results} = state;
   return html`
     <ul class=${styles.list}>
-      ${results.map(renderResult)}
+    ${results ?
+        results.length > 0 ?
+          results.map(renderResult) :
+          html`<p class=${styles.noresults}>Helaas hebben we geen resultaten gevonden. Probeer je zoekmachine aan te passen!</p>` :
+        null
+      }
     </ul>
   `;
 
