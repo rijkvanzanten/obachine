@@ -7,15 +7,16 @@ import parts from '../parts';
 import buttonAnimation from '../buttonAnimation.css';
 
 export default (state, emit) => {
-  const {machineslider: {items, current}} = state;
+  const {machineslider: {items, current, names}} = state;
   const {highlightSlider} = state;
   const currentItem = items[current];
+  const name = names[current];
 
   return html`
     <div class="${styles.machineslider} ${highlightSlider ? styles.highlight : null}">
       <button class=${styles.prev + ' ' + buttonAnimation.hoverEffect} onclick=${prev}><img src=${prevButton} alt="vorige machine"/></button>
       <button data-item=${currentItem} class=${styles.buildingblock + ' ' + buttonAnimation.hoverEffect} onclick=${select}>
-        <span>${currentItem}</span>
+        <span>${name}</span>
         <img src=${parts[currentItem].image} />
       </button>
       <button class=${styles.next + ' ' + buttonAnimation.hoverEffect} onclick=${next}><img src=${nextButton} alt="volgende machine"/></button>
