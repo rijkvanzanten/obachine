@@ -8,10 +8,11 @@ import buttonAnimation from '../buttonAnimation.css';
 
 export default (state, emit) => {
   const {machineslider: {items, current}} = state;
+  const {highlightSlider} = state;
   const currentItem = items[current];
 
   return html`
-    <div class=${styles.machineslider}>
+    <div class="${styles.machineslider} ${highlightSlider ? styles.highlight : null}">
       <button class=${styles.prev + ' ' + buttonAnimation.hoverEffect} onclick=${prev}><img src=${prevButton} alt="vorige machine"/></button>
       <button data-item=${currentItem} class=${styles.buildingblock + ' ' + buttonAnimation.hoverEffect} onclick=${select}>
         <span>${currentItem}</span>

@@ -65,6 +65,8 @@ function setupState(state, emitter) {
   emitter.on('getAvailability', getAvailability);
   emitter.on('getReviews', getReviews);
 
+  emitter.on('highlightSlider', highlightSlider);
+
   function onSelectNextItem() {
     state.machineslider.current++;
     if (state.machineslider.current >= state.machineslider.items.length) {
@@ -194,5 +196,15 @@ function setupState(state, emitter) {
       }
     })
     .catch(err => console.error(err));
+  }
+
+  function highlightSlider() {
+    state.highlightSlider = false;
+    emitter.emit('render');
+
+    setTimeout(function() {
+      state.highlightSlider = true;
+      emitter.emit('render');
+    }, 1);
   }
 }
