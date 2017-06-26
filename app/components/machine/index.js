@@ -21,7 +21,11 @@ export default (state, emit) => {
   `;
 
   function emptyState() {
-    return html`<div class=${styles.placeholder}>Klik hier om je zoekmachine samen te stellen...</div>`;
+    return html`<div onclick=${showSlider} class=${styles.placeholder}>Stel je zoekmachine samen...</div>`;
+  }
+
+  function showSlider() {
+    emit('highlightSlider');
   }
 
   function machine(id) {
