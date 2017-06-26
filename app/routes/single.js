@@ -94,9 +94,8 @@ export default function single(state, emit) {
             <ul>
               ${reviews.map(({link, username, dateadded, ratingtitle, rating, review}) => html`
                 <li>
-                  <a href="${link}"><p>${username} - ${dateadded}</p></a>
-                  <p><em>"${ratingtitle}"</em></p>
-                  <p>${rating}</p>
+                  <a href="${link}"><p class=${styles.reviewname}><span>${username}</span><span> ${dateadded}</span></p></a>
+                  <p><em>"${ratingtitle}" <span class=${styles.rating}>Cijfer: ${rating}</span></em></p>
                   <details>
                     <summary>Lees de review</summary>
                     <p>${review}</p>
