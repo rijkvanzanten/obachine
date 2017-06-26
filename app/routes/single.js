@@ -24,54 +24,87 @@ export default function single(state, emit) {
     const specifications = toArray(getValue(item, 'description', 'physical-description'));
 
     const availability = item.availability;
+    const reviews = item.reviews;
+    const isbn = getValue(item, 'identifiers', 'isbn-id');
 
     if (!availability) {
       emit('getAvailability', itemID);
     }
 
+    if (!reviews) {
+      emit('getReviews', {itemID, isbn});
+    }
+
     return html`
-      <body class=${styles.body}>
+      <body>
         ${header(state, emit)}
-        <main>
-          <a href="/"><img src="${backArrow}"> terug</a>
+        <main class=${styles.main}>
+          <a class="${styles.back}" href="/"><img src="${backArrow}">terug</a>
           <section class=${styles.header}>
             <h2>${title}</h2>
-            <img class=${styles.cover} src=${imageSrc} />
+            <img src=${imageSrc} />
+            <p>${specifications}</p>
           </section>
           <section class=${styles.summary}>
             <h3>Korte beschrijving</h3>
             <p>${summaries}</p>
           </section>
-          ${genres.length > 0 ? renderList('Genres', genres) : null}
-          ${specifications.length > 0 ? renderList('Specifications', specifications) : null}
-          ${formats.length > 0 ? renderList('Formats', formats) : null}
           ${renderAvailability(availability)}
+          ${renderReviews(reviews)}
+          ${formats.length > 0 ? renderList('Formats', formats) : null}
+          ${genres.length > 0 ? renderList('Genres', genres) : null}
         </main>
       </body>
     `;
 
     function renderList(title, values) {
       return html`
-        <div>
+        <section>
           <h3>${title}</h3>
           <ul>${values.map(value => renderLI(value))}</ul>
-        </div>
+        </section>
       `;
 
       function renderLI(value) {
-        return html`<li>${value}</li>`;
+        return html`<li><p>${value}</p></li>`;
       }
     }
 
     function renderAvailability(availability) {
       if (availability && availability.length > 0) {
         return html`
-          <div>
+          <section class="${styles.availability}">
             <h3>Beschikbaarheid</h3>
+            <details>
+              <summary>Klik hier om de beschikbaarheid te bekijken</summary>
+              <ul>${availability.map(({name, available}) => html`<li class="${styles.location}" data-available="${available}">${name}</li>`)}</ul>
+            </details>
+          </section>
+        `;
+      }
+
+      return null;
+    }
+
+    function renderReviews(reviews) {
+      if (reviews && reviews.length > 0) {
+        return html`
+          <section class="${styles.reviews}">
+            <h3>Reviews <small>van Boekenliefde.nl</small></h3>
             <ul>
-              ${availability.map(({name, available}) => html`<li class="${styles.location}" data-available="${available}">${name}</li>`)}
+              ${reviews.map(({link, username, dateadded, ratingtitle, rating, review}) => html`
+                <li>
+                  <a href="${link}"><p>${username} - ${dateadded}</p></a>
+                  <p><em>"${ratingtitle}"</em></p>
+                  <p>${rating}</p>
+                  <details>
+                    <summary>Lees de review</summary>
+                    <p>${review}</p>
+                  </details>
+                </li>
+              `)}
             </ul>
-          </div>
+          </section>
         `;
       }
 

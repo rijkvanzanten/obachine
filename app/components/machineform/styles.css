@@ -1,19 +1,18 @@
 .machineform {
-  box-sizing: border-box;
   max-width: 400px;
   width: 100%;
-  padding: 1em;
-  margin: 1em auto;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
-.machineform button {
+.machineform > button {
   background-color: #f7d80a;
   border: 0;
   color: #86138a;
-  display: block;
   font-family: 'AvenirBold';
   font-weight: 800;
   font-size: 1.5rem;
   padding: 1rem;
-  margin: 0 auto;
 }

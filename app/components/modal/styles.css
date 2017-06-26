@@ -1,9 +1,9 @@
 .wrapper {
   position: fixed;
-  top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
+  top: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +17,8 @@
   width: 100%;
   height: 100%;
   top: 0;
+  right: 0;
+  bottom: 0;
   left: 0;
 }
 
@@ -38,13 +40,11 @@
   background-color: #da008c;
   padding: 0.5rem;
   color: #fff;
-  font-size: 1rem;
-  width: 90%;
+  width: 95%;
   max-width: 500px;
-  flex-wrap: wrap;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
   animation: bounceIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
@@ -87,9 +87,9 @@
 }
 
 .title {
-  margin: auto;
-  padding-top: 1.5em;
-  padding-bottom: 1em;
+  margin: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .button {
@@ -102,9 +102,7 @@
   font-size: 1.5rem;
   padding: 1rem;
   width: 50%;
-  margin: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1.5rem;
 }
 
 .button:hover {

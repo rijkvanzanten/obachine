@@ -1,5 +1,5 @@
 import html from 'choo/html';
-import styles from './style.css';
+import styles from './styles.css';
 
 export const modalSettings = {
   title: 'Welk type zoek je?',
