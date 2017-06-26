@@ -24,9 +24,11 @@ export default state => {
       <li>
         <a href="/item/${itemID}">
           <span>${title}</span>
-          <img class=${styles.cover} src="${imageSrc}" />
-          ${description ?
-            html`<li>${description}</li>` : ''
+            ${imageSrc.startsWith('https://v19.nbc.bibliotheek.nl') ?
+              html`<img class=${styles.cover} src="${imageSrc}" />` :  html`<p>Geen afbeelding beschikbaar</p>`
+            }
+            ${description ?
+              html`<li>${description}</li>` : ''
           }
         </a>
       </li>
