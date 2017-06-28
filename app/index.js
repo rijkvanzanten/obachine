@@ -1,6 +1,7 @@
 import choo from 'choo';
 import shortid from 'shortid';
 import axios from 'axios';
+import animateScrollTo from 'animated-scroll-to';
 import {toArray, getValue} from './utils';
 import parts from './components/parts';
 
@@ -152,10 +153,43 @@ function setupState(state, emitter) {
   }
 
   function startAnimationAll() {
+    const scrollToTopDuration = 3000;
+    const scrollDurationPerMachine = 3000;
+
+    const machine = document.getElementById('machine');
+    const resultsList = document.querySelector('body > ul');
+    const {top} = resultsList.getBoundingClientRect();
+
     Object.keys(state.machineparts).forEach(id => {
       state.machineparts[id].animating = true;
     });
+
     emitter.emit('render');
+
+    // Wait a little bit (100ms) before start scroll animation
+    setTimeout(function() {
+      // Scroll to top of the machine
+      animateScrollTo(0, {
+        minDuration: scrollToTopDuration - 100,
+        maxDuration: scrollToTopDuration,
+      });
+    }, 100);
+
+    // Scroll to the bottom of the machine after it scrolls to top
+    setTimeout(function() {
+      // Calculate time to scroll
+      const duration = machine.querySelectorAll('li').length * scrollDurationPerMachine;
+      animateScrollTo(top, {
+        minDuration: duration - 100,
+        maxDuration: duration,
+      });
+
+      // Stop animating the machines after the scroll is done
+      setTimeout(function() {
+        emitter.emit('stopAnimationAll');
+      }, duration);
+
+    }, scrollToTopDuration + 50);
   }
 
   function stopAnimation(id) {
@@ -193,8 +227,6 @@ function setupState(state, emitter) {
         if (rctx.length > 0) {
           state.searchQuery.rctx = rctx;
         }
-
-        emitter.emit('stopAnimationAll');
         emitter.emit('results', results);
       })
       .catch(err => console.error(err));
