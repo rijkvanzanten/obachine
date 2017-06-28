@@ -11,7 +11,7 @@ export default (state, emit) => {
   const showEmptyState = machinepartsIDs.length === 0;
 
   return html`
-    <div class=${styles.wrapper}>
+    <div id="machine" class=${styles.wrapper}>
       <img class=${styles.tunnel} src=${startTunnel}/>
       <ul class=${styles.machine}>
         ${showEmptyState ? emptyState() : machinepartsIDs.map(machine)}
