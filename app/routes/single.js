@@ -53,9 +53,9 @@ export default function single(state, emit) {
             <p>${summaries}</p>
           </section>
           ${renderAvailability(availability)}
+          ${renderReviews(reviews)}
           ${formats.length > 0 ? renderList('Formats', formats) : null}
           ${genres.length > 0 ? renderList('Genres', genres) : null}
-          ${renderReviews(reviews)}
         </main>
       </body>
     `;
