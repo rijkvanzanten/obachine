@@ -8,7 +8,7 @@ export default (state, emit) => {
 
   // Add eventListener for scroll (infinite scrolling)
   window.addEventListener('scroll', throttle(150, function() {
-    const thresholdPassed = document.body.clientHeight - (window.scrollY + window.innerHeight) < 400;
+    const thresholdPassed = document.body.clientHeight - (window.scrollY + window.innerHeight) < 500;
     if (thresholdPassed && state.isFetching === false && results.length > 0 && Object.keys(searchQuery).length > 0) {
       searchQuery.page++;
       emit('fetchResults', searchQuery);
