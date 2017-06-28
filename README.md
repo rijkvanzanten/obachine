@@ -22,6 +22,8 @@ It works by literally building the search query with using the machine blocks wh
 
 To view a full in-depth report of this project you can view the [GitBook](https://dandevri.gitbooks.io/oba) of this project.
 
+*Please note: the whole UI is in dutch 🇳🇱*
+
 ## ⚙️ Installation & Development
 
 ### Tech Stack
