@@ -175,6 +175,11 @@ function setupState(state, emitter) {
   function fetchResults(searchQuery) {
     emitter.emit('startAnimationAll');
 
+    // Reset RCTX for new machines
+    if (searchQuery.page ===  1) {
+      searchQuery.rctx = null;
+    }
+
     state.searchQuery = searchQuery;
     state.isFetching = true;
 
@@ -182,6 +187,13 @@ function setupState(state, emitter) {
       .then(res => {
         const results = toArray(getValue(res, 'data', 'aquabrowser', 'results', 'result'));
         state.isFetching = false;
+
+        // Save RCTX string for follow-up requests
+        const rctx = getValue(res, 'data', 'aquabrowser', 'meta', 'rctx');
+        if (rctx.length > 0) {
+          state.searchQuery.rctx = rctx;
+        }
+
         emitter.emit('stopAnimationAll');
         emitter.emit('results', results);
       })
