@@ -32,7 +32,7 @@ To view a full in-depth report of this project you can view the [GitBook](https:
   - [Express](https://expressjs.com) webserver
 - [Webpack](https://webpack.js.org/) automation
 - [Node OBA API](https://github.com/rijkvanzanten/node-oba-api)
-- [Boekenliefde API](https://boekenliefde.nl/api.html)
+- [BoekenLiefde API](https://boekenliefde.nl/api.html)
 
 ### Prerequisites
 * Make sure you have [`node`](https://nodejs.org/en/) installed on your machine.
