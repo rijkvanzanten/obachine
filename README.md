@@ -68,8 +68,11 @@ To see all upcoming todo's and features please navigate to the [issues](https://
 - [x] Add animations for a richer experience
 - [ ] Add gamification for a better user experience
 - [ ] Add swiping mechanism for filters
-- [ ] Add dyslexia filter
-- [ ] Add better responsive handling for desktops
+- [ ] Add "read more" button for longer reviews and always display short ones
+- [ ] Re-design machines to be more clear on their function
+- [ ] Enhance usability by cross-browser testing
+- [ ] Add help screen with a bit of info on the application
+- [ ] Add start/end tunnel animations
 
 ## :page_facing_up: Contributing
 Please read [Contributing](CONTRIBUTING.md) for details on how to contribute to this project.
