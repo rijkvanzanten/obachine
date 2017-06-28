@@ -20,25 +20,29 @@ Obachine is a search engine made for the [Amsterdam Public Library (OBA)](https:
 
 It works by literally building the search query with using the machine blocks which are acting as search filters (i.e. author, genre).
 
-## Tech Stack
+## ⚙️ Installation & Development
+
+### Tech Stack
 - HTML, CSS & JS
 - [Node.JS](http://nodejs.org) w/
   - [Express](https://expressjs.com) webserver
 - [Webpack](https://webpack.js.org/) automation
+- [Node OBA API](https://github.com/rijkvanzanten/node-oba-api)
+- [Boekenliefde API](https://boekenliefde.nl/api.html)
 
-## API's
-- OBA API for OBA related content
-- BoekenLiefde API for Dutch reviews and ratings
+### Prerequisites
+* Make sure you have [`node`](https://nodejs.org/en/) installed on your machine.
+
 
 ## Installation
-Clone this repo
+1. Clone this repo
 ```bash
 $ https://github.com/rijkvanzanten/obachine.git
 ```
 
-and run `npm install` to install all dependencies.
+2. Run `npm install` to install all dependencies.
 
-You will need a `.env` file in the root of your project which contains a public/secret keypair for the OBA API and BoekenLiefde API:
+*You will need a `.env` file in the root of your project which contains a public/secret keypair for the OBA API and BoekenLiefde API:*
 ```
 PUBLIC=1234567890
 SECRET=1234567890
@@ -46,7 +50,7 @@ BL_URL=https://apiurl
 BL_KEY=1234567890
 ```
 
-## Usage
+### Usage
 - To use the app in development mode, use `npm start`
 - To build the application use `npm run build`
 - To test your JS use `npm run lint:js`
@@ -54,11 +58,13 @@ BL_KEY=1234567890
 
 The last two commands are running within Webpack, but they are there if you want to use them besides Webpack.
 
-## Wishlist
+## :white_check_mark: Todo's /  :sparkles: Wishlist
+To see all upcoming todo's and features please navigate to the [issues](https://github.com/rijkvanzanten/obachine/issues) page of this repo.
+
+- [x] Add animations for a richer experience
 - [ ] Add gamification for a better user experience
 - [ ] Add swiping mechanism for filters
 - [ ] Add dyslexia filter
-- [ ] Add animations for a richer experience
 - [ ] Add better responsive handling for desktops
 
 ## Contributing
