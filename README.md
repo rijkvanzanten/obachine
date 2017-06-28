@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img width="300" src="media/logo.png" alt="Logo">
+  <img width="300" src="media/obachine_icon-logo.png" alt="Logo">
   <br>
   <br>
 </h1>
