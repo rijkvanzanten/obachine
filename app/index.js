@@ -154,8 +154,8 @@ function setupState(state, emitter) {
   function startAnimationAll() {
     Object.keys(state.machineparts).forEach(id => {
       state.machineparts[id].animating = true;
-      emitter.emit('render');
     });
+    emitter.emit('render');
   }
 
   function stopAnimation(id) {
