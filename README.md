@@ -5,13 +5,15 @@
 </h1>
 
 <p align="center">
-  <b>🔎 Build your own search engine @ <a href="https://obachine.rijks.website">obachine.rijks.website</a> 🔍</b>
+  <b>🔎 OBA Obachine @ <a href="https://obachine.rijks.website">obachine.rijks.website</a> 🔍</b>
 </p>
 
 # Obachine
 [![Build Status](https://semaphoreci.com/api/v1/rijkvanzanten/obachine/branches/master/shields_badge.svg)](https://semaphoreci.com/rijkvanzanten/obachine)
+![NPM](https://img.shields.io/npm/v/npm.svg)
+![Obachine](https://img.shields.io/badge/⚙-obachine-8031D1.svg)
 
-## Overview
+## :book: Introduction
 Obachine is a search engine made for the [Amsterdam Public Library (OBA)](https://oba.nl) and is mainly built for their younger age demographic. The purpose of this application is to educate them on the inner workings of a search engine where the outcome is based on the given inputs. However, it's also developed to enhance the quest of finding a book to read; making it easier and enjoyable.
 
 It works by literally building the search query with using the machine blocks which are acting as search filters (i.e. author, genre).
