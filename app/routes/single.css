@@ -22,6 +22,10 @@
   box-shadow: 3px 3px 0 #86138a;
 }
 
+.main section:nth-last-child(-n+2) li {
+  margin-left: 1rem;
+}
+
 @media only screen and (min-width: 1224px) {
   .main section:nth-last-child(-n+2) {
     width: 44%;
@@ -50,8 +54,7 @@
 
 .availability p,
 .main section:nth-last-child(-n+2) p {
-  display: flex;
-  justify-content: space-between;
+  display: inline-block;
 }
 
 .main h3 {
@@ -124,7 +127,7 @@
 }
 
 .reviews li {
-  margin: 0 0 1.5rem;
+  margin-bottom: 1.5rem;
   background-color: rgba(247, 216, 10, 0.6);
   padding: 1rem;
 }
