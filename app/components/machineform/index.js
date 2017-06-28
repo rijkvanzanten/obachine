@@ -1,7 +1,5 @@
 import html from 'choo/html';
-import axios from 'axios';
 import styles from './styles.css';
-import {getValue, toArray} from '../../utils';
 
 export default (state, emit) => {
   const {machineparts} = state;
@@ -21,19 +19,14 @@ export default (state, emit) => {
   function submitForm(e) {
     const searchQuery = {};
 
-    emit('startAnimationAll');
-
     e.target.querySelectorAll('input').forEach(input => {
       searchQuery[input.name] = input.value;
     });
 
-    axios.get('/api/search', {params: searchQuery})
-      .then(res => {
-        const results = toArray(getValue(res, 'data', 'aquabrowser', 'results', 'result'));
-        emit('stopAnimationAll');
-        emit('results', results);
-      })
-      .catch(err => console.error(err));
+    searchQuery.page = 1;
+    searchQuery.ps = 20;
+
+    emit('fetchResults', searchQuery);
 
     e.preventDefault();
     return false;

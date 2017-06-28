@@ -1,7 +1,7 @@
 import choo from 'choo';
 import shortid from 'shortid';
 import axios from 'axios';
-import {getValue} from './utils';
+import {toArray, getValue} from './utils';
 import parts from './components/parts';
 
 import main from './routes/main';
@@ -41,7 +41,9 @@ function setupState(state, emitter) {
       id: '', // ID of machine
     },
     results: false,
-    store: {},
+    store: {}, // all results ever
+    searchQuery: {},
+    isFetching: false,
   });
 
   emitter.on('select-nextItem', onSelectNextItem);
@@ -62,6 +64,7 @@ function setupState(state, emitter) {
   emitter.on('stopAnimation', stopAnimation);
   emitter.on('stopAnimationAll', stopAnimationAll);
 
+  emitter.on('fetchResults', fetchResults);
   emitter.on('getItem', getItem);
   emitter.on('getAvailability', getAvailability);
   emitter.on('getReviews', getReviews);
@@ -123,7 +126,9 @@ function setupState(state, emitter) {
   function setResults(results) {
     // Filter out all items without an ID
     results = results.filter(result => result.id && result.id.nativeid);
-    state.results = results;
+
+    // Add results to existing (infinite scroll), but don't when it's the first page (new machine)
+    state.results = state.searchQuery.page === 1 ? results : state.results.length > 0 ? [...state.results, ...results] : results;
 
     results.forEach(result => {
       const itemID = getValue(result, 'id', 'nativeid');
@@ -165,6 +170,34 @@ function setupState(state, emitter) {
       state.machineparts[id].animating = false;
       emitter.emit('render');
     });
+  }
+
+  function fetchResults(searchQuery) {
+    emitter.emit('startAnimationAll');
+
+    // Reset RCTX for new machines
+    if (searchQuery.page ===  1) {
+      searchQuery.rctx = null;
+    }
+
+    state.searchQuery = searchQuery;
+    state.isFetching = true;
+
+    axios.get('/api/search', {params: searchQuery})
+      .then(res => {
+        const results = toArray(getValue(res, 'data', 'aquabrowser', 'results', 'result'));
+        state.isFetching = false;
+
+        // Save RCTX string for follow-up requests
+        const rctx = getValue(res, 'data', 'aquabrowser', 'meta', 'rctx');
+        if (rctx.length > 0) {
+          state.searchQuery.rctx = rctx;
+        }
+
+        emitter.emit('stopAnimationAll');
+        emitter.emit('results', results);
+      })
+      .catch(err => console.error(err));
   }
 
   function getItem(id) {
