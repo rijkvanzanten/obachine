@@ -10,6 +10,9 @@ export const modalSettings = {
           <option>Kies een taal...</option>
           <option ${value === 'eng' ? 'selected' : null} value="eng">Engels</option>
           <option ${value === 'dut' ? 'selected' : null} value="dut">Nederlands</option>
+          <option ${value === 'ita' ? 'selected' : null} value="ita">Italiaans</option>
+          <option ${value === 'spa' ? 'selected' : null} value="spa">Spaans</option>
+          <option ${value === 'ger' ? 'selected' : null} value="ger">Duits</option>
         </select>
       </form>
     `;
