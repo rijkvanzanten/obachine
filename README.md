@@ -13,6 +13,8 @@
 ![NPM](https://img.shields.io/npm/v/npm.svg)
 ![Obachine](https://img.shields.io/badge/⚙-obachine-8031D1.svg)
 
+> With Obachine you can Build a custom search engine to search for books in the Amsterdam Public Library
+
 ## :book: Introduction
 Obachine is a search engine made for the [Amsterdam Public Library (OBA)](https://oba.nl) and is mainly built for their younger age demographic. The purpose of this application is to educate them on the inner workings of a search engine where the outcome is based on the given inputs. However, it's also developed to enhance the quest of finding a book to read; making it easier and enjoyable.
 
