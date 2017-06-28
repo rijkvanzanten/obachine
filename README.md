@@ -20,6 +20,8 @@ Obachine is a search engine made for the [Amsterdam Public Library (OBA)](https:
 
 It works by literally building the search query with using the machine blocks which are acting as search filters (i.e. author, genre).
 
+To view a full in-depth report of this project you can view the [GitBook](https://dandevri.gitbooks.io/oba) of this project.
+
 ## ⚙️ Installation & Development
 
 ### Tech Stack
