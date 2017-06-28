@@ -16,7 +16,7 @@ export default function single(state, emit) {
   return renderPage(item);
 
   function renderPage(item) {
-    window.scrollTo(0);
+    window.scrollTo(0, 0);
     const title = getValue(item, 'titles', 'short-title');
     const imageSrc = getValue(item, 'coverimages', 'coverimage')[1];
     const genres = toArray(getValue(item, 'genres', 'genre'));
