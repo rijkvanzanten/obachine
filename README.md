@@ -13,7 +13,7 @@
 ![NPM](https://img.shields.io/npm/v/npm.svg)
 ![Obachine](https://img.shields.io/badge/⚙-obachine-8031D1.svg)
 
-> With Obachine you can Build a custom search engine to search for books in the Amsterdam Public Library
+> With Obachine you can build your own search engine to search for books in the Amsterdam Public Library
 
 ## :book: Introduction
 Obachine is a search engine made for the [Amsterdam Public Library (OBA)](https://oba.nl) and is mainly built for their younger age demographic. The purpose of this application is to educate them on the inner workings of a search engine where the outcome is based on the given inputs. However, it's also developed to enhance the quest of finding a book to read; making it easier and enjoyable.
@@ -22,7 +22,7 @@ It works by literally building the search query with using the machine blocks wh
 
 To view a full in-depth report of this project you can view the [GitBook](https://dandevri.gitbooks.io/oba) of this project.
 
-*Please note: the whole UI is in dutch 🇳🇱*
+*Please note: the whole UI is in Dutch 🇳🇱*
 
 ## ⚙️ Installation & Development
 
@@ -32,7 +32,7 @@ To view a full in-depth report of this project you can view the [GitBook](https:
   - [Express](https://expressjs.com) webserver
 - [Webpack](https://webpack.js.org/) automation
 - [Node OBA API](https://github.com/rijkvanzanten/node-oba-api)
-- [Boekenliefde API](https://boekenliefde.nl/api.html)
+- [BoekenLiefde API](https://boekenliefde.nl/api.html)
 
 ### Prerequisites
 * Make sure you have [`node`](https://nodejs.org/en/) installed on your machine.
@@ -68,8 +68,11 @@ To see all upcoming todo's and features please navigate to the [issues](https://
 - [x] Add animations for a richer experience
 - [ ] Add gamification for a better user experience
 - [ ] Add swiping mechanism for filters
-- [ ] Add dyslexia filter
-- [ ] Add better responsive handling for desktops
+- [ ] Add "read more" button for longer reviews and always display short ones
+- [ ] Re-design machines to be more clear on their function
+- [ ] Enhance usability by cross-browser testing
+- [ ] Add help screen with a bit of info on the application
+- [ ] Add start/end tunnel animations
 
 ## :page_facing_up: Contributing
 Please read [Contributing](CONTRIBUTING.md) for details on how to contribute to this project.
