@@ -35,8 +35,9 @@ export default (state, emit) => {
       <li>
         <a href="/item/${itemID}">
           <span>${title}</span>
-          ${imageSrc.startsWith('https://v19.nbc.bibliotheek.nl') ?
-            html`<img class=${styles.cover} src="${imageSrc}" />` :  html`<p>Geen afbeelding beschikbaar</p>`
+          ${imageSrc ?
+            imageSrc.startsWith('https://v19.nbc.bibliotheek.nl') ?
+              html`<img class=${styles.cover} src="${imageSrc}" />` :  html`<p>Geen afbeelding beschikbaar</p>` : null
           }
           ${description ?
             html`<li>${description}</li>` : ''

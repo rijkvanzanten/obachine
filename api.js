@@ -53,11 +53,11 @@ router.get('/search', (req, res) => {
   }
 
   if(query.ps) {
-    apiSearchObject.ps = query.ps;
+    apiSearchObject.pagesize = +query.ps;
   }
 
   if(query.page) {
-    apiSearchObject.page = query.page;
+    apiSearchObject.page = +query.page;
   }
 
   client.get('search', apiSearchObject)
