@@ -2,3 +2,13 @@
   background-color: #f7d80a;
   padding: 1rem;
 }
+
+.header a {
+  text-decoration: none;
+}
+
+.header h1 {
+  font-weight: 800;
+  font-family: Avenir, system-ui;
+  font-size: 2rem;
+}
